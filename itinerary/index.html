@@ -793,7 +793,7 @@ $("#cal").addEventListener("click",e=>{const c=e.target.closest(".cell"); if(c) 
 /* ================= TIMELINE ================= */
 (function buildTL(){
  const pct=h=>(h/24*100).toFixed(3)+"%";
- let h=`<div></div><div class="scale">${[0,3,6,9,12,15,18,21,24].map(x=>`<span style="left:${pct(x)}">${String(x).padStart(2,"0")}</span>`).join("")}</div>`;
+ let h=`<div></div><div class="scale">${[0,3,6,9,12,15,18,21,24].map(x=>`<span style="left:${pct(x)}${x===24?';transform:translateX(-100%)':x===0?';transform:none':''}">${String(x).padStart(2,"0")}</span>`).join("")}</div>`;
  DAYS.forEach(D=>{const W=WORK[D.d];
   h+=`<div class="rl">${D.wd.slice(0,3)}. ${D.d} ธ.ค.<small>${CITY[D.city].name}</small></div><div class="tr" title="${esc(W.msg)}">`;
   if(W.lvl==="off"){ h+=`<div class="offrow">${esc(W.msg)}</div>`; }
