@@ -588,7 +588,7 @@ document.addEventListener("click",e=>{
  const h=e.target.closest("[data-hotel]"); if(h){e.preventDefault(); const H=HOTELS[+h.dataset.hotel]; if(isMobile()) openMap(); map.setView(H.ll,15); const p=PL.find(p=>p.title===H.name); if(p) activate(p.id,true); return;}
 });
 $("#fab").onclick=()=>{openMap(); setTimeout(()=>showDay(curDay,false),120);};
-window.addEventListener("resize",()=>{ if(map){ map.invalidateSize(); } });
+let rsz; window.addEventListener("resize",()=>{ clearTimeout(rsz); rsz=setTimeout(()=>{ if(map){ map.invalidateSize(); showDay(curDay,false); } },200); });
 $("#mapclose").onclick=closeMap;
 
 // tabs active state on scroll (desktop scrolls .side, mobile scrolls window)
