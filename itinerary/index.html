@@ -2,922 +2,428 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#14161c">
-<title>Itinerary · Paris · Alsace · Switzerland — December 2026</title>
-<meta name="description" content="แผนการเดินทาง 17–31 ธ.ค. 2026 · เที่ยวบิน ที่พัก ปฏิทินงาน วันหยุด และแผนรายวันพร้อมแผนที่">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314161c'/><text x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='34' fill='%23c9a86a'>I</text></svg>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Out of Office · December</title>
+<meta name="description" content="ตารางลาพักร้อนและช่วงเวลาที่ติดต่อได้ 18 ธ.ค. 2026 – 3 ม.ค. 2027">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+Thai:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&family=Noto+Serif+Thai:wght@300;400;500&family=Noto+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f7f3ec; --surface:#fffdf9; --surface-2:#f1ebe0; --ink:#14161c; --ink-2:#3a3d46; --muted:#6e6a62;
-  --line:#e4dccd; --line-2:#d6cbb6; --gold:#8a6b3f; --gold-2:#b8975f; --gold-soft:#f3eadb;
-  --navy:#1d2a3d; --ok:#2f5d50; --ok-soft:#e6efe9; --warn:#8a5a1f; --warn-soft:#f6ecdc; --off:#7a7368; --off-soft:#efebe4;
-  --leave:#7a2e3a; --leave-soft:#f5e7e8; --hol:#5b4a86; --hol-soft:#ece8f4;
-  --shadow:0 1px 1px rgba(20,22,28,.03),0 8px 24px -12px rgba(20,22,28,.14);
-  --radius:16px; --mapw:clamp(360px,36vw,720px);
-  --serif:"Playfair Display","Noto Serif Thai",Georgia,serif;
-  --sans:"Inter","IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --tile-filter:grayscale(.85) sepia(.18) contrast(.92) brightness(1.04);
+ --bg:#f4f0e8;--paper:#faf8f3;--ink:#171614;--ink-2:#4b4842;--mute:#857f75;
+ --line:#d6cfc1;--line-2:#e6e0d4;--tint:#ebe5d9;--accent:#8a6a45;
+ --display:"Bodoni Moda","Noto Serif Thai",Georgia,serif;
+ --serif:"Noto Serif Thai","Bodoni Moda",Georgia,serif;
+ --sans:"Jost","Noto Sans Thai",system-ui,sans-serif;
+ color-scheme:light;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#0e1116; --surface:#151a21; --surface-2:#1b212a; --ink:#ede7dc; --ink-2:#cfc8bb; --muted:#9a9488;
-    --line:#2a313b; --line-2:#38404b; --gold:#d2b47a; --gold-2:#c9a86a; --gold-soft:#2a2418;
-    --navy:#c9d4e6; --ok:#8cc5ae; --ok-soft:#16261f; --warn:#e2b373; --warn-soft:#2c2214; --off:#a39d92; --off-soft:#1f232a;
-    --leave:#e59aa5; --leave-soft:#2e181c; --hol:#b8a8e6; --hol-soft:#221e30;
-    --shadow:0 1px 1px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.6);
-    --tile-filter:invert(1) hue-rotate(180deg) grayscale(.75) brightness(.78) contrast(.95);
-  }
-}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%}
-body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:15.5px;line-height:1.65;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
-a{color:var(--gold);text-decoration:none;text-underline-offset:3px} a:hover{text-decoration:underline}
-:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px;border-radius:6px}
-h1,h2,h3,h4{margin:0;line-height:1.3}
-.ic{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}
-.ic.sm{width:15px;height:15px}
-.app{display:grid;grid-template-columns:minmax(0,1fr) var(--mapw);height:100vh;height:100dvh}
-.side{overflow-y:auto;background:var(--paper);scroll-behavior:smooth;border-right:1px solid var(--line)}
-@media (prefers-reduced-motion:reduce){.side{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-.mapwrap{position:relative;background:var(--surface-2)}
-#map{position:absolute;inset:0;background:var(--surface-2)}
-.leaflet-tile-pane{filter:var(--tile-filter)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#0d0d0c;--paper:#141413;--ink:#eee8dc;--ink-2:#bdb6a9;--mute:#857f75;
+ --line:#2e2c28;--line-2:#1f1e1c;--tint:#1c1a17;--accent:#c6a77d;color-scheme:dark;}}
+:root[data-theme="dark"]{--bg:#0d0d0c;--paper:#141413;--ink:#eee8dc;--ink-2:#bdb6a9;--mute:#857f75;--line:#2e2c28;--line-2:#1f1e1c;--tint:#1c1a17;--accent:#c6a77d;color-scheme:dark;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font:300 16px/1.75 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.eyebrow{font:400 11px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--mute)}
+.num{font-family:var(--display);font-variant-numeric:lining-nums tabular-nums}
 
-/* ---------- COVER ---------- */
-.cover{position:relative;min-height:340px;display:flex;align-items:flex-end;color:#f7f3ec;
-  background:#14161c url("https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg?width=1600") center 38%/cover}
-.cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,22,.25) 0%,rgba(14,17,22,.35) 40%,rgba(14,17,22,.92) 100%)}
-.cover .in{position:relative;width:100%;max-width:980px;margin:0 auto;padding:28px 32px 30px}
-.topbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;z-index:2}
-.ghost{display:inline-flex;align-items:center;gap:6px;color:#f7f3ec;font-size:13px;font-weight:500;padding:8px 14px;border:1px solid rgba(247,243,236,.35);border-radius:999px;background:rgba(14,17,22,.25);backdrop-filter:blur(6px)}
-.ghost:hover{text-decoration:none;border-color:rgba(247,243,236,.7)}
-.eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#d9c49b;font-weight:600}
-.cover h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.4vw,52px);letter-spacing:-.01em;margin:10px 0 8px}
-.cover h1 em{font-style:italic;font-weight:500;color:#e6d3ac}
-.cover .lede{font-family:var(--serif);font-size:17px;color:#e9e2d4;max-width:620px;margin:0}
-.rule{display:flex;align-items:center;gap:12px;margin:18px 0 14px;color:#c9a86a}
-.rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(201,168,106,.6),transparent)}
-.rule span{font-size:9px;letter-spacing:.3em}
-.facts{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:13.5px;color:#e9e2d4}
-.facts b{display:block;font-family:var(--serif);font-size:20px;font-weight:600;color:#fff;letter-spacing:.01em}
-.facts span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#bfb5a3}
+/* top bar */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line-2)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.mark{font:400 13px/1 var(--display);letter-spacing:.42em;text-transform:uppercase}
+.bar nav{display:flex;gap:28px}
+.bar nav a{font:400 11px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);padding:8px 0;border-bottom:1px solid transparent}
+.bar nav a:hover,.bar nav a.on{color:var(--ink);border-color:var(--ink)}
 
-/* ---------- NAV ---------- */
-.tabs{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.tabs .in{max-width:980px;margin:0 auto;display:flex;gap:2px;overflow-x:auto;padding:0 20px;scrollbar-width:none}
-.tabs .in::-webkit-scrollbar{display:none}
-.tabs a{flex:none;display:inline-flex;align-items:center;gap:7px;padding:15px 12px 13px;font-size:13.5px;font-weight:500;color:var(--muted);border-bottom:1.5px solid transparent;white-space:nowrap;min-height:48px}
-.tabs a:hover{color:var(--ink);text-decoration:none}
-.tabs a.on{color:var(--ink);border-bottom-color:var(--gold-2)}
+/* hero */
+.hero{padding:96px 0 72px;text-align:center}
+.hero .eyebrow{margin-bottom:36px}
+.hero h1{font:400 clamp(52px,10vw,124px)/.95 var(--display);letter-spacing:-.01em}
+.hero h1 .dash{display:inline-block;width:.6em;height:1px;background:var(--ink);vertical-align:.28em;margin:0 .22em}
+.hero h1 small{display:block;font-size:max(11px,.11em);letter-spacing:.38em;text-transform:uppercase;font-family:var(--sans);font-weight:300;margin-top:26px;color:var(--ink-2)}
+.hero .th{font:300 19px/1.7 var(--serif);color:var(--ink-2);margin:34px auto 0;max-width:34em}
+.now{display:inline-flex;align-items:center;gap:12px;margin-top:40px;padding:12px 22px;border:1px solid var(--line);font:400 13px/1.5 var(--sans);color:var(--ink-2);text-align:left}
+.now i{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 
-/* ---------- SECTIONS ---------- */
-.sec{max-width:980px;margin:0 auto;padding:44px 32px 8px;scroll-margin-top:52px}
-.sech{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
-.sech .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:10px}
-.sech .k::after{content:"";width:28px;height:1px;background:var(--gold-2)}
-.sech h2{font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:-.005em;margin-top:6px}
-.sech p{margin:6px 0 0;color:var(--muted);font-size:14px;max-width:560px}
-.divider{max-width:980px;margin:36px auto 0;padding:0 32px}
-.divider hr{border:0;border-top:1px solid var(--line);margin:0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-.pad{padding:20px 22px}
-.grid{display:grid;gap:14px}
-.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.serif{font-family:var(--serif)}
-.muted{color:var(--muted)}
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);background:var(--surface);white-space:nowrap}
-.chip i{width:7px;height:7px;border-radius:50%;background:var(--c,var(--gold-2))}
-.chip.ok{color:var(--ok);background:var(--ok-soft);border-color:transparent}
-.chip.warn{color:var(--warn);background:var(--warn-soft);border-color:transparent}
-.chip.leave{color:var(--leave);background:var(--leave-soft);border-color:transparent}
-.chip.off{color:var(--off);background:var(--off-soft);border-color:transparent}
-.chip.hol{color:var(--hol);background:var(--hol-soft);border-color:transparent}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:30px 24px;text-align:center}
+.fact+.fact{border-left:1px solid var(--line)}
+.fact .eyebrow{margin-bottom:14px}
+.fact b{display:block;font:400 30px/1.15 var(--display);white-space:nowrap}
+.fact span{display:block;font:300 13px/1.5 var(--sans);color:var(--mute);margin-top:6px}
 
-/* overview */
-.stat .n{font-family:var(--serif);font-size:34px;font-weight:600;line-height:1.1}
-.stat .t{font-size:13px;color:var(--muted);margin-top:4px}
-.journey{display:flex;align-items:flex-start;overflow-x:auto;padding:6px 2px 4px;scrollbar-width:thin}
-.jstop{flex:1 0 110px;position:relative;text-align:center;padding-top:30px}
-.jstop::before{content:"";position:absolute;top:11px;left:0;right:0;border-top:1px dashed var(--line-2)}
-.jstop:first-child::before{left:50%} .jstop:last-child::before{right:50%}
-.jstop .dot{position:absolute;top:4px;left:50%;transform:translateX(-50%);width:15px;height:15px;border-radius:50%;background:var(--surface);border:1.5px solid var(--c);box-shadow:inset 0 0 0 3px var(--surface),inset 0 0 0 8px var(--c)}
-.jstop b{display:block;font-family:var(--serif);font-size:16px;font-weight:600}
-.jstop span{font-size:12px;color:var(--muted)}
-.status li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;align-items:center}
-.status li:last-child{border-bottom:0}
-.status{list-style:none;margin:0;padding:0}
-.hl li{padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;display:grid;grid-template-columns:96px 1fr;gap:10px}
-.hl li:last-child{border-bottom:0}
-.hl{list-style:none;margin:0;padding:0}
-.hl b{font-family:var(--serif);font-weight:600}
+/* sections */
+.sec{padding:120px 0 0}
+.head{display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:end;margin-bottom:48px}
+.head .roman{font:400 italic 15px/1 var(--display);color:var(--mute)}
+.head h2{font:400 clamp(32px,4.4vw,48px)/1.1 var(--display)}
+.head h2 .th{display:block;font:300 16px/1.6 var(--serif);color:var(--ink-2);margin-top:12px}
+.clocks{display:flex;gap:36px;text-align:right}
+.clocks b{display:block;font:400 34px/1 var(--display)}
+.clocks span{display:block;font:400 10px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--mute);margin-top:10px}
 
-/* ---------- TEAM / WORK ---------- */
-.away{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:0;overflow:hidden}
-.away>div{padding:20px 22px;border-right:1px solid var(--line)}
-.away>div:last-child{border-right:0}
-.away .big{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.25;margin-top:6px}
-.away .s{font-size:13px;color:var(--muted);margin-top:4px}
-.away .hero{background:var(--ink);color:var(--paper)}
-.away .hero .lbl{color:#bfb5a3}
-.away .hero .s{color:#cfc8bb}
-.away .hero .big em{font-style:italic;color:var(--gold-2)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .away .hero{background:#232a35;color:var(--ink)}}
-
-.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
-.cal .dow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;font-weight:600;padding-bottom:4px}
-.cal .dow.we{color:var(--off)}
-.cell{position:relative;min-height:84px;border-radius:12px;padding:8px 9px;border:1px solid var(--line);background:var(--surface);text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:2px;transition:border-color .15s,transform .15s}
-.cell:hover{border-color:var(--gold-2)}
-.cell.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
-.cell .d{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1}
-.cell .m{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.cell .w{font-size:11.5px;line-height:1.35;margin-top:auto;color:var(--ink-2)}
-.cell .bar{position:absolute;left:8px;right:8px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--c,transparent)}
-.cell.work{background:var(--surface)}
-.cell.leave{background:var(--leave-soft);border-color:transparent} .cell.leave .w{color:var(--leave)}
-.cell.off{background:var(--off-soft);border-color:transparent} .cell.off .w{color:var(--off)}
-.cell.hol{background:var(--hol-soft);border-color:transparent} .cell.hol .w{color:var(--hol)}
-.cell.back{background:var(--ok-soft);border-color:transparent} .cell.back .w{color:var(--ok);font-weight:600}
+/* calendar */
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--line)}
+.dow{font:400 10px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--mute);padding:14px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cell{position:relative;min-height:112px;padding:12px 12px 14px;text-align:left;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;transition:background .2s}
+.cell:hover{background:var(--paper)}
+.cell .d{font:400 26px/1 var(--display)}
+.cell .m{font:400 9px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-left:6px;vertical-align:4px}
+.cell .c{font:400 9.5px/1.3 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-top:10px}
+.cell .s{font:300 12.5px/1.35 var(--sans);color:var(--mute);margin-top:auto}
+.cell.work .d{color:var(--mute)}
+.cell.leave{background:var(--tint)}
+.cell.leave .s{color:var(--ink)}
+.cell.off .d,.cell.off .s{color:var(--mute)}
+.cell.off{background:repeating-linear-gradient(135deg,transparent 0 7px,var(--line-2) 7px 8px)}
+.cell.hol{background:var(--tint)}
+.cell.hol .s{font-family:var(--serif);font-style:italic;color:var(--ink)}
+.cell.back{background:var(--ink);color:var(--bg)}
+.cell.back .d,.cell.back .s,.cell.back .c{color:var(--bg)}
 .cell.dim{opacity:.45}
-.cell .mt{position:absolute;top:8px;right:8px;width:7px;height:7px;transform:rotate(45deg);background:var(--gold-2)}
-.cell.today::after{content:"วันนี้";position:absolute;top:6px;right:8px;font-size:9.5px;color:var(--gold);font-weight:600}
-.legend{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
-.daypanel{margin-top:14px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:start}
-.daypanel h4{font-family:var(--serif);font-size:20px;font-weight:600;grid-column:1/-1}
-.daypanel .lbl{padding-top:2px}
-.daypanel div{font-size:14px}
+.cell[aria-pressed="true"]{box-shadow:inset 0 0 0 1px var(--ink)}
+.cell.back[aria-pressed="true"]{box-shadow:inset 0 0 0 3px var(--bg),inset 0 0 0 4px var(--ink)}
+.cell .today{position:absolute;top:12px;right:12px;font:400 8.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:26px;margin-top:22px;font:300 13px/1.4 var(--sans);color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:10px}
+.legend i{width:18px;height:12px;border:1px solid var(--line);flex:none}
+.legend .l-leave{background:var(--tint)}
+.legend .l-off{background:repeating-linear-gradient(135deg,transparent 0 3px,var(--line) 3px 4px)}
+.legend .l-hol{background:var(--tint);border-style:dashed;border-color:var(--mute)}
+.legend .l-back{background:var(--ink);border-color:var(--ink)}
 
-.tl{display:grid;grid-template-columns:118px 1fr;gap:0;font-size:13px}
-.tl .hd{display:contents}
-.tl .scale{position:relative;height:22px;margin-left:0}
-.tl .scale span{position:absolute;top:2px;transform:translateX(-50%);font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums}
-.tl .rl{padding:9px 10px 9px 0;border-top:1px solid var(--line);font-weight:500;white-space:nowrap;display:flex;flex-direction:column;line-height:1.3}
-.tl .rl small{font-weight:400;color:var(--muted);font-size:11.5px}
-.tl .tr{position:relative;border-top:1px solid var(--line);min-height:46px}
-.tl .office{position:absolute;top:12px;bottom:12px;left:37.5%;width:37.5%;background:repeating-linear-gradient(135deg,var(--surface-2) 0 6px,transparent 6px 12px);border:1px dashed var(--line-2);border-radius:6px}
-.tl .seg{position:absolute;top:14px;bottom:14px;border-radius:6px;background:var(--gold-2);opacity:.95}
-.tl .seg.warn{background:var(--warn);opacity:.75}
-.tl .seg.bad{background:var(--leave);opacity:.6}
-.tl .mtg{position:absolute;top:8px;width:11px;height:11px;transform:translateX(-50%) rotate(45deg);background:var(--ink);border:2px solid var(--surface)}
-.tl .offrow{position:absolute;inset:12px 0;display:flex;align-items:center;color:var(--off);font-size:12px;padding-left:8px;background:var(--off-soft);border-radius:6px}
-.tl .now{position:absolute;top:0;bottom:0;width:1.5px;background:var(--leave)}
-.tlwrap{overflow-x:auto}
-.tlwrap .tl{min-width:640px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
-tr:last-child td{border-bottom:0}
-.tw{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface)}
-.tw table{min-width:620px}
-.tz{font-variant-numeric:tabular-nums;white-space:nowrap}
-.clock{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-end}
-.clock .t{font-family:var(--serif);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
-.clock .z{font-size:12px;color:var(--muted);margin-top:6px}
+.panel{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.panel>div{padding:26px 24px}
+.panel>div+div{border-left:1px solid var(--line)}
+.panel .eyebrow{margin-bottom:12px}
+.panel h3{font:400 26px/1.3 var(--display)}
+.panel h3 .th{font-family:var(--serif);font-weight:300;font-size:.8em}
+.panel p{font:300 15px/1.6 var(--sans);color:var(--ink-2);margin-top:4px}
+.panel p b{font-weight:400;color:var(--ink)}
 
-/* flights */
-.fl{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-top:16px}
-.fl .code{font-family:var(--serif);font-size:38px;font-weight:600;letter-spacing:.02em;line-height:1}
-.fl .r{text-align:right}
-.fl .sub{font-size:13px;color:var(--muted);margin-top:6px}
-.fl .time{font-family:var(--serif);font-size:20px;font-weight:600;margin-top:4px}
-.fl .mid{min-width:120px;text-align:center;font-size:12px;color:var(--muted)}
-.fl .path{position:relative;height:1px;background:var(--line-2);margin:10px 0}
-.fl .path svg{position:absolute;left:50%;top:-9px;transform:translateX(-50%);background:var(--surface);padding:0 6px;width:30px;height:18px;color:var(--gold)}
-.fhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.fhead .serif{font-size:18px;font-weight:600}
-.fnote{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+/* destinations */
+.dest{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.dest figure{margin:0}
+.dest .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--tint)}
+.dest img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.55) contrast(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.dest figure:hover img{transform:scale(1.035);filter:saturate(.85)}
+.dest .idx{position:absolute;left:16px;top:14px;font:400 italic 15px/1 var(--display);color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.dest figcaption{padding-top:18px}
+.dest .when{font:400 10px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--mute)}
+.dest h3{font:400 28px/1.15 var(--display);margin-top:12px}
+.dest .country{font:300 14px/1.5 var(--serif);color:var(--ink-2);margin-top:4px}
+.tz{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font:300 14px/1.6 var(--sans);color:var(--ink-2)}
+.tz b{font-weight:400;color:var(--ink)}
 
-/* hotels */
-.hotel{display:grid;grid-template-columns:120px 1fr;overflow:hidden}
-.hotel .art{background:var(--c);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:16px 14px;min-height:100%}
-.hotel .art .n{font-family:var(--serif);font-size:40px;font-weight:600;line-height:1}
-.hotel .art .t{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
-.hotel .bd{padding:18px 20px}
-.hotel h3{font-family:var(--serif);font-size:19px;font-weight:600}
-.hotel .addr{font-size:13px;color:var(--muted);margin-top:4px;display:flex;gap:6px;align-items:flex-start}
-.hotel .io{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.hotel .io div{border:1px solid var(--line);border-radius:10px;padding:8px 12px}
-.hotel .io b{display:block;font-size:14px;font-weight:600;margin-top:2px}
-.hotel .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center}
-.hotel .note{font-size:13px;color:var(--ink-2);margin-top:10px}
-.hotel .act{display:flex;gap:16px;margin-top:12px;font-size:13px;font-weight:500}
-.hotel .act a{display:inline-flex;align-items:center;gap:6px;min-height:32px}
+/* availability */
+.av{border-top:1px solid var(--ink)}
+.avh,.avr{display:grid;grid-template-columns:140px 130px 190px minmax(0,1fr);gap:20px;align-items:center;padding:0 4px}
+.avh{padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.avh .eyebrow{font-size:10px}
+.scale{position:relative;height:12px}
+.scale span{position:absolute;top:0;font:400 10px/1 var(--sans);color:var(--mute);transform:translateX(-50%)}
+.scale span:first-child{transform:none}.scale span:last-child{transform:translateX(-100%)}
+.avr{min-height:76px;border-bottom:1px solid var(--line-2)}
+.avr .dt{display:flex;align-items:baseline;gap:12px}
+.avr .dt b{font:400 26px/1 var(--display)}
+.avr .dt span{font:400 10px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.avr .ct{font:400 10px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2)}
+.avr .st{font:300 14px/1.45 var(--sans)}
+.avr .st small{display:block;color:var(--mute);font-size:12.5px}
+.avr.off .dt b,.avr.off .st{color:var(--mute)}
+.track{position:relative;height:22px;margin-top:12px}
+.track::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line)}
+.track .office{position:absolute;top:5px;bottom:5px;background:var(--tint)}
+.track .seg{position:absolute;top:8px;bottom:8px;background:var(--ink)}
+.track .lab{position:absolute;top:-13px;font:400 11px/1 var(--sans);color:var(--ink);white-space:nowrap}
+.avnote{margin-top:18px;font:300 13px/1.6 var(--sans);color:var(--mute);display:flex;gap:24px;flex-wrap:wrap}
+.avnote i{display:inline-block;width:18px;height:6px;vertical-align:2px;margin-right:8px}
 
-/* itinerary */
-.daychips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 16px;scrollbar-width:none;position:sticky;top:49px;z-index:20;background:var(--paper)}
-.daychips::-webkit-scrollbar{display:none}
-.daychips button{flex:none;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:8px 14px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;min-height:38px}
-.daychips button i{width:7px;height:7px;border-radius:50%;background:var(--c)}
-.daychips button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.day{margin-bottom:14px;scroll-margin-top:110px;overflow:hidden}
-.dayhead{width:100%;display:grid;grid-template-columns:62px 1fr auto;gap:16px;align-items:center;padding:16px 20px;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
-.dnum{width:62px;height:62px;border-radius:14px;border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.dnum::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--c)}
-.dnum b{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1}
-.dnum span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-.dayhead h3{font-family:var(--serif);font-size:19px;font-weight:600}
-.dayhead .sum{font-size:13px;color:var(--muted);margin-top:2px}
-.dayhead .city{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c);font-weight:600}
-.chev{color:var(--muted);transition:transform .2s ease}
-.day.closed .chev{transform:rotate(-90deg)}
-.day.closed .body{display:none}
-.body{padding:0 20px 18px 98px}
-.availnote{display:flex;gap:10px;align-items:flex-start;font-size:13px;padding:10px 14px;border-radius:12px;background:var(--surface-2);margin-bottom:14px;color:var(--ink-2)}
-.availnote b{color:var(--ink)}
-.place{display:grid;grid-template-columns:30px 1fr;gap:12px;position:relative}
-.place:not(:last-child)::before{content:"";position:absolute;left:14px;top:34px;bottom:-4px;border-left:1px solid var(--line-2)}
-.num{width:28px;height:28px;border-radius:50%;background:var(--c);color:#fff;font-family:var(--serif);font-size:13px;font-weight:600;display:grid;place-items:center;margin-top:8px;border:0;cursor:pointer;position:relative;z-index:1}
-.num.plain{background:var(--surface);color:var(--c);border:1.5px solid var(--c)}
-.pc{padding:8px 12px 10px;margin-bottom:6px;border-radius:12px;cursor:pointer;transition:background .15s}
-.pc:hover{background:var(--surface-2)}
-.pc.active{background:var(--gold-soft)}
-.pc .tm{font-size:12px;color:var(--gold);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.02em}
-.pc h4{font-size:15px;font-weight:600;margin-top:1px}
-.pc p{margin:2px 0 0;font-size:13px;color:var(--muted)}
-.tag{display:inline-block;margin-left:8px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gold);vertical-align:2px}
-.tag.must{color:var(--leave)}
-.leg{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);padding:2px 0 10px 42px;position:relative}
-.leg svg{color:var(--gold)}
-.routecards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
-.rc{border:1px solid var(--line);border-radius:12px;padding:12px 14px;position:relative;overflow:hidden}
-.rc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c)}
-.rc .when{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c);font-weight:600}
-.rc b{display:block;font-family:var(--serif);font-size:17px;font-weight:600;margin-top:2px}
-.rc p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
-.dmeta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:6px}
-.temp{font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:4px;font-variant-numeric:tabular-nums}
-.avgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:14px}
-.avgrid div{background:var(--surface-2);border-radius:10px;padding:8px 12px;font-size:13px}
-.avgrid .lbl{font-size:10px}
-.avgrid b{display:block;font-weight:600;font-variant-numeric:tabular-nums;margin-top:1px}
-.prin{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
-.prin .pn{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--gold-2);line-height:1}
-.prin b{font-family:var(--serif);font-size:17px;font-weight:600}
-.prin p{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
-.statement{text-align:center;padding:48px 10px 8px;max-width:720px;margin:0 auto}
-.statement p{font-size:clamp(20px,2.4vw,26px);line-height:1.6;margin:14px 0 22px;color:var(--ink);font-style:italic}
-.statement .k{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.statement .k::before,.statement .k::after{content:"";width:28px;height:1px;background:var(--gold-2)}
-.ghostdark{display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:var(--ink);border:1px solid var(--line-2);border-radius:999px;padding:9px 18px;margin:4px;min-height:40px}
-.ghostdark:hover{text-decoration:none;border-color:var(--gold-2)}
-@media (max-width:720px){.routecards{grid-template-columns:1fr 1fr}.avgrid{grid-template-columns:1fr 1fr}.avgrid div:first-child{grid-column:1/-1}}
-@media (max-width:420px){.routecards{grid-template-columns:1fr}}
-@media (max-width:720px){.stat .n[style]{font-size:20px!important;white-space:nowrap}}
-.foot{max-width:980px;margin:0 auto;padding:40px 32px 110px;color:var(--muted);font-size:12.5px;text-align:center}
-.foot .mark{font-family:var(--serif);font-size:15px;color:var(--ink-2);font-style:italic;margin-bottom:6px}
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.contact>div{padding:36px 28px 40px}
+.contact>div+div{border-left:1px solid var(--line)}
+.contact .n{font:400 italic 15px/1 var(--display);color:var(--mute)}
+.contact h3{font:400 22px/1.3 var(--serif);margin:18px 0 12px}
+.contact p{font:300 15px/1.7 var(--sans);color:var(--ink-2)}
 
-/* map ui */
-.mapctl{position:absolute;top:14px;right:14px;z-index:500;display:flex;gap:6px;background:var(--surface);padding:4px;border-radius:999px;box-shadow:var(--shadow);border:1px solid var(--line)}
-.mapctl button{font:inherit;font-size:12.5px;font-weight:500;border:0;border-radius:999px;padding:8px 14px;background:transparent;color:var(--ink-2);cursor:pointer;white-space:nowrap;min-height:36px}
-.mapctl button.on{background:var(--ink);color:var(--paper)}
-.fab{display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom));z-index:900;align-items:center;gap:8px;font:inherit;font-weight:500;font-size:14px;border:0;border-radius:999px;padding:13px 22px;background:var(--ink);color:var(--paper);box-shadow:0 10px 30px -10px rgba(0,0,0,.5);cursor:pointer}
-.mapclose{display:none;position:absolute;top:calc(14px + env(safe-area-inset-top));left:14px;z-index:600;align-items:center;gap:6px;font:inherit;font-weight:500;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:9px 16px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow);cursor:pointer}
-.mk{width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--c);border:2px solid #fffdf9;box-shadow:0 4px 10px rgba(0,0,0,.28);display:grid;place-items:center}
-.mk span{transform:rotate(45deg);color:#fff;font:600 13px "Playfair Display",Georgia,serif}
-.mk.hl{width:38px;height:38px;box-shadow:0 0 0 4px rgba(184,151,95,.45),0 6px 14px rgba(0,0,0,.3)}
-.dim{opacity:.22}
-.leaflet-container{font-family:var(--sans)}
-.leaflet-popup-content-wrapper{border-radius:12px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
-.leaflet-popup-tip{background:var(--surface)}
-.leaflet-popup-content{margin:12px 14px;font-size:13px;line-height:1.5}
-.leaflet-popup-content b{font-family:var(--serif);font-size:15px;font-weight:600}
-.leaflet-bar a{background:var(--surface);color:var(--ink);border-color:var(--line)}
-.leaflet-control-attribution{background:color-mix(in srgb,var(--surface) 80%,transparent)!important;color:var(--muted)}
+footer{padding:140px 0 60px;text-align:center}
+footer .merci{font:400 italic clamp(40px,6vw,64px)/1 var(--display)}
+footer p{margin-top:22px;font:300 14px/1.6 var(--serif);color:var(--ink-2)}
+footer .small{margin-top:60px;font:400 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width:1180px){ :root{--mapw:40vw} .away{grid-template-columns:1fr 1fr} .away .hero{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)} }
-@media (max-width:900px){
-  .app{display:block;height:auto}
-  .side{overflow:visible;border-right:0}
-  .mapwrap{position:fixed;inset:0;z-index:1000;display:none}
-  body.showmap .mapwrap{display:block}
-  body.showmap{overflow:hidden}
-  .fab{display:inline-flex}
-  body.showmap .fab{display:none}
-  .mapclose{display:inline-flex}
-  .mapctl{top:auto;right:auto;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom))}
-  .daychips{top:48px}
+/* responsive */
+@media (max-width:980px){
+ .dest{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 18px}
+ .avh,.avr{grid-template-columns:110px 110px minmax(0,1fr)}
+ .avh .h-st,.avr .st{display:none}
 }
-@media (max-width:720px){
-  .sec{padding:34px 18px 4px}
-  .divider{padding:0 18px}
-  .cover{min-height:300px}
-  .cover .in{padding:78px 20px 24px}
-  .facts{gap:10px 22px}
-  .tabs .in{padding:0 8px}
-  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .g2,.g3{grid-template-columns:1fr}
-  .away{grid-template-columns:1fr}
-  .away>div{border-right:0;border-bottom:1px solid var(--line)}
-  .away>div:last-child{border-bottom:0}
-  .sech h2{font-size:25px}
-  .cal{gap:4px}
-  .cell{min-height:62px;padding:6px;border-radius:10px}
-  .cell .d{font-size:16px}
-  .cell .w{display:none}
-  .cell .m{font-size:9px}
-  .hotel{grid-template-columns:1fr}
-  .hotel .art{flex-direction:row;align-items:center;padding:12px 16px;min-height:0}
-  .hotel .art .n{font-size:26px}
-  .dayhead{grid-template-columns:52px 1fr auto;gap:12px;padding:14px 14px}
-  .dnum{width:52px;height:52px}
-  .dnum b{font-size:20px}
-  .body{padding:0 14px 16px 14px}
-  .fl .code{font-size:30px}
-  .fl .mid{min-width:70px}
-  .foot{padding:30px 18px 110px}
-  .daypanel{grid-template-columns:1fr}
+@media (max-width:760px){
+ .wrap{padding:0 18px}
+ .bar nav{gap:16px}.bar nav a{letter-spacing:.18em;font-size:10px}
+ .mark{letter-spacing:.3em;font-size:12px}
+ .hero{padding:64px 0 52px}
+ .hero .th{font-size:16.5px}
+ .facts{grid-template-columns:1fr 1fr}
+ .fact:nth-child(3){border-left:0}
+ .fact:nth-child(n+3){border-top:1px solid var(--line)}
+ .fact{padding:22px 10px}.fact b{font-size:22px}
+ .sec{padding-top:84px}
+ .head{grid-template-columns:1fr;gap:12px;margin-bottom:32px}
+ .clocks{justify-content:flex-start;text-align:left;margin-top:8px}
+ .clocks b{font-size:28px}
+ .cell{min-height:74px;padding:8px 6px}
+ .cell .d{font-size:19px}.cell .m,.cell .c{display:none}
+ .cell .s{font-size:10px;line-height:1.25}
+ .cell .today{top:7px;right:6px;font-size:0;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+ .dow{padding:10px 6px;letter-spacing:.12em;font-size:9px}
+ .legend{gap:12px 20px;font-size:12.5px}
+ .panel{grid-template-columns:1fr}
+ .panel>div+div{border-left:0;border-top:1px solid var(--line)}
+ .panel>div{padding:20px 4px}
+ .avh{display:none}
+ .avr{grid-template-columns:1fr auto;gap:6px 12px;padding:18px 2px}
+ .avr .ct{display:block;text-align:right}
+ .avr .st{display:block;grid-column:1/-1}
+ .avr .track{grid-column:1/-1;margin-top:16px}
+ .contact{grid-template-columns:1fr}
+ .contact>div+div{border-left:0;border-top:1px solid var(--line)}
+ .contact>div{padding:28px 4px}
+ .tz{flex-direction:column}
 }
-@media (max-width:380px){ .facts{gap:8px 18px} .cell{min-height:54px} }
-@media print{
-  .mapwrap,.fab,.tabs,.daychips,.topbar{display:none!important}
-  .app{display:block;height:auto} .side{overflow:visible}
-  .day.closed .body{display:block}
-  .cover{min-height:auto;color:#000;background:none} .cover::before{display:none} .cover h1,.facts b{color:#000}
-}
+@media (max-width:400px){.bar nav a:nth-child(3){display:none}}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
-    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></symbol>
-    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
-    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
-    <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 3 3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2 6.3-6.4 2.1 2-6.3z"/></symbol>
-    <symbol id="i-train" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M12 3v8M8 21l-2-4M16 21l2-4"/><circle cx="8.5" cy="14" r=".6"/><circle cx="15.5" cy="14" r=".6"/></symbol>
-    <symbol id="i-metro" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 16V8l4 5 4-5v8"/></symbol>
-    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17h14l-1.5-6.5A2 2 0 0 0 15.6 9H8.4a2 2 0 0 0-1.9 1.5z"/><path d="M3 17h18v3H3z"/><circle cx="7.5" cy="20" r="1"/><circle cx="16.5" cy="20" r="1"/></symbol>
-    <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="m9 20 3-6 3 3v4M7 12l3-3 3 1 2 3h3M10 9l-1 5"/></symbol>
-    <symbol id="i-tram" viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="12" rx="2"/><path d="M5 12h14M9 2h6M12 2v4M8 22l1-4M16 22l-1-4"/></symbol>
-    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
-    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></symbol>
-    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
-    <symbol id="i-mtg" viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
-    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
-  </defs>
-</svg>
 
-<div class="app">
-<aside class="side" id="side">
+<header class="bar">
+ <div class="wrap">
+  <div class="mark">Décembre</div>
+  <nav aria-label="Sections">
+   <a href="#calendar">Calendar</a><a href="#availability">Hours</a><a href="#destinations">Places</a>
+  </nav>
+ </div>
+</header>
 
-  <header class="cover" id="top">
-    <div class="topbar">
-      <a class="ghost" href="../"><svg class="ic sm"><use href="#i-back"/></svg>แผนฉบับเต็ม</a>
-      <span class="ghost" id="cd" aria-live="polite"></span>
-    </div>
-    <div class="in">
-      <div class="eyebrow">Private Itinerary · December 2026</div>
-      <h1>Paris, Alsace <em>&amp;</em> the Swiss Alps</h1>
-      <p class="lede">ทริปฤดูหนาว 15 วัน จากปารีส สู่ตลาดคริสต์มาสอัลซาส และยอดเขาแห่งสวิตเซอร์แลนด์</p>
-      <div class="rule"><span>◆</span></div>
-      <div class="facts">
-        <div><span>Dates</span><b>17 – 31 Dec</b></div>
-        <div><span>Nights</span><b>12</b></div>
-        <div><span>Cities</span><b>5</b></div>
-        <div><span>Back to work</span><b>Mon 4 Jan</b></div>
-      </div>
-    </div>
-  </header>
+<main>
+<section class="hero">
+ <div class="wrap">
+  <div class="eyebrow">Out of Office · Winter 2026</div>
+  <h1><span class="num">18.12</span><span class="dash" aria-hidden="true"></span><span class="num">03.01</span><small>France &amp; Switzerland</small></h1>
+  <p class="th">ลาพักร้อนช่วงปลายปี ติดต่อได้เฉพาะช่วงสั้น ๆ ในวันทำการ<br>กลับมาทำงานตามปกติ วันจันทร์ที่ 4 มกราคม</p>
+  <div class="now" role="status"><i aria-hidden="true"></i><span id="now">—</span></div>
+ </div>
+</section>
 
-  <nav class="tabs" aria-label="หมวด"><div class="in" id="tabs">
-    <a href="#overview" class="on"><svg class="ic sm"><use href="#i-compass"/></svg>ภาพรวม</a>
-    <a href="#team"><svg class="ic sm"><use href="#i-brief"/></svg>ปฏิทินงาน</a>
-    <a href="#flights"><svg class="ic sm"><use href="#i-plane"/></svg>เที่ยวบิน</a>
-    <a href="#hotels"><svg class="ic sm"><use href="#i-bed"/></svg>ที่พัก</a>
-    <a href="#itinerary"><svg class="ic sm"><use href="#i-cal"/></svg>แผนรายวัน</a>
-  </div></nav>
-
-  <!-- ===== OVERVIEW ===== -->
-  <section class="sec" id="overview">
-    <div class="sech"><div><div class="k">Overview</div><h2>ภาพรวมการเดินทาง</h2><p>บินเข้าปารีส ออกจากซูริก นั่งรถไฟเชื่อมทุกเมือง</p></div></div>
-    <div class="grid g4">
-      <div class="card pad stat"><div class="n">15</div><div class="t">วัน · 17–31 ธ.ค.</div></div>
-      <div class="card pad stat"><div class="n">12</div><div class="t">คืน · 4 ที่พัก</div></div>
-      <div class="card pad stat"><div class="n">2</div><div class="t">ประเทศ · 5 เมือง</div></div>
-      <div class="card pad stat"><div class="n">−6<span style="font-size:18px"> ชม.</span></div><div class="t">ยุโรปช้ากว่าไทย</div></div>
-    </div>
-    <div class="card pad" style="margin-top:14px"><div class="lbl" style="margin-bottom:10px">Route at a glance</div><div class="journey" id="journey"></div>
-      <div class="routecards" id="routecards"></div></div>
-    <div class="grid g2" style="margin-top:14px">
-      <div class="card pad"><div class="lbl">Bookings</div>
-        <ul class="status" style="margin-top:8px">
-          <li><span>ตั๋วเครื่องบินไป-กลับ</span><span class="chip ok"><svg class="ic sm"><use href="#i-check"/></svg>ออกตั๋วแล้ว</span></li>
-          <li><span>ที่พัก 12 คืน</span><span class="chip ok"><svg class="ic sm"><use href="#i-check"/></svg>ยืนยันแล้ว</span></li>
-          <li><span>วีซ่าเชงเก้น</span><span class="chip ok"><svg class="ic sm"><use href="#i-check"/></svg>อนุมัติแล้ว</span></li>
-          <li><span>ประกันเดินทาง</span><span class="chip ok"><svg class="ic sm"><use href="#i-check"/></svg>ซื้อแล้ว</span></li>
-          <li><span>รถไฟ · พาส · ตั๋วเข้าชม</span><span class="chip warn">กำลังจัดการ</span></li>
-        </ul>
-      </div>
-      <div class="card pad"><div class="lbl">Cities</div>
-        <ul class="hl" style="margin-top:8px">
-          <li><b>ปารีส</b><span>ลูฟวร์ · แวร์ซาย · นอเทรอดาม · ล่องเรือแซน</span></li>
-          <li><b>สตราสบูร์ก</b><span>ตลาดคริสต์มาส · มิสซาเที่ยงคืนวันคริสต์มาสอีฟ</span></li>
-          <li><b>โคลมาร์</b><span>เดย์ทริปวันคริสต์มาส</span></li>
-          <li><b>อินเทอร์ลาเคน</b><span>Jungfraujoch · Top of Europe 3,454 ม.</span></li>
-          <li><b>ลูเซิร์น</b><span>Chapel Bridge · Rigi</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"><hr></div>
-
-  <!-- ===== TEAM / WORK ===== -->
-  <section class="sec" id="team">
-    <div class="sech"><div><div class="k">For the team</div><h2>ปฏิทินงาน &amp; วันหยุด</h2><p>ช่วงที่ไม่อยู่ ติดต่อได้เมื่อไร และประชุมที่ตรงกับช่วงลา · เวลาทั้งหมดในหัวข้อนี้เป็น<b>เวลาไทย</b>ยกเว้นระบุไว้</p></div></div>
-
-    <div class="card away">
-      <div class="hero"><div class="lbl">Out of office</div><div class="big">ศ. 18 ธ.ค. – อา. 3 ม.ค.</div><div class="s">ลาพักร้อน 9 วันทำการ (18–30 ธ.ค.) ต่อด้วยวันหยุดสิ้นปี · กลับมาทำงาน <b style="color:var(--gold-2)">จันทร์ 4 ม.ค. 2027</b></div></div>
-      <div><div class="lbl">Reachable · weekdays</div><div class="big">13:00–14:30</div><div class="s">ตรงกับเช้า 07:00–08:30 ที่ยุโรป ก่อนออกเที่ยว · นอกช่วงนี้ตอบช้า</div></div>
-      <div><div class="lbl">Urgent</div><div class="big" style="display:flex;gap:8px;align-items:center"><svg class="ic"><use href="#i-msg"/></svg>Slack</div><div class="s">ทักทิ้งไว้ได้ จะตอบในช่วงที่ติดต่อได้ของวันนั้น</div></div>
-    </div>
-
-    <div class="grid g4" style="margin-top:14px">
-      <div class="card pad stat"><div class="lbl">Leave</div><div class="n">9</div><div class="t">วันทำการ · 18–30 ธ.ค.</div></div>
-      <div class="card pad stat"><div class="lbl">Core local</div><div class="n" style="font-size:26px">07:00–08:30</div><div class="t">เช้าที่ยุโรป ก่อนออกเที่ยว</div></div>
-      <div class="card pad stat"><div class="lbl">Thailand</div><div class="n" style="font-size:26px">13:00–14:30</div><div class="t">ช่วงตอบงาน · วันทำการ</div></div>
-      <div class="card pad stat"><div class="lbl">Meetings on leave</div><div class="n">3</div><div class="t">เข้าได้ 2 · ข้าม 1 (บนเครื่อง)</div></div>
-    </div>
-
-    <div class="card pad" style="margin-top:14px">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:14px">
-        <div><div class="lbl">December 2026 – January 2027</div><div class="serif" style="font-size:20px;font-weight:600;margin-top:2px">ปฏิทินช่วงลา</div></div>
-        <div class="clock">
-          <div><div class="t" id="tBkk">--:--</div><div class="z">กรุงเทพฯ <span id="dBkk"></span></div></div>
-          <div><div class="t" id="tEu">--:--</div><div class="z">ปารีส / ซูริก <span id="dEu"></span></div></div>
-        </div>
-      </div>
-      <div class="cal" id="cal"></div>
-      <div class="legend">
-        <span class="chip"><i style="--c:var(--line-2)"></i>ทำงานปกติ</span>
-        <span class="chip leave">ลาพักร้อน</span>
-        <span class="chip off">เสาร์–อาทิตย์</span>
-        <span class="chip hol">วันหยุดนักขัตฤกษ์</span>
-        <span class="chip ok">กลับมาทำงาน</span>
-        <span class="chip"><i style="--c:var(--gold-2);border-radius:1px;transform:rotate(45deg)"></i>มีประชุม</span>
-      </div>
-      <div class="card daypanel" id="daypanel" aria-live="polite"></div>
-    </div>
-
-    <div class="card pad" style="margin-top:14px">
-      <div class="lbl">Availability · Thailand time</div>
-      <div class="serif" style="font-size:20px;font-weight:600;margin:2px 0 4px">ไทม์ไลน์รายวัน</div>
-      <p class="muted" style="font-size:13px;margin:0 0 12px">แถบทอง = ช่วงที่สะดวก · แถบลายเส้น = เวลางานปกติ 09:00–18:00 · ◆ = ประชุม</p>
-      <div class="tlwrap"><div class="tl" id="tl"></div></div>
-    </div>
-
-    <div style="margin-top:14px" class="tw"><table>
-      <thead><tr><th>วัน</th><th>ประชุม</th><th>เวลาไทย</th><th>เวลายุโรป</th><th>สถานะ</th></tr></thead>
-      <tbody>
-        <tr><td class="tz"><b>ศ. 18 ธ.ค.</b></td><td>Bi-weekly Operation meeting<br><span class="muted" style="font-size:12.5px">Microsoft Teams</span></td><td class="tz">10:00</td><td class="tz">04:00</td><td><span class="chip leave">ไม่สามารถเข้าได้</span><div class="muted" style="font-size:12.5px;margin-top:4px">อยู่บนเครื่องบิน</div></td></tr>
-        <tr><td class="tz"><b>จ. 21 ธ.ค.</b></td><td>Security Weekly Meeting<br><span class="muted" style="font-size:12.5px">Microsoft Teams</span></td><td class="tz">14:00</td><td class="tz">08:00</td><td><span class="chip warn">เข้าได้ช่วงสั้น</span><div class="muted" style="font-size:12.5px;margin-top:4px">จากโรงแรมที่ปารีส</div></td></tr>
-        <tr><td class="tz"><b>จ. 28 ธ.ค.</b></td><td>Security Weekly Meeting<br><span class="muted" style="font-size:12.5px">Microsoft Teams</span></td><td class="tz">14:00</td><td class="tz">08:00</td><td><span class="chip warn">เข้าได้ช่วงสั้น</span><div class="muted" style="font-size:12.5px;margin-top:4px">จากที่พักอินเทอร์ลาเคน</div></td></tr>
-        <tr><td class="tz"><b>ศ. 1 ม.ค.</b></td><td>Bi-weekly Operation meeting<br><span class="muted" style="font-size:12.5px">Microsoft Teams</span></td><td class="tz">10:00</td><td class="tz">—</td><td><span class="chip hol">วันขึ้นปีใหม่</span></td></tr>
-      </tbody>
-    </table></div>
-    <p class="muted" style="font-size:12.5px;margin:10px 2px 0">วันหยุดนักขัตฤกษ์อ้างอิงปฏิทินไทย (31 ธ.ค. วันสิ้นปี · 1 ม.ค. วันขึ้นปีใหม่) · วันหยุดจริงตามประกาศบริษัท</p>
-  </section>
-
-  <div class="divider"><hr></div>
-
-  <!-- ===== FLIGHTS ===== -->
-  <section class="sec" id="flights">
-    <div class="sech"><div><div class="k">Flights</div><h2>เที่ยวบิน</h2><p>Thai Airways บินตรงทั้งขาไปและขากลับ</p></div></div>
-    <div class="grid g2">
-      <div class="card pad">
-        <div class="fhead"><span class="serif">ขาไป</span><span class="chip">TG930 · ศ. 18 ธ.ค.</span></div>
-        <div class="fl">
-          <div><div class="code">BKK</div><div class="time">00:05</div><div class="sub">กรุงเทพฯ · สุวรรณภูมิ</div></div>
-          <div class="mid">12 ชม. 45 นาที<div class="path"><svg><use href="#i-plane"/></svg></div>บินตรง</div>
-          <div class="r"><div class="code">CDG</div><div class="time">06:50</div><div class="sub">ปารีส · Terminal 1</div></div>
-        </div>
-        <p class="fnote">ถึงสนามบินคืนพฤหัสที่ 17 ราว 21:00 · ลงเครื่องผ่านด่าน EES เผื่อเวลา 45–180 นาที</p>
-      </div>
-      <div class="card pad">
-        <div class="fhead"><span class="serif">ขากลับ</span><span class="chip">TG971 · พ. 30 ธ.ค.</span></div>
-        <div class="fl">
-          <div><div class="code">ZRH</div><div class="time">13:15</div><div class="sub">ซูริก</div></div>
-          <div class="mid">10 ชม. 55 นาที<div class="path"><svg><use href="#i-plane"/></svg></div>บินตรง</div>
-          <div class="r"><div class="code">BKK</div><div class="time">~06:10<sup style="font-size:11px"> +1</sup></div><div class="sub">กรุงเทพฯ · 31 ธ.ค.</div></div>
-        </div>
-        <p class="fnote">ตั้งเป้าถึงสนามบินซูริก 09:30–10:00 · เวลาถึงกรุงเทพฯ ตามใบยืนยันอีกครั้ง</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"><hr></div>
-
-  <!-- ===== HOTELS ===== -->
-  <section class="sec" id="hotels">
-    <div class="sech"><div><div class="k">Stays</div><h2>ที่พัก</h2><p>ห้องส่วนตัวทุกคืน ยกเลิกได้ฟรีตามเงื่อนไขของแต่ละที่</p></div></div>
-    <div class="grid" id="hotelList"></div>
-  </section>
-
-  <div class="divider"><hr></div>
-
-  <!-- ===== ITINERARY ===== -->
-  <section class="sec" id="itinerary">
-    <div class="sech"><div><div class="k">Day by day</div><h2>แผนรายวัน</h2><p>แตะหมายเลขเพื่อดูตำแหน่งบนแผนที่ · เวลาในหัวข้อนี้เป็นเวลาท้องถิ่น</p></div></div>
-    <div class="legend" style="margin:0 0 14px">
-      <span class="chip ok">Work day</span><span class="chip leave">Leave</span><span class="chip warn">Travel day</span><span class="chip off">Weekend / Day trip</span><span class="chip hol">Public holiday</span>
-    </div>
-    <div class="daychips" id="chips" role="tablist" aria-label="เลือกวัน"></div>
-    <div id="days"></div>
-  </section>
-
-  <div class="divider"><hr></div>
-
-  <section class="sec" id="principles">
-    <div class="sech"><div><div class="k">What the plan optimizes for</div><h2>เที่ยวช้า ๆ ให้ลึก ไม่เร่ง</h2><p>หลักที่ใช้ตัดสินใจทุกวันของทริปนี้</p></div></div>
-    <div class="grid g2">
-      <div class="card pad prin"><span class="pn">01</span><div><b>อยู่ให้นานพอจะรู้สึกถึงเมือง</b><p>4 คืนในปารีสและสตราสบูร์ก แทนการเปลี่ยนที่พักทุกคืน</p></div></div>
-      <div class="card pad prin"><span class="pn">02</span><div><b>รักษาช่วงเช้าไว้ให้ทีม</b><p>07:00–08:30 ที่ยุโรป (13:00–14:30 ไทย) ตอบงานก่อนออกเที่ยวทุกวันทำการ</p></div></div>
-      <div class="card pad prin"><span class="pn">03</span><div><b>รถไฟคือส่วนหนึ่งของการเที่ยว</b><p>TGV · TER · Luzern-Interlaken Express · รถไฟฟันเฟือง แทนเที่ยวบินในยุโรป</p></div></div>
-      <div class="card pad prin"><span class="pn">04</span><div><b>ให้อากาศเป็นคนตัดสินใจ</b><p>เผื่อสองวันสำหรับยอดเขา ถ้าฟ้าปิดสลับเป็นแผนในเมืองทันที</p></div></div>
-    </div>
-    <div class="statement">
-      <div class="k" style="justify-content:center">Final trip statement</div>
-      <p class="serif">“จากแสงไฟริมแม่น้ำแซน สู่ตลาดคริสต์มาสอัลซาส และความเงียบบนยอดเขาแอลป์ — ไม่ได้ต้องการเห็นทุกอย่าง แต่อยากรู้ว่าแต่ละเมืองในเดือนธันวาคมรู้สึกอย่างไร”</p>
-      <a href="#top" class="ghostdark">กลับขึ้นด้านบน</a> <a href="#itinerary" class="ghostdark">ดูแผนรายวัน</a>
-    </div>
-  </section>
-
-  <footer class="foot">
-    <div class="mark">Bon voyage · Gute Reise</div>
-    อัปเดต 14 พ.ย. 2026 · รายละเอียดเต็ม (ร้าน จุดระวัง แผนสำรอง งบ ของที่ต้องเตรียม) อยู่ที่ <a href="../">แผนฉบับเต็ม</a>
-  </footer>
-</aside>
-
-<main class="mapwrap" id="mapwrap" aria-label="แผนที่">
-  <div id="map"></div>
-  <div class="mapctl" id="mapctl"></div>
-  <button class="mapclose" id="mapclose" type="button"><svg class="ic sm"><use href="#i-x"/></svg>ปิดแผนที่</button>
-</main>
+<div class="wrap">
+ <div class="facts">
+  <div class="fact"><div class="eyebrow">Away</div><b>9 days</b><span>วันลา (วันทำการ)</span></div>
+  <div class="fact"><div class="eyebrow">Reachable</div><b class="num">13:00–14:30</b><span>เวลาไทย · วันทำการ</span></div>
+  <div class="fact"><div class="eyebrow">Urgent</div><b>Slack</b><span>เฉพาะเรื่องด่วน</span></div>
+  <div class="fact"><div class="eyebrow">Return</div><b>Mon 4 Jan</b><span>กลับมาทำงานปกติ</span></div>
+ </div>
 </div>
-<button class="fab" id="fab" type="button"><svg class="ic"><use href="#i-map"/></svg>ดูแผนที่</button>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script>
-/* ================= DATA ================= */
-const CITY={
- bkk:{name:"กรุงเทพฯ",en:"Bangkok",c:"#8a8072"},
- par:{name:"ปารีส",en:"Paris",c:"#2e4a7d"},
- stg:{name:"สตราสบูร์ก",en:"Strasbourg",c:"#7a2e3a"},
- col:{name:"โคลมาร์",en:"Colmar",c:"#6b3f69"},
- int:{name:"อินเทอร์ลาเคน",en:"Interlaken",c:"#2f5d50"},
- luz:{name:"ลูเซิร์น",en:"Lucerne",c:"#3d5a6c"}
-};
-const HOTELS=[
- {city:"par",name:"Hôtel Sophie Germain",addr:"12 rue Sophie Germain, 75014 Paris",in:"ศ. 18 ธ.ค. · 15:00",out:"อ. 22 ธ.ค. · 12:00",n:4,free:"15 ธ.ค.",note:"ย่านเงียบเขต 14 ใกล้ Denfert-Rochereau (RER B) และ Mouton-Duvernet (สาย 4)"},
- {city:"stg",name:"ibis budget Strasbourg Centre République",addr:"ย่าน Place de la République (ตามใบจอง)",in:"อ. 22 ธ.ค.",out:"ส. 26 ธ.ค.",n:4,free:"11 ธ.ค.",note:"ใกล้ย่าน Neustadt มรดกโลก · หมุดบนแผนที่เป็นตำแหน่งโดยประมาณ",approx:true},
- {city:"int",name:"Backpackers Villa Sonnenhof",addr:"Alpenstrasse 16, 3800 Interlaken",in:"ส. 26 ธ.ค. · 16:00",out:"จ. 28 ธ.ค. · 10:00",n:2,free:"26 ธ.ค. 14:00",note:"ห้อง Comfort ห้องน้ำในตัว รวมอาหารเช้า วิวเทือกเขา Jungfrau"},
- {city:"luz",name:"Hotel Alpina Luzern",addr:"Frankenstrasse 6, 6003 Luzern",in:"จ. 28 ธ.ค. · 15:00",out:"พ. 30 ธ.ค. · 11:00",n:2,free:"20 ธ.ค.",note:"เดิน 3 นาทีจากสถานีลูเซิร์น · เคาน์เตอร์อยู่ที่ Hotel Monopol"}
-];
-/* work windows in THAI time; lvl ok|warn|bad|off */
-const WORK={
- "17":{lvl:"ok",th:[[9,18]],eu:"—",msg:"ทำงานปกติ · ออกไปสนามบินคืนนี้"},
- "18":{lvl:"bad",th:[[18,21]],eu:"12:00–15:00",msg:"วันเดินทาง เพิ่งถึงปารีส · ตอบเฉพาะเรื่องด่วน",mt:[10]},
- "19":{lvl:"off",th:[],eu:"—",msg:"วันเสาร์"},
- "20":{lvl:"off",th:[],eu:"—",msg:"วันอาทิตย์"},
- "21":{lvl:"warn",th:[[13,14.5]],eu:"07:00–08:30",msg:"เข้าประชุม Security Weekly ได้ช่วงสั้น",mt:[14]},
- "22":{lvl:"ok",th:[[13.5,14.75],[20,21.83]],eu:"07:30–08:45 · บนรถไฟ 14:00–15:50",msg:"เช้าที่โรงแรม และบนรถไฟ TGV"},
- "23":{lvl:"ok",th:[[13.5,15]],eu:"07:30–09:00",msg:"เช้าก่อนออกเที่ยว"},
- "24":{lvl:"warn",th:[[13.5,15],[22,23]],eu:"07:30–09:00 · 16:00–17:00",msg:"คริสต์มาสอีฟ"},
- "25":{lvl:"bad",th:[[14,15]],eu:"08:00–09:00",msg:"วันคริสต์มาส · เดย์ทริปโคลมาร์"},
- "26":{lvl:"off",th:[],eu:"—",msg:"วันเสาร์ · เดินทางเข้าสวิส"},
- "27":{lvl:"off",th:[],eu:"—",msg:"วันอาทิตย์ · ขึ้นเขา Jungfraujoch"},
- "28":{lvl:"ok",th:[[13.5,15.5],[16.07,17.92]],eu:"07:30–09:30 · บนรถไฟ 10:04–11:55",msg:"เข้าประชุมได้ + ทำงานบนรถไฟไปลูเซิร์น",mt:[14]},
- "29":{lvl:"warn",th:[[13,14.25]],eu:"07:00–08:15",msg:"เช้าก่อนขึ้นเขา Rigi"},
- "30":{lvl:"warn",th:[[14.58,15.75],[16.5,18.5]],eu:"08:35–09:45 · 10:30–12:30",msg:"บนรถไฟและที่สนามบินก่อนบินกลับ"},
- "31":{lvl:"off",th:[],eu:"—",msg:"วันสิ้นปี · ถึงกรุงเทพฯ เช้า"}
-};
-const DAYS=[
- {d:"17",wd:"พฤหัส",w:"Thu",city:"bkk",title:"ออกเดินทาง",sum:"เช็คอิน TG930 ที่สุวรรณภูมิ",items:[
-   ["21:00","สนามบินสุวรรณภูมิ","เช็คอินเที่ยวบิน TG930 · นอนบนเครื่อง"]]},
- {d:"18",wd:"ศุกร์",w:"Fri",city:"par",title:"ถึงปารีส",sum:"วันพักฟื้นเจ็ตแล็ก · ไอเฟลยามค่ำ",items:[
-   ["06:50","CDG Terminal 1","ลงเครื่อง ผ่าน EES และรับกระเป๋า",49.0097,2.5479],
-   {leg:"car",t:"รถรับส่งสนามบินเข้าเมือง ราว 45 นาที"},
-   ["09:30","Hôtel Sophie Germain","ฝากกระเป๋า · เช็คอิน 15:00",48.8318,2.3296,"hotel"],
-   ["10:30","Rue Daguerre","มื้อแรกในย่านตลาดเก่า",48.8343,2.3291],
-   ["12:00","Cimetière du Montparnasse","เดินเล่นยามบ่าย",48.8381,2.3262],
-   {leg:"metro",t:"เมโทรสาย 6 · Denfert-Rochereau → Trocadéro"},
-   ["17:45","Trocadéro","หอไอเฟลเปิดไฟระยิบทุกต้นชั่วโมง",48.8620,2.2877]]},
- {d:"19",wd:"เสาร์",w:"Sat",city:"par",title:"ลูฟวร์ & Tuileries",sum:"พิพิธภัณฑ์ลูฟวร์ · ตลาดคริสต์มาส · Galeries Lafayette",items:[
-   {leg:"metro",t:"สาย 4 → Châtelet → สาย 1 Palais-Royal"},
-   ["09:00","Musée du Louvre","เริ่มใช้ Paris Museum Pass",48.8606,2.3376,"book"],
-   ["14:00","Jardin des Tuileries","ตลาดคริสต์มาส",48.8635,2.3275],
-   {leg:"walk",t:"เดินผ่าน Opéra ราว 20 นาที"},
-   ["16:10","Galeries Lafayette Haussmann","ดาดฟ้าชั้น 8 และต้นคริสต์มาสใต้โดมกระจก",48.8738,2.3320],
-   ["18:30","Champs-Élysées","ถนนประดับไฟคริสต์มาส",48.8698,2.3079]]},
- {d:"20",wd:"อาทิตย์",w:"Sun",city:"par",title:"พระราชวังแวร์ซาย",sum:"ทั้งวันที่แวร์ซาย",items:[
-   {leg:"train",t:"RER C → Versailles Château Rive Gauche ราว 1 ชม."},
-   ["09:00","Château de Versailles","ท้องพระโรงกระจก · ห้องบรรทม",48.8049,2.1204,"book"],
-   ["13:00","Trianon & Hameau de la Reine","ตำหนักและหมู่บ้านของพระนางมารี อองตัวเนต",48.8156,2.1097],
-   ["14:30","Jardins de Versailles","สวนฝรั่งเศสฤดูหนาว",48.8077,2.1137],
-   {leg:"train",t:"RER C กลับปารีส"},
-   ["19:00","Rue Daguerre","มื้อเย็นใกล้โรงแรม",48.8343,2.3291]]},
- {d:"21",wd:"จันทร์",w:"Mon",city:"par",title:"Île de la Cité",sum:"นอเทรอดาม · Sainte-Chapelle · ล่องเรือแซน",items:[
-   {leg:"metro",t:"สาย 4 · Mouton-Duvernet → Cité"},
-   ["08:35","Notre-Dame de Paris","มหาวิหารหลังการบูรณะ",48.8530,2.3499,"book"],
-   ["09:30","Sainte-Chapelle","หน้าต่างกระจกสีศตวรรษที่ 13",48.8554,2.3450,"book"],
-   ["11:00","Conciergerie","",48.8561,2.3458,"book"],
-   ["13:15","Shakespeare and Company","ร้านหนังสือในย่านละติน",48.8526,2.3471],
-   ["15:00","Panthéon","",48.8462,2.3464],
-   ["18:00","Vedettes du Pont Neuf","ล่องเรือแม่น้ำแซนยามค่ำ",48.8576,2.3401]]},
- {d:"22",wd:"อังคาร",w:"Tue",city:"stg",title:"สู่สตราสบูร์ก",sum:"Musée d'Orsay · รถไฟ TGV · ตลาดคริสต์มาสคืนแรก",items:[
-   ["09:30","Musée d'Orsay","ผลงานอิมเพรสชันนิสม์",48.8600,2.3266,"book"],
-   {leg:"metro",t:"สาย 4 → Gare de l'Est"},
-   ["14:00","Paris Gare de l'Est","TGV INOUI สู่สตราสบูร์ก 1 ชม. 46 นาที",48.8768,2.3592,"book"],
-   ["15:50","Gare de Strasbourg","",48.5850,7.7346],
-   {leg:"tram",t:"ไปที่พักย่าน République"},
-   ["16:30","ibis budget Strasbourg Centre République","เช็คอิน",48.5878,7.7552,"hotel"],
-   ["17:00","La Petite France","ย่านบ้านไม้ริมคลอง",48.5813,7.7400],
-   ["19:00","Place Kléber","ต้นคริสต์มาสยักษ์",48.5833,7.7458]]},
- {d:"23",wd:"พุธ",w:"Wed",city:"stg",title:"สตราสบูร์ก",sum:"มหาวิหาร · นาฬิกาดาราศาสตร์ · ล่องเรือ",items:[
-   ["09:30","Cathédrale Notre-Dame de Strasbourg","มหาวิหารกอทิกหินทราย",48.5819,7.7509],
-   ["12:30","Horloge astronomique","ขบวนอัครสาวกวันละรอบ",48.5817,7.7508],
-   ["15:00","Batorama","ล่องเรือรอบเกาะ Grande Île",48.5812,7.7498],
-   ["16:30","Christkindelsmärik, Place Broglie","ตลาดคริสต์มาสที่เก่าแก่ที่สุดในฝรั่งเศส",48.5848,7.7500],
-   ["17:30","Square Louise Weiss","ของฝากจากผู้ผลิตท้องถิ่น",48.5797,7.7424]]},
- {d:"24",wd:"พฤหัส",w:"Thu",city:"stg",title:"คริสต์มาสอีฟ",sum:"ย่าน Neustadt · ตลาดวันสุดท้าย · มิสซาเที่ยงคืน",items:[
-   ["09:30","Neustadt","Place de la République · Palais du Rhin",48.5881,7.7566],
-   ["11:30","ตลาดคริสต์มาส","",48.5833,7.7458],
-   ["14:30","เตรียมเสบียง","ร้านค้าปิด 25–26 ธ.ค.",48.5840,7.7470,"must"],
-   ["23:00","Midnight Mass","มิสซาเที่ยงคืนในมหาวิหาร",48.5819,7.7509]]},
- {d:"25",wd:"ศุกร์",w:"Fri",city:"col",title:"วันคริสต์มาสที่โคลมาร์",sum:"เมืองเทพนิยายแห่งอัลซาส",items:[
-   {leg:"train",t:"TER Strasbourg → Colmar ราว 30 นาที"},
-   ["11:00","Place des Dominicains","ตลาดงานฝีมือ · Koïfhus",48.0789,7.3567],
-   ["13:00","Marché Gourmand","มื้อเที่ยงในร่ม",48.0773,7.3577],
-   ["14:00","Petite Venise","คลองและบ้านหลากสี",48.0735,7.3610],
-   ["16:30","Place Rapp","ไฟประดับ · ชิงช้าสวรรค์ · ลานสเก็ต",48.0775,7.3540],
-   {leg:"train",t:"TER กลับสตราสบูร์กราว 20:00"}]},
- {d:"26",wd:"เสาร์",w:"Sat",city:"int",title:"สู่เทือกเขาแอลป์",sum:"สตราสบูร์ก → บาเซิล → อินเทอร์ลาเคน",items:[
-   ["10:51","Gare de Strasbourg","TER 200 สู่บาเซิล",48.5850,7.7346,"book"],
-   ["12:08","Basel SBB","เปลี่ยนรถไฟเข้าสวิส",47.5476,7.5896],
-   {leg:"train",t:"IC 61 · Basel → Interlaken Ost"},
-   ["15:28","Interlaken Ost","",46.6905,7.8691],
-   ["16:00","Backpackers Villa Sonnenhof","เช็คอิน",46.6866,7.8622,"hotel"],
-   ["17:00","Top of Europe Magic Park","ลานน้ำแข็งกลางเมือง",46.6880,7.8595]]},
- {d:"27",wd:"อาทิตย์",w:"Sun",city:"int",title:"Jungfraujoch",sum:"Top of Europe 3,454 เมตร",items:[
-   {leg:"train",t:"07:34 Interlaken Ost → Grindelwald"},
-   ["08:10","Grindelwald Terminal","กระเช้า Eiger Express",46.6245,8.0410],
-   ["08:40","Eigergletscher","รถไฟ Jungfraubahn ลอดภูเขา",46.5751,7.9741],
-   ["09:11","Jungfraujoch","Sphinx · Ice Palace · Aletsch Glacier",46.5475,7.9853,"book"],
-   ["15:00","Höheweg","เดินเล่นในเมือง",46.6880,7.8595]]},
- {d:"28",wd:"จันทร์",w:"Mon",city:"luz",title:"สู่ลูเซิร์น",sum:"Luzern-Interlaken Express ผ่านทะเลสาบ",items:[
-   ["10:04","Interlaken Ost","Luzern-Interlaken Express",46.6905,7.8691],
-   ["11:55","Luzern","",47.0502,8.3102],
-   ["12:00","Hotel Alpina Luzern","ฝากกระเป๋า · เช็คอิน 15:00",47.0489,8.3083,"hotel"],
-   ["13:00","Kapellbrücke","สะพานไม้เก่าแก่ที่สุดในยุโรป",47.0516,8.3075],
-   ["14:00","Löwendenkmal","อนุสาวรีย์สิงโต",47.0585,8.3104],
-   ["15:30","Ice Magic, Europaplatz","ลานสเก็ตริมทะเลสาบ",47.0507,8.3118]]},
- {d:"29",wd:"อังคาร",w:"Tue",city:"luz",title:"Rigi",sum:"ราชินีแห่งขุนเขา",items:[
-   {leg:"train",t:"IR → Arth-Goldau ราว 30 นาที"},
-   ["09:20","Arth-Goldau","รถไฟฟันเฟืองขึ้นเขา",47.0490,8.5480],
-   ["10:15","Rigi Kulm","1,798 เมตร เหนือทะเลหมอก",47.0565,8.4851],
-   {leg:"train",t:"กลับลูเซิร์นราว 16:20"},
-   ["17:00","Luzern","ช้อปของฝาก · แพ็คกระเป๋า",47.0502,8.3102]]},
- {d:"30",wd:"พุธ",w:"Wed",city:"luz",title:"บินกลับ",sum:"ลูเซิร์น → สนามบินซูริก",items:[
-   ["08:35","Luzern","รถไฟสู่ Zürich Flughafen",47.0502,8.3102],
-   ["09:45","Zürich Airport","เช็คอิน TG971",47.4504,8.5623],
-   ["13:15","TG971","ออกเดินทางสู่กรุงเทพฯ",47.4504,8.5623]]},
- {d:"31",wd:"พฤหัส",w:"Thu",city:"bkk",title:"ถึงบ้าน",sum:"สุวรรณภูมิ ราว 06:10",items:[
-   ["06:10","สนามบินสุวรรณภูมิ","สวัสดีปีใหม่"]]}
-];
-/* day type (like a team-facing status) + temperature range (ประมาณ) */
-const TYPE={
- "17":["ok","Work · บินคืนนี้"],"18":["warn","Leave + Flight"],"19":["off","Weekend"],"20":["off","Weekend · Day trip"],
- "21":["leave","Leave"],"22":["warn","Leave + Travel"],"23":["leave","Leave"],"24":["leave","Leave · Christmas Eve"],
- "25":["leave","Leave · Day trip"],"26":["warn","Weekend + Travel"],"27":["off","Weekend · Mountain"],"28":["warn","Leave + Travel"],
- "29":["leave","Leave · Day trip"],"30":["warn","Leave + Flight"],"31":["hol","Holiday + Arrival"]};
-const TEMP={"17":"25–33°","18":"2–8°","19":"2–8°","20":"1–7°","21":"2–8°","22":"−2–5°","23":"−2–5°","24":"−2–5°","25":"−3–5°","26":"−5–3°","27":"−15 – −9° ยอดเขา","28":"−2–4°","29":"−4–2° ยอดเขา","30":"−2–4°","31":"25–33°"};
-const TEAM={ok:"ทำงานปกติ",warn:"ติดต่อได้จำกัด",leave:"ลา · ตอบช่วงสั้น",off:"ไม่ติดต่องาน",hol:"วันหยุด"};
-const ROUTE=[
- ["bkk","17 Dec","กรุงเทพฯ","TG930 00:05 → CDG 06:50"],
- ["par","18–22 Dec · 4 nights","ปารีส","ลูฟวร์ แวร์ซาย นอเทรอดาม และแม่น้ำแซน"],
- ["stg","22–26 Dec · 4 nights","สตราสบูร์ก","ตลาดคริสต์มาส มิสซาเที่ยงคืน เดย์ทริปโคลมาร์"],
- ["int","26–28 Dec · 2 nights","อินเทอร์ลาเคน","Jungfraujoch และเทือกเขาแอลป์"],
- ["luz","28–30 Dec · 2 nights","ลูเซิร์น","Chapel Bridge ทะเลสาบ และ Rigi"],
- ["bkk","30–31 Dec","กลับกรุงเทพฯ","TG971 ZRH 13:15 → BKK ~06:10+1"]];
-const MEET={"2026-12-18":"Bi-weekly Operation 10:00","2026-12-21":"Security Weekly 14:00","2026-12-28":"Security Weekly 14:00","2027-01-01":"Bi-weekly Operation 10:00"};
-
-/* ================= HELPERS ================= */
-const $=s=>document.querySelector(s);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const icon=(id,cls="ic sm")=>`<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
-const hm=h=>{const H=Math.floor(h),M=Math.round((h-H)*60);return String(H).padStart(2,"0")+":"+String(M).padStart(2,"0");};
-const lvlName={ok:"สะดวก",warn:"ได้บ้าง",bad:"ไม่สะดวก",off:"วันหยุด"};
-
-/* journey */
-$("#journey").innerHTML=[["bkk","กรุงเทพฯ","17 ธ.ค."],["par","ปารีส","4 คืน"],["stg","สตราสบูร์ก","4 คืน"],["int","อินเทอร์ลาเคน","2 คืน"],["luz","ลูเซิร์น","2 คืน"],["bkk","ซูริก → กรุงเทพฯ","30 ธ.ค."]]
- .map(([c,n,s])=>`<div class="jstop" style="--c:${CITY[c].c}"><span class="dot"></span><b>${n}</b><span>${s}</span></div>`).join("");
-
-$("#routecards").innerHTML=ROUTE.map(([c,w,n,p])=>`<div class="rc" style="--c:${CITY[c].c}"><div class="when">${w}</div><b>${n}</b><p>${esc(p)}</p></div>`).join("");
-
-/* hotels */
-$("#hotelList").innerHTML=HOTELS.map((h,i)=>`
- <article class="card hotel" style="--c:${CITY[h.city].c}">
-  <div class="art"><div class="t">${CITY[h.city].en}</div><div><div class="n">${h.n}</div><div class="t">nights</div></div></div>
-  <div class="bd">
-   <h3>${esc(h.name)}</h3>
-   <div class="addr">${icon("pin")}<span>${esc(h.addr)}</span></div>
-   <div class="io"><div><span class="lbl">Check-in</span><b>${h.in}</b></div><div><span class="lbl">Check-out</span><b>${h.out}</b></div></div>
-   <div class="note">${esc(h.note)}</div>
-   <div class="meta"><span class="chip ok">${icon("check")}ยกเลิกฟรีถึง ${h.free}</span></div>
-   <div class="act"><a href="#" data-hotel="${i}">${icon("map")}ดูบนแผนที่</a><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(h.name+' '+(h.approx?'Strasbourg':h.addr))}">${icon("ext")}Google Maps</a></div>
+<section class="sec" id="calendar">
+ <div class="wrap">
+  <div class="head">
+   <div class="roman">I.</div>
+   <h2>The Calendar<span class="th">ปฏิทินช่วงลา · แตะวันที่เพื่อดูรายละเอียด</span></h2>
+   <div class="clocks">
+    <div><b class="num" id="tBkk">--:--</b><span>Bangkok</span></div>
+    <div><b class="num" id="tEu">--:--</b><span>Paris · Zürich</span></div>
+   </div>
   </div>
- </article>`).join("");
+  <div class="cal" id="cal" aria-label="ปฏิทิน 14 ธ.ค. 2026 – 10 ม.ค. 2027"></div>
+  <div class="legend">
+   <span><i class="l-leave"></i>ลาพักร้อน</span>
+   <span><i class="l-off"></i>เสาร์–อาทิตย์</span>
+   <span><i class="l-hol"></i>วันหยุดนักขัตฤกษ์</span>
+   <span><i class="l-back"></i>กลับมาทำงาน</span>
+  </div>
+  <div class="panel" id="panel" aria-live="polite"></div>
+ </div>
+</section>
 
-/* ================= CALENDAR ================= */
-function dayInfo(dt){
- const y=dt.getFullYear(),m=dt.getMonth(),d=dt.getDate(),dow=dt.getDay(),key=`${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
- const we=dow===0||dow===6;
- let cls="work",w="ทำงาน",city=null,note="";
- if(y===2026&&m===11&&d===31||y===2027&&m===0&&d===1){cls="hol";w=d===31?"วันสิ้นปี":"ปีใหม่";}
- else if(y===2026&&m===11&&d>=18&&d<=30){cls=we?"off":"leave";w=we?"วันหยุด":"ลาพักร้อน";}
- else if(we){cls="off";w="วันหยุด";}
- if(y===2027&&m===0&&d===4){cls="back";w="กลับมาทำงาน";}
- if(y===2026&&m===11&&d===17){w="บินคืนนี้";}
- const D=(y===2026&&m===11)?DAYS.find(x=>+x.d===d):null; if(D) city=CITY[D.city];
- const inTrip=y===2026&&m===11&&d>=17&&d<=31 || y===2027&&m===0&&d<=4;
- return {key,y,m,d,dow,cls,w,city,D,meet:MEET[key],inTrip};
-}
-const MONTHS=["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
+<section class="sec" id="availability">
+ <div class="wrap">
+  <div class="head">
+   <div class="roman">II.</div>
+   <h2>Hours<span class="th">ช่วงเวลาที่ติดต่อได้ในแต่ละวัน · เวลาประเทศไทย</span></h2>
+  </div>
+  <div class="av" id="av"></div>
+  <div class="avnote">
+   <span><i style="background:var(--ink)"></i>ช่วงที่ติดต่อได้</span>
+   <span><i style="background:var(--tint)"></i>เวลาทำงานที่ออฟฟิศ 09:00–18:00</span>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="destinations">
+ <div class="wrap">
+  <div class="head">
+   <div class="roman">III.</div>
+   <h2>Places<span class="th">เมืองที่อยู่ในแต่ละช่วง</span></h2>
+  </div>
+  <div class="dest" id="dest"></div>
+  <div class="tz"><span>ยุโรปช้ากว่าไทย <b>6 ชั่วโมง</b> · 08:00 ที่ยุโรป = 14:00 ที่ไทย</span><span>ทุกเมืองใช้เขตเวลาเดียวกัน (CET)</span></div>
+ </div>
+</section>
+
+<section class="sec" id="contact">
+ <div class="wrap">
+  <div class="head">
+   <div class="roman">IV.</div>
+   <h2>While I'm Away<span class="th">ระหว่างที่ลา</span></h2>
+  </div>
+  <div class="contact">
+   <div><div class="n">i</div><h3>เรื่องด่วน</h3><p>ส่งทาง Slack พร้อมสรุปสั้น ๆ ว่าต้องการอะไร จะตอบในช่วง 13:00–14:30 ของวันทำการ</p></div>
+   <div><div class="n">ii</div><h3>เรื่องไม่ด่วน</h3><p>เก็บไว้คุยหลังวันที่ 4 มกราคม หรือส่งอีเมลไว้ก่อนได้</p></div>
+   <div><div class="n">iii</div><h3>วันหยุด</h3><p>เสาร์–อาทิตย์ และวันที่ 31 ธ.ค. – 3 ม.ค. ไม่ได้เช็คข้อความ</p></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="merci">Merci.</div>
+  <p>ขอบคุณที่ช่วยดูแลงานระหว่างนี้</p>
+  <div class="small">See you in January</div>
+ </div>
+</footer>
+
+<script>
+const IMG=f=>`https://commons.wikimedia.org/wiki/Special:FilePath/${f}?width=900`;
+const CITY={
+ bkk:{en:"Bangkok",th:"กรุงเทพฯ"},
+ par:{en:"Paris",th:"ปารีส"},
+ stg:{en:"Strasbourg",th:"สตราสบูร์ก"},
+ int:{en:"Interlaken",th:"อินเทอร์ลาเคน"},
+ luz:{en:"Lucerne",th:"ลูเซิร์น"}
+};
+const DEST=[
+ ["par","18 — 22 Dec","France","Tour_Eiffel_Wikimedia_Commons.jpg","Eiffel Tower, Paris"],
+ ["stg","22 — 26 Dec","France · Alsace","Strasbourg_Petite-France_place_Benjamin-Zix_septembre_2015.jpg","Petite France, Strasbourg"],
+ ["int","26 — 28 Dec","Switzerland","Sphinx_et_Jungfrau_-_img_06980.jpg","Jungfrau, Bernese Alps"],
+ ["luz","28 — 30 Dec","Switzerland","Kapellbruecke.JPG","Chapel Bridge, Lucerne"]
+];
+/* Thai-time windows (decimal hours). lvl: work | brief | limited | off | hol */
+const DAY={
+ "2026-12-17":{city:"bkk",lvl:"work",th:[[9,18]],st:"ทำงานปกติ"},
+ "2026-12-18":{city:"par",lvl:"limited",th:[[18,21]],st:"วันเดินทาง",sub:"เฉพาะเรื่องด่วน"},
+ "2026-12-19":{city:"par",lvl:"off",th:[],st:"วันหยุด"},
+ "2026-12-20":{city:"par",lvl:"off",th:[],st:"วันหยุด"},
+ "2026-12-21":{city:"par",lvl:"brief",th:[[13,14.5]],st:"ลา · ตอบช่วงสั้น"},
+ "2026-12-22":{city:"stg",lvl:"brief",th:[[13.5,14.75],[20,21.75]],st:"ลา · ตอบช่วงสั้น"},
+ "2026-12-23":{city:"stg",lvl:"brief",th:[[13.5,15]],st:"ลา · ตอบช่วงสั้น"},
+ "2026-12-24":{city:"stg",lvl:"brief",th:[[13.5,15]],st:"ลา · ตอบช่วงสั้น"},
+ "2026-12-25":{city:"stg",lvl:"limited",th:[[14,15]],st:"วันคริสต์มาส",sub:"เฉพาะเรื่องด่วน"},
+ "2026-12-26":{city:"int",lvl:"off",th:[],st:"วันหยุด"},
+ "2026-12-27":{city:"int",lvl:"off",th:[],st:"วันหยุด"},
+ "2026-12-28":{city:"luz",lvl:"brief",th:[[13.5,15.5],[16,18]],st:"ลา · ตอบช่วงสั้น"},
+ "2026-12-29":{city:"luz",lvl:"brief",th:[[13,14.25]],st:"ลา · ตอบช่วงสั้น"},
+ "2026-12-30":{city:"luz",lvl:"limited",th:[[14.5,15.75]],st:"วันเดินทางกลับ",sub:"เฉพาะเรื่องด่วน"},
+ "2026-12-31":{city:"bkk",lvl:"hol",th:[],st:"วันสิ้นปี"}
+};
+const $=s=>document.querySelector(s);
+const p2=n=>String(n).padStart(2,"0");
+const hm=h=>{const H=Math.floor(h),M=Math.round((h-H)*60);return p2(H)+":"+p2(M);};
+const win=a=>a.map(([s,e])=>`${hm(s)}–${hm(e)}`).join(" · ");
+const winEu=a=>a.map(([s,e])=>`${hm(s-6)}–${hm(e-6)}`).join(" · ");
+const MON=["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
+const MEN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const WD=["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"];
-(function buildCal(){
- const head=["จ","อ","พ","พฤ","ศ","ส","อา"].map((x,i)=>`<div class="dow${i>4?' we':''}">${x}</div>`).join("");
- let html=head; const start=new Date(2026,11,14);
- const todayKey=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Bangkok"}).format(new Date());
+const WEN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const keyOf=d=>`${d.getFullYear()}-${p2(d.getMonth()+1)}-${p2(d.getDate())}`;
+const bkkNow=()=>{const s=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Bangkok",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d);};
+
+function info(dt){
+ const k=keyOf(dt),y=dt.getFullYear(),m=dt.getMonth(),d=dt.getDate(),dow=dt.getDay(),we=dow===0||dow===6;
+ let cls="work",s="ทำงาน";
+ if(k==="2026-12-31"||k==="2027-01-01"){cls="hol";s=d===31?"วันสิ้นปี":"ปีใหม่";}
+ else if(y===2026&&m===11&&d>=18&&d<=30){cls=we?"off":"leave";s=we?"วันหยุด":"ลาพักร้อน";}
+ else if(we){cls="off";s="วันหยุด";}
+ if(k==="2027-01-04"){cls="back";s="กลับมาทำงาน";}
+ const inRange=dt>=new Date(2026,11,17)&&dt<=new Date(2027,0,4);
+ return {k,y,m,d,dow,cls,s,D:DAY[k],inRange};
+}
+
+/* calendar */
+const START=new Date(2026,11,14);
+function buildCal(){
+ const today=keyOf(bkkNow());
+ let h=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(x=>`<div class="dow" aria-hidden="true">${x}</div>`).join("");
  for(let i=0;i<28;i++){
-  const dt=new Date(start); dt.setDate(start.getDate()+i); const f=dayInfo(dt);
-  const lab=`${WD[f.dow]} ${f.d} ${MONTHS[f.m]} — ${f.w}${f.city?' · '+f.city.name:''}${f.meet?' · ประชุม':''}`;
-  html+=`<button type="button" class="cell ${f.cls}${f.inTrip?'':' dim'}${f.key===todayKey?' today':''}" data-key="${f.key}" aria-label="${esc(lab)}" style="${f.city?`--c:${f.city.c}`:''}">
-    ${f.city?'<span class="bar"></span>':''}${f.meet?'<span class="mt" title="มีประชุม"></span>':''}
-    <span class="d">${f.d}</span><span class="m">${f.d===1||i===0?MONTHS[f.m]:(f.city?f.city.en:'')}</span>
-    <span class="w">${esc(f.w)}</span></button>`;
+  const dt=new Date(START);dt.setDate(START.getDate()+i);
+  const I=info(dt);
+  const city=I.D&&I.D.city!=="bkk"?CITY[I.D.city].en:"";
+  const mo=(I.d===1||i===0)?`<span class="m">${MEN[I.m]}</span>`:"";
+  h+=`<button class="cell ${I.cls}${I.inRange?"":" dim"}" data-k="${I.k}" aria-pressed="false" aria-label="${WD[I.dow]} ${I.d} ${MON[I.m]} · ${I.s}${city?" · "+city:""}">${I.k===today?'<span class="today">Today</span>':""}<span><span class="d num">${I.d}</span>${mo}</span><span class="c">${city}</span><span class="s">${I.s}</span></button>`;
  }
- $("#cal").innerHTML=html;
-})();
-function showPanel(key){
- const [y,m,d]=key.split("-").map(Number); const f=dayInfo(new Date(y,m-1,d));
- document.querySelectorAll(".cell").forEach(c=>c.classList.toggle("sel",c.dataset.key===key));
- const W=f.y===2026&&f.m===11?WORK[String(f.d)]:null;
- const chipCls={work:"",leave:"leave",off:"off",hol:"hol",back:"ok"}[f.cls];
- let rows=`<h4>${WD[f.dow]} ${f.d} ${MONTHS[f.m]} ${f.y}</h4>
-  <div class="lbl">Status</div><div><span class="chip ${chipCls}">${esc(f.w)}</span></div>`;
- if(f.city) rows+=`<div class="lbl">Location</div><div>${f.city.name} · ${esc(f.D.title)}</div>`;
- if(W){ rows+=`<div class="lbl">Reachable</div><div>${W.th.length?W.th.map(s=>hm(s[0])+"–"+hm(s[1])).join(" · ")+" <span class='muted'>(ไทย)</span>":"—"}${W.eu!=="—"?`<div class="muted" style="font-size:12.5px">ยุโรป ${W.eu}</div>`:""}</div>
-   <div class="lbl">Note</div><div>${esc(W.msg)}</div>`; }
- if(f.meet) rows+=`<div class="lbl">Meeting</div><div>${icon("mtg")} ${esc(f.meet)} น.</div>`;
- if(f.cls==="back") rows+=`<div class="lbl">Note</div><div>กลับเข้าออฟฟิศตามปกติ</div>`;
- $("#daypanel").innerHTML=rows;
+ $("#cal").innerHTML=h;
+ $("#cal").addEventListener("click",e=>{const b=e.target.closest(".cell");if(b)show(b.dataset.k);});
 }
-$("#cal").addEventListener("click",e=>{const c=e.target.closest(".cell"); if(c) showPanel(c.dataset.key);});
-(function(){const t=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Bangkok"}).format(new Date()); const inRange=t>="2026-12-14"&&t<="2027-01-10"; showPanel(inRange?t:"2026-12-18");})();
+function show(k){
+ document.querySelectorAll(".cell").forEach(c=>c.setAttribute("aria-pressed",c.dataset.k===k?"true":"false"));
+ const [y,m,d]=k.split("-").map(Number),dt=new Date(y,m-1,d),I=info(dt),D=I.D;
+ let where,reach,eu="";
+ if(D) where=`${CITY[D.city].en} <span class="th">· ${CITY[D.city].th}</span>`;
+ else if(I.cls==="work"||I.cls==="back") where=`Office <span class="th">· ออฟฟิศ</span>`;
+ else where=`Bangkok <span class="th">· กรุงเทพฯ</span>`;
+ if(D&&D.th.length){reach=`<b class="num">${win(D.th)}</b> เวลาไทย`;if(D.city!=="bkk")eu=`<br>${winEu(D.th)} เวลายุโรป`;}
+ else if(I.cls==="work"||I.cls==="back") reach=`<b>เวลาทำงานปกติ</b>`;
+ else reach=`<b>ไม่ได้เช็คข้อความ</b>`;
+ const status=D?D.st+(D.sub?` · ${D.sub}`:""):I.s;
+ $("#panel").innerHTML=`
+  <div><div class="eyebrow">${WEN[I.dow]} · ${I.d} ${MEN[I.m]} ${I.y}</div><h3><span class="th">${WD[I.dow]} ${I.d} ${MON[I.m]}</span></h3><p>${status}</p></div>
+  <div><div class="eyebrow">Location</div><h3>${where}</h3></div>
+  <div><div class="eyebrow">Reachable</div><p>${reach}${eu}</p></div>`;
+}
 
-/* ================= TIMELINE ================= */
-(function buildTL(){
+/* availability */
+function buildAv(){
  const pct=h=>(h/24*100).toFixed(3)+"%";
- let h=`<div></div><div class="scale">${[0,3,6,9,12,15,18,21,24].map(x=>`<span style="left:${pct(x)}${x===24?';transform:translateX(-100%)':x===0?';transform:none':''}">${String(x).padStart(2,"0")}</span>`).join("")}</div>`;
- DAYS.forEach(D=>{const W=WORK[D.d];
-  h+=`<div class="rl">${D.wd.slice(0,3)}. ${D.d} ธ.ค.<small>${CITY[D.city].name}</small></div><div class="tr" title="${esc(W.msg)}">`;
-  if(W.lvl==="off"){ h+=`<div class="offrow">${esc(W.msg)}</div>`; }
-  else{
-   if(D.d!=="17") h+=`<div class="office"></div>`;
-   W.th.forEach(s=>{h+=`<div class="seg ${W.lvl==='ok'?'':W.lvl}" style="left:${pct(s[0])};width:${pct(s[1]-s[0])}" title="${hm(s[0])}–${hm(s[1])} น."></div>`;});
-  }
-  (W.mt||[]).forEach(t=>{h+=`<div class="mtg" style="left:${pct(t)}" title="ประชุม ${hm(t)} น."></div>`;});
-  h+=`</div>`;
+ const office=`<span class="office" style="left:${pct(9)};width:${pct(9)}"></span>`;
+ let h=`<div class="avh"><span class="eyebrow">Date</span><span class="eyebrow">City</span><span class="eyebrow h-st">Status</span><div class="scale">${[0,6,12,18,24].map(x=>`<span style="left:${pct(x)}">${p2(x)}:00</span>`).join("")}</div></div>`;
+ Object.entries(DAY).forEach(([k,D])=>{
+  const [y,m,d]=k.split("-").map(Number),dt=new Date(y,m-1,d),off=!D.th.length;
+  const segs=D.th.map(([s,e])=>`<span class="seg" style="left:${pct(s)};width:${pct(e-s)}"></span>`).join("");
+  const first=off?0:D.th[0][0];
+  const lab=off?`<span class="lab" style="left:0;color:var(--mute)">ไม่ได้เช็คข้อความ</span>`:`<span class="lab num" style="left:${pct(first)};${first>14?"transform:translateX(-40%)":""}">${win(D.th)}</span>`;
+  h+=`<div class="avr${off?" off":""}"><div class="dt"><b class="num">${d}</b><span>${WEN[dt.getDay()]} · ${MEN[m-1]}</span></div><div class="ct">${CITY[D.city].en}</div><div class="st">${D.st}${D.sub?`<small>${D.sub}</small>`:""}</div><div class="track" role="img" aria-label="${off?"ไม่ได้เช็คข้อความ":"ติดต่อได้ "+win(D.th)+" เวลาไทย"}">${office}${segs}${lab}</div></div>`;
  });
- $("#tl").innerHTML=h;
-})();
-
-/* ================= ITINERARY ================= */
-let gid=0; const PL=[];
-$("#chips").innerHTML=`<button class="on" data-day="all" role="tab"><i style="--c:var(--gold-2)"></i>ทั้งทริป</button>`+DAYS.map(D=>`<button data-day="${D.d}" role="tab" style="--c:${CITY[D.city].c}"><i></i>${D.d} ธ.ค.</button>`).join("");
-$("#days").innerHTML=DAYS.map(D=>{
- const c=CITY[D.city].c; let n=0; const W=WORK[D.d];
- const body=D.items.map(it=>{
-  if(it.leg) return `<div class="leg">${icon(it.leg)}${esc(it.t)}</div>`;
-  const [t,title,note,lat,lng,flag]=it; const has=lat!=null; let num;
-  if(has){n++; const id=gid++; PL.push({id,day:D.d,n,title,note,t,ll:[lat,lng],c}); num=`<button class="num" data-pid="${id}" aria-label="ดู ${esc(title)} บนแผนที่">${n}</button>`;}
-  else num=`<span class="num plain">•</span>`;
-  const tag=flag==="book"?'<span class="tag">จองล่วงหน้า</span>':flag==="must"?'<span class="tag must">สำคัญ</span>':flag==="hotel"?'<span class="tag">ที่พัก</span>':"";
-  return `<div class="place">${num}<div class="pc" ${has?`data-pid="${gid-1}"`:""}><div class="tm">${esc(t)}</div><h4>${esc(title)}${tag}</h4>${note?`<p>${esc(note)}</p>`:""}</div></div>`;
- }).join("");
- const T=TYPE[D.d];
- const av=`<div class="avgrid"><div><span class="lbl">Team</span><b>${TEAM[T[0]]}</b></div>
-   <div><span class="lbl">Local</span><b>${W.eu==="—"?(W.lvl==="off"?"—":"ตามเวลาไทย"):esc(W.eu)}</b></div>
-   <div><span class="lbl">Thailand</span><b>${W.th.length?W.th.map(s=>hm(s[0])+"–"+hm(s[1])).join(" · "):"ไม่ว่าง"}</b></div></div>`;
- return `<article class="card day" id="day-${D.d}" data-day="${D.d}" style="--c:${c}">
-  <button class="dayhead" type="button" aria-expanded="true"><span class="dnum"><b>${D.d}</b><span>${D.w}</span></span>
-   <span><span class="city">${CITY[D.city].en}</span><h3>${esc(D.title)}</h3><div class="sum">${esc(D.sum)}</div>
-    <span class="dmeta"><span class="chip ${T[0]}">${esc(T[1])}</span><span class="temp">${TEMP[D.d]}C</span></span></span>
-   <svg class="ic chev"><use href="#i-chev"/></svg></button>
-  <div class="body">${av}${body}</div></article>`;
-}).join("");
-
-/* ================= MAP ================= */
-let map,markers={},lines={},curDay="all",lastHl=null;
-const isMobile=()=>matchMedia("(max-width:900px)").matches;
-function mkIcon(n,c,hl){return L.divIcon({className:"",html:`<div class="mk${hl?' hl':''}" style="--c:${c}"><span>${n}</span></div>`,iconSize:hl?[38,38]:[30,30],iconAnchor:hl?[19,38]:[15,30],popupAnchor:[0,-30]});}
-function initMap(){
- if(!window.L){$("#map").innerHTML='<p style="padding:24px">โหลดแผนที่ไม่สำเร็จ</p>';return;}
- map=L.map("map",{zoomControl:true,scrollWheelZoom:true,attributionControl:true});
- L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
- const byDay={};
- PL.forEach(p=>{const m=L.marker(p.ll,{icon:mkIcon(p.n,p.c),title:p.title}).addTo(map).bindPopup(`<b>${esc(p.title)}</b><br><span style="opacity:.7">${esc(p.t)} · ${p.day} ธ.ค.</span>${p.note?'<br>'+esc(p.note):''}`);
-  m.on("click",()=>activate(p.id,false)); markers[p.id]={m,p}; (byDay[p.day]=byDay[p.day]||[]).push(p.ll);});
- Object.entries(byDay).forEach(([d,pts])=>{const D=DAYS.find(x=>x.d===d); lines[d]=L.polyline(pts,{color:CITY[D.city].c,weight:2,opacity:.55,dashArray:"4 7"}).addTo(map);});
- [["all","ทั้งทริป"],["par","ปารีส"],["stg","อัลซาส"],["int","สวิส"]].forEach(([k,l])=>{const b=document.createElement("button");b.type="button";b.textContent=l;b.dataset.zone=k;b.onclick=()=>zone(k);$("#mapctl").appendChild(b);});
- showDay("all",false);
+ $("#av").innerHTML=h;
 }
-function zone(k){
- const S={all:PL,par:PL.filter(p=>p.ll[1]<3),stg:PL.filter(p=>p.ll[0]>48&&p.ll[1]>7),int:PL.filter(p=>p.ll[0]<47.6)};
- document.querySelectorAll("#mapctl button").forEach(b=>b.classList.toggle("on",b.dataset.zone===k));
- map.fitBounds(L.latLngBounds(S[k].map(p=>p.ll)),{padding:[50,50],maxZoom:14});
-}
-function showDay(d,scroll){
- curDay=d; document.querySelectorAll("#chips button").forEach(b=>{const on=b.dataset.day===d;b.classList.toggle("on",on);b.setAttribute("aria-selected",on);});
- if(map){
-  PL.forEach(p=>{const el=markers[p.id].m.getElement(); if(el) el.classList.toggle("dim",d!=="all"&&p.day!==d);});
-  Object.entries(lines).forEach(([k,l])=>l.setStyle({opacity:d==="all"||k===d?.55:.06}));
-  const pts=PL.filter(p=>d==="all"||p.day===d).map(p=>p.ll);
-  if(pts.length) map.fitBounds(L.latLngBounds(pts),{padding:[60,60],maxZoom:15});
- }
- if(scroll&&d!=="all"){const el=document.getElementById("day-"+d); el.classList.remove("closed"); el.scrollIntoView({behavior:"smooth",block:"start"});}
-}
-function activate(id,pan=true){
- const o=markers[id]; if(!o) return; const {m,p}=o;
- if(lastHl!=null&&markers[lastHl]) markers[lastHl].m.setIcon(mkIcon(markers[lastHl].p.n,markers[lastHl].p.c));
- m.setIcon(mkIcon(p.n,p.c,true)); m.setZIndexOffset(1000); lastHl=id;
- document.querySelectorAll(".pc.active").forEach(e=>e.classList.remove("active"));
- const pc=document.querySelector(`.pc[data-pid="${id}"]`); if(pc){pc.classList.add("active"); if(!pan) pc.scrollIntoView({behavior:"smooth",block:"center"});}
- if(pan){ if(isMobile()) openMap(); setTimeout(()=>{map.setView(p.ll,Math.max(map.getZoom(),15),{animate:true}); m.openPopup();},isMobile()?120:0); }
-}
-function openMap(){document.body.classList.add("showmap"); setTimeout(()=>map&&map.invalidateSize(),60);}
-function closeMap(){document.body.classList.remove("showmap");}
 
-/* ================= EVENTS ================= */
-document.addEventListener("click",e=>{
- const pid=e.target.closest("[data-pid]"); if(pid){activate(+pid.dataset.pid,true);return;}
- const chip=e.target.closest("#chips button"); if(chip){showDay(chip.dataset.day,true);return;}
- const head=e.target.closest(".dayhead"); if(head){const day=head.parentElement; const closed=day.classList.toggle("closed"); head.setAttribute("aria-expanded",!closed); if(!closed) showDay(day.dataset.day,false); return;}
- const h=e.target.closest("[data-hotel]"); if(h){e.preventDefault(); const H=HOTELS[+h.dataset.hotel]; const p=PL.find(p=>p.title===H.name); if(p) activate(p.id,true); return;}
-});
-$("#fab").onclick=()=>{openMap(); setTimeout(()=>showDay(curDay,false),120);};
-$("#mapclose").onclick=closeMap;
-document.addEventListener("keydown",e=>{if(e.key==="Escape"&&document.body.classList.contains("showmap")) closeMap();});
-let rsz; window.addEventListener("resize",()=>{clearTimeout(rsz); rsz=setTimeout(()=>{if(map){map.invalidateSize(); showDay(curDay,false);}},200);});
+/* destinations */
+$("#dest").innerHTML=DEST.map(([c,w,co,f,alt],i)=>`<figure><div class="ph"><img src="${IMG(f)}" alt="${alt}" loading="lazy" decoding="async" width="900" height="1200"><span class="idx">${["i","ii","iii","iv"][i]}</span></div><figcaption><div class="when">${w}</div><h3>${CITY[c].en}</h3><div class="country">${CITY[c].th} · ${co}</div></figcaption></figure>`).join("");
 
-const secs=["overview","team","flights","hotels","itinerary"].map(id=>document.getElementById(id));
-function onScroll(){
- const top=isMobile()?window.scrollY:$("#side").scrollTop; let cur="overview";
- secs.forEach(s=>{if(s.offsetTop-90<=top) cur=s.id;});
- document.querySelectorAll("#tabs a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur));
- if(!isMobile()&&map&&cur==="itinerary"){
-  const st=$("#side").getBoundingClientRect().top; let v=null;
-  document.querySelectorAll(".day").forEach(d=>{const r=d.getBoundingClientRect(); if(r.top-st<260&&r.bottom-st>160) v=d.dataset.day;});
-  if(v&&v!==curDay) showDay(v,false);
- }
+/* live status + clocks */
+function status(){
+ const t=bkkNow(),k=keyOf(t),start=new Date(2026,11,18),back=new Date(2027,0,4);
+ let s;
+ if(t<start){const n=Math.round((start-t)/864e5);s=`ตอนนี้ทำงานตามปกติ · เริ่มลา ศ. 18 ธ.ค. (อีก ${n} วัน)`;}
+ else if(t<back){const D=DAY[k];s="กำลังลาพักร้อน · "+(D&&D.th.length?`วันนี้ติดต่อได้ ${win(D.th)} เวลาไทย`:"วันนี้ไม่ได้เช็คข้อความ")+" · กลับ จ. 4 ม.ค.";}
+ else s="กลับมาทำงานตามปกติแล้ว";
+ $("#now").textContent=s;
 }
-let raf; const sched=()=>{cancelAnimationFrame(raf); raf=requestAnimationFrame(onScroll);};
-$("#side").addEventListener("scroll",sched,{passive:true}); window.addEventListener("scroll",sched,{passive:true});
+const fmt=tz=>new Intl.DateTimeFormat("en-GB",{timeZone:tz,hour:"2-digit",minute:"2-digit",hour12:false}).format(new Date());
+function tick(){$("#tBkk").textContent=fmt("Asia/Bangkok");$("#tEu").textContent=fmt("Europe/Paris");}
 
-/* ================= CLOCKS ================= */
-const fmt=(tz,o)=>new Intl.DateTimeFormat("th-TH",Object.assign({timeZone:tz},o)).format(new Date());
-function tick(){
- $("#tBkk").textContent=fmt("Asia/Bangkok",{hour:"2-digit",minute:"2-digit",hour12:false});
- $("#dBkk").textContent="· "+fmt("Asia/Bangkok",{weekday:"short",day:"numeric",month:"short"});
- $("#tEu").textContent=fmt("Europe/Paris",{hour:"2-digit",minute:"2-digit",hour12:false});
- $("#dEu").textContent="· "+fmt("Europe/Paris",{weekday:"short",day:"numeric",month:"short"});
- const dep=Date.parse("2026-12-18T00:05:00+07:00"),end=Date.parse("2026-12-31T08:00:00+07:00"),now=Date.now();
- $("#cd").innerHTML=icon("clock")+(now<dep?` อีก ${Math.ceil((dep-now)/864e5)} วัน`:now<end?" กำลังเดินทาง":" จบทริปแล้ว");
-}
-tick(); setInterval(tick,20000);
-window.addEventListener("load",()=>setTimeout(()=>{if(map){map.invalidateSize();showDay(curDay,false);}},300));
+/* nav highlight */
+const links=[...document.querySelectorAll(".bar nav a")];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id));}),{rootMargin:"-45% 0px -50% 0px"});
+["calendar","availability","destinations"].forEach(id=>io.observe(document.getElementById(id)));
 
-/* ================= INIT ================= */
-initMap();
-(function(){
- const t=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Paris"}).format(new Date()); const m=t.match(/^2026-12-(\d\d)$/);
- if(m&&document.getElementById("day-"+m[1])){ DAYS.forEach(D=>{if(D.d!==m[1]) document.getElementById("day-"+D.d).classList.add("closed");}); setTimeout(()=>showDay(m[1],true),300); }
-})();
+buildCal();buildAv();status();tick();setInterval(tick,15000);
+const tk=keyOf(bkkNow());show(DAY[tk]||tk==="2027-01-04"?tk:"2026-12-18");
 </script>
 </body>
 </html>
