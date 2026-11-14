@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Itinerary · ปารีส–อัลซาส–สวิส ธ.ค. 2026</title>
+<meta name="description" content="แผนการเดินทาง 17–31 ธ.ค. 2026: ภาพรวม เที่ยวบิน ที่พัก ตารางงาน และแผนรายวันพร้อมแผนที่">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232f6fed'/><text x='32' y='44' text-anchor='middle' font-size='36'>🗺️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#1d2433; --muted:#667085; --line:#e6e8ec; --soft:#f1f4f9;
+  --brand:#2f6fed; --brand-soft:#e8f0fe; --ok:#12805c; --ok-soft:#e6f6ef; --warn:#b54708; --warn-soft:#fef3e7;
+  --bad:#c0362c; --bad-soft:#fdecea; --shadow:0 1px 2px rgba(16,24,40,.06),0 4px 14px rgba(16,24,40,.06);
+  --radius:14px; --side:min(560px,46vw);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1218; --panel:#171b23; --ink:#e7eaf0; --muted:#98a2b3; --line:#2a303b; --soft:#1e2430;
+    --brand:#6b9bff; --brand-soft:#1d2a45; --ok:#4fd1a1; --ok-soft:#14302a; --warn:#f5a25b; --warn-soft:#3a2614;
+    --bad:#ff8a80; --bad-soft:#3b1c1a; --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:"Noto Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.3;margin:0}
+.app{display:grid;grid-template-columns:var(--side) 1fr;height:100vh;height:100dvh}
+.side{overflow-y:auto;background:var(--panel);border-right:1px solid var(--line);scroll-behavior:smooth}
+.mapwrap{position:relative}
+#map{position:absolute;inset:0;background:var(--soft)}
+/* cover */
+.cover{position:relative;height:220px;background:#24324d url("https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg?width=1200") center 35%/cover;color:#fff}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 20%,rgba(10,15,30,.78))}
+.cover .in{position:absolute;left:24px;right:24px;bottom:18px;z-index:1}
+.cover .crumb{font-size:13px;opacity:.9}
+.cover h1{font-size:26px;font-weight:700;margin:4px 0 6px}
+.cover .meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;opacity:.95}
+.backlink{position:absolute;top:14px;left:16px;z-index:2;background:rgba(255,255,255,.92);color:#1d2433;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px}
+/* tabs */
+.tabs{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:0 16px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;padding:12px 12px;font-size:14px;font-weight:600;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap}
+.tabs a.on,.tabs a:hover{color:var(--ink);border-bottom-color:var(--brand);text-decoration:none}
+.sec{padding:22px 24px;border-bottom:8px solid var(--bg)}
+.sec>h2{font-size:20px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sub{color:var(--muted);font-size:13px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.stat{background:var(--soft);border-radius:12px;padding:10px 12px}
+.stat b{display:block;font-size:20px}
+.stat span{font-size:12px;color:var(--muted)}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)} .pill.warn{background:var(--warn-soft);color:var(--warn)} .pill.bad{background:var(--bad-soft);color:var(--bad)} .pill.brand{background:var(--brand-soft);color:var(--brand)}
+/* route */
+.route{display:flex;gap:0;overflow-x:auto;padding:4px 0 2px;scrollbar-width:thin}
+.stop{flex:1 0 96px;text-align:center;position:relative;padding-top:26px;font-size:13px}
+.stop::before{content:"";position:absolute;top:9px;left:0;right:0;height:3px;background:var(--line)}
+.stop:first-child::before{left:50%} .stop:last-child::before{right:50%}
+.stop i{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:17px;height:17px;border-radius:50%;background:var(--c,var(--brand));border:3px solid var(--panel);box-shadow:0 0 0 1px var(--line)}
+.stop b{display:block;font-size:13.5px}
+.stop span{color:var(--muted);font-size:12px}
+/* flight */
+.flight{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin-top:10px}
+.flight .ap b{font-size:24px;display:block;letter-spacing:.5px}
+.flight .ap span{font-size:12.5px;color:var(--muted)}
+.flight .ap.r{text-align:right}
+.flight .mid{text-align:center;color:var(--muted);font-size:12px;min-width:90px}
+.flight .mid .line{height:2px;background:var(--line);position:relative;margin:6px 0}
+.flight .mid .line::after{content:"✈";position:absolute;right:-4px;top:-11px;font-size:15px;color:var(--brand)}
+.fhead{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.fhead b{font-size:15px}
+/* hotel */
+.hotel{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start}
+.hotel .ic{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;font-size:24px;background:var(--c-soft,var(--soft))}
+.hotel h3{font-size:15.5px;font-weight:700}
+.hotel .row{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--muted);margin-top:2px}
+.hotel .row b{color:var(--ink);font-weight:600}
+.dates{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.dates div{background:var(--soft);border-radius:10px;padding:6px 10px;font-size:12.5px;color:var(--muted)}
+.dates div b{display:block;color:var(--ink);font-size:14px}
+/* work */
+.clock{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.clock .stat b{font-variant-numeric:tabular-nums;font-size:24px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:8px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:600;background:var(--soft);position:sticky;top:0}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.tw table td:first-child{white-space:nowrap;font-weight:600}
+.tz{font-variant-numeric:tabular-nums;white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+/* itinerary */
+.daychips{display:flex;gap:6px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}
+.daychips::-webkit-scrollbar{display:none}
+.daychips button{flex:none;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:5px 12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.daychips button i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:6px;vertical-align:1px}
+.daychips button.on{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.day{border-top:1px solid var(--line);padding:16px 0 6px;scroll-margin-top:56px}
+.day:first-of-type{border-top:0}
+.dayhead{display:flex;align-items:flex-start;gap:10px;cursor:pointer;user-select:none}
+.dayhead .dot{flex:none;width:12px;height:12px;border-radius:50%;background:var(--c);margin-top:7px}
+.dayhead h3{font-size:17px;font-weight:700}
+.dayhead .t{flex:1}
+.dayhead .chev{color:var(--muted);transition:transform .2s;margin-top:2px}
+.day.closed .chev{transform:rotate(-90deg)}
+.day.closed .body{display:none}
+.daysum{font-size:13px;color:var(--muted);margin:2px 0 0}
+.body{padding:10px 0 0 22px}
+.workbar{display:flex;gap:8px;align-items:flex-start;background:var(--brand-soft);color:var(--ink);border-radius:10px;padding:7px 10px;font-size:13px;margin-bottom:10px}
+.workbar.none{background:var(--soft);color:var(--muted)}
+.place{position:relative;display:grid;grid-template-columns:30px 1fr;gap:10px;padding:0 0 4px}
+.num{width:26px;height:26px;border-radius:50%;background:var(--c);color:#fff;font-size:12.5px;font-weight:700;display:grid;place-items:center;cursor:pointer;margin-top:4px;box-shadow:0 0 0 3px var(--panel)}
+.num.text{background:var(--panel);color:var(--c);border:2px solid var(--c);font-size:13px}
+.pc{background:var(--soft);border-radius:12px;padding:9px 12px;cursor:pointer;transition:box-shadow .15s,background .15s}
+.pc:hover{box-shadow:inset 0 0 0 1px var(--line)}
+.pc.active{box-shadow:inset 0 0 0 2px var(--c)}
+.pc .tm{font-size:12px;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+.pc h4{margin:0;font-size:14.5px;font-weight:600}
+.pc p{margin:2px 0 0;font-size:13px;color:var(--muted)}
+.leg{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);padding:3px 0 7px 40px;position:relative}
+.leg::before{content:"";position:absolute;left:12px;top:-4px;bottom:-4px;border-left:2px dotted var(--line)}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:0 7px;border-radius:6px;background:var(--panel);color:var(--muted);margin-left:4px;vertical-align:1px}
+.tag.must{color:var(--bad);background:var(--bad-soft)}
+.tag.book{color:var(--warn);background:var(--warn-soft)}
+.note{font-size:13px;background:var(--warn-soft);color:var(--ink);border-radius:10px;padding:8px 12px;margin:6px 0 10px}
+.foot{padding:22px 24px 90px;color:var(--muted);font-size:12.5px}
+/* map ui */
+.mapctl{position:absolute;top:12px;right:12px;z-index:500;display:flex;gap:6px}
+.mapctl button,.fab,.mapclose{font:inherit;font-weight:600;font-size:13px;border:0;border-radius:999px;padding:8px 14px;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);cursor:pointer}
+.mapctl button.on{background:var(--ink);color:var(--panel)}
+.fab{display:none;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:900;background:var(--ink);color:var(--panel);padding:11px 18px;font-size:14px}
+.mapclose{display:none}
+.mk{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--c);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);display:grid;place-items:center}
+.mk span{transform:rotate(45deg);color:#fff;font:700 12px "Noto Sans Thai",sans-serif}
+.mk.hl{width:36px;height:36px;z-index:1000}
+.leaflet-popup-content{font-family:"Noto Sans Thai",sans-serif;font-size:13px;margin:10px 12px}
+.leaflet-popup-content b{font-size:14px}
+.dim{opacity:.28}
+/* responsive */
+@media (max-width:1100px){ :root{--side:min(520px,52vw)} }
+@media (max-width:860px){
+  .app{display:block;height:auto}
+  .side{overflow:visible;border-right:0}
+  .mapwrap{position:fixed;inset:0;z-index:1000;display:none;background:var(--panel)}
+  body.showmap .mapwrap{display:block}
+  body.showmap{overflow:hidden}
+  .fab{display:block}
+  body.showmap .fab{display:none}
+  .mapclose{display:block}
+  .mapctl{top:auto;bottom:calc(16px + env(safe-area-inset-bottom));right:auto;left:50%;transform:translateX(-50%)}
+  .mapclose{position:absolute;top:calc(12px + env(safe-area-inset-top));right:12px;z-index:600}
+  .cover{height:200px}
+  .sec{padding:18px 16px}
+  .tabs{padding:0 8px}
+  .foot{padding:18px 16px 96px}
+}
+@media (max-width:520px){
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g2{grid-template-columns:1fr}
+  .cover h1{font-size:22px}
+  .cover .in{left:16px;right:16px}
+  .body{padding-left:4px}
+  .flight .ap b{font-size:20px}
+  .dates{grid-template-columns:1fr 1fr}
+}
+@media print{
+  .mapwrap,.fab,.tabs,.backlink,.daychips{display:none!important}
+  .app{display:block;height:auto} .side{overflow:visible}
+  .day.closed .body{display:block}
+  .sec{border-bottom:1px solid #ddd}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side" id="side">
+
+  <header class="cover">
+    <a class="backlink" href="../">← แผนฉบับเต็ม</a>
+    <div class="in">
+      <div class="crumb">Itinerary · ทริปเดี่ยวหน้าหนาว</div>
+      <h1>ปารีส · อัลซาส · สวิส</h1>
+      <div class="meta"><span>📅 17–31 ธ.ค. 2026</span><span>🌙 12 คืนในยุโรป</span><span>🧳 1 คน</span><span id="cd"></span></div>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <a href="#overview" class="on">ภาพรวม</a>
+    <a href="#flights">เที่ยวบิน</a>
+    <a href="#hotels">ที่พัก</a>
+    <a href="#work">ตารางงาน</a>
+    <a href="#itinerary">แผนรายวัน</a>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="sec" id="overview">
+    <h2>🧭 ภาพรวม</h2>
+    <div class="grid g4">
+      <div class="stat"><b>15</b><span>วัน (17–31 ธ.ค.)</span></div>
+      <div class="stat"><b>12</b><span>คืน · 4 ที่พัก</span></div>
+      <div class="stat"><b>2</b><span>ประเทศ · 5 เมือง</span></div>
+      <div class="stat"><b>UTC+1</b><span>ช้ากว่าไทย 6 ชม.</span></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <div class="route" id="route"></div>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><div class="sub">สถานะการจอง</div>
+        <div style="margin-top:6px;display:flex;flex-direction:column;gap:6px;font-size:14px">
+          <div>✈️ ตั๋วเครื่องบินไป-กลับ <span class="pill ok">ออกตั๋วแล้ว</span></div>
+          <div>🏨 ที่พักครบ 12 คืน <span class="pill ok">จองแล้ว · ยกเลิกฟรี</span></div>
+          <div>🛂 วีซ่าเชงเก้น (ฝรั่งเศส) <span class="pill ok">ได้แล้ว</span></div>
+          <div>🛡️ ประกันเดินทาง <span class="pill ok">ซื้อแล้ว</span></div>
+          <div>🚆 ตั๋วรถไฟ / พาส / ตั๋วเข้าชม <span class="pill warn">ยังไม่ได้ซื้อ</span></div>
+        </div>
+      </div>
+      <div class="card"><div class="sub">ไฮไลต์แต่ละช่วง</div>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:14px">
+          <li><b>ปารีส</b> ลูฟวร์ · แวร์ซาย · นอเทรอดาม · ล่องเรือแซน</li>
+          <li><b>สตราสบูร์ก</b> ตลาดคริสต์มาส · มิสซาเที่ยงคืน 24 ธ.ค.</li>
+          <li><b>โคลมาร์</b> เดย์ทริปวันคริสต์มาส</li>
+          <li><b>อินเทอร์ลาเคน</b> Jungfraujoch 3,454 ม.</li>
+          <li><b>ลูเซิร์น</b> Chapel Bridge · Rigi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLIGHTS -->
+  <section class="sec" id="flights">
+    <h2>✈️ เที่ยวบิน</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="fhead"><b>ขาไป · ศุกร์ 18 ธ.ค. 2026</b><span class="pill brand">Thai Airways TG930</span></div>
+        <div class="flight">
+          <div class="ap"><b>BKK</b><span>00:05 · สุวรรณภูมิ</span></div>
+          <div class="mid">~12 ชม. 45 นาที<div class="line"></div>บินตรง</div>
+          <div class="ap r"><b>CDG</b><span>06:50 · Terminal 1</span></div>
+        </div>
+        <p class="sub" style="margin:10px 0 0">ไปถึงสนามบินคืนวันพฤหัส 17 ธ.ค. ราว 21:00 · เช็คอินออนไลน์เปิด 17 ธ.ค. 00:05 · ถึงแล้วผ่านด่าน EES (สแกนหน้า + นิ้ว) เผื่อ 45–180 นาที</p>
+      </div>
+      <div class="card">
+        <div class="fhead"><b>ขากลับ · พุธ 30 ธ.ค. 2026</b><span class="pill brand">Thai Airways TG971</span></div>
+        <div class="flight">
+          <div class="ap"><b>ZRH</b><span>13:15 · Zürich</span></div>
+          <div class="mid">~10 ชม. 55 นาที<div class="line"></div>บินตรง</div>
+          <div class="ap r"><b>BKK</b><span>~06:10 (+1) · 31 ธ.ค.</span></div>
+        </div>
+        <p class="sub" style="margin:10px 0 0">เคาน์เตอร์ Thai ที่ ZRH เปิด ~09:45 · ตั้งเป้าถึงสนามบิน 09:30–10:00 · เวลาถึงกรุงเทพฯ ต้องเช็คในใบยืนยัน</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTELS -->
+  <section class="sec" id="hotels">
+    <h2>🏨 ที่พัก</h2>
+    <div class="grid" id="hotelList"></div>
+    <p class="sub" style="margin:10px 0 0">ทุกที่จองแบบห้องส่วนตัว ยกเลิกฟรี · เวลาเช็คอิน/เอาต์เป็นค่าที่แผนระบุ ต้องเช็คในใบจองอีกครั้ง</p>
+  </section>
+
+  <!-- WORK -->
+  <section class="sec" id="work">
+    <h2>💼 ตารางงานช่วงทริป</h2>
+    <div class="clock">
+      <div class="stat"><span>เวลาไทย (BKK)</span><b id="tBkk">--:--</b><span id="dBkk"></span></div>
+      <div class="stat"><span>เวลายุโรป (ปารีส/สวิส)</span><b id="tEu">--:--</b><span id="dEu"></span></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <div style="display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:14px">
+        <b>สถานะ:</b> <span class="pill bad">ลางาน 18–30 ธ.ค.</span>
+        <span class="sub">ตามปฏิทิน · ฝรั่งเศสและสวิสเร็ว/ช้ากว่าไทย <b>6 ชั่วโมง</b> (ยุโรป 08:00 = ไทย 14:00)</span>
+      </div>
+      <p style="margin:8px 0 0;font-size:13.5px">ช่วงที่ติดต่อได้สะดวกที่สุดคือ <b>เช้ายุโรป 07:00–08:30 = บ่ายไทย 13:00–14:30</b> ก่อนออกเที่ยว · ตอนเย็นยุโรปตรงกับดึกที่ไทย จึงไม่ใช้เป็นเวลางาน</p>
+    </div>
+
+    <h3 style="font-size:15px;margin:16px 0 8px">📅 ประชุมที่ติดอยู่ในปฏิทินช่วงลา</h3>
+    <div class="tw"><table>
+      <thead><tr><th>วัน</th><th>ประชุม</th><th>เวลาไทย</th><th>เวลายุโรป</th><th>เข้าได้ไหม</th></tr></thead>
+      <tbody>
+        <tr><td>ศ. 18 ธ.ค.</td><td>Bi-weekly Operation meeting (Teams)</td><td class="tz">10:00</td><td class="tz">04:00</td><td><span class="pill bad">ไม่ได้</span> อยู่บนเครื่อง ลง 06:50 · ปฏิเสธ/แจ้งล่วงหน้า</td></tr>
+        <tr><td>จ. 21 ธ.ค.</td><td>Security Weekly Meeting (Teams)</td><td class="tz">14:00</td><td class="tz">08:00</td><td><span class="pill warn">ได้ถ้าสั้น</span> เข้าจากโรงแรมปารีส แล้วค่อยออกไปนอเทรอดาม</td></tr>
+        <tr><td>จ. 28 ธ.ค.</td><td>Security Weekly Meeting (Teams)</td><td class="tz">14:00</td><td class="tz">08:00</td><td><span class="pill warn">ได้ถ้าสั้น</span> เข้าจากที่พักอินเทอร์ลาเคน ก่อนเช็คเอาต์ 10:00</td></tr>
+        <tr><td>ศ. 1 ม.ค.</td><td>Bi-weekly Operation meeting (Teams)</td><td class="tz">10:00</td><td class="tz">—</td><td><span class="pill">กลับไทยแล้ว</span> วันหยุดปีใหม่ เช็คว่ายังจัดไหม</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 style="font-size:15px;margin:16px 0 8px">🟢 ช่วงที่สะดวกทำงาน/ตอบงานด่วน (รายวัน)</h3>
+    <div class="legend"><span class="pill ok">สะดวก</span><span class="pill warn">ได้บ้าง</span><span class="pill bad">ไม่สะดวก</span><span class="pill">วันหยุด</span></div>
+    <div class="tw"><table id="workTable">
+      <thead><tr><th>วัน</th><th>อยู่ที่</th><th>เวลายุโรป</th><th>เวลาไทย</th><th>หมายเหตุ</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+    <p class="sub" style="margin:8px 0 0">มีเน็ตจาก eSIM ตลอดทริป · บนรถไฟ TGV/SBB มีไวไฟหรือใช้มือถือแชร์เน็ตได้ แต่สัญญาณขาดเป็นช่วงในอุโมงค์</p>
+  </section>
+
+  <!-- ITINERARY -->
+  <section class="sec" id="itinerary">
+    <h2>🗓️ แผนรายวัน</h2>
+    <div class="daychips" id="chips"></div>
+    <div id="days"></div>
+  </section>
+
+  <div class="foot">
+    อัปเดต 14 พ.ย. 2026 · เวลาเป็นเวลาท้องถิ่น · ราคาและเวลาที่ยังไม่ประกาศจริงถือเป็นค่าประมาณ ·
+    รายละเอียดเต็ม (ร้าน จุดระวัง แผนสำรอง งบ ของที่ต้องเตรียม) อยู่ที่ <a href="../">แผนฉบับเต็ม</a>
+  </div>
+</aside>
+
+<main class="mapwrap" id="mapwrap" aria-label="แผนที่">
+  <div id="map"></div>
+  <div class="mapctl" id="mapctl"></div>
+  <button class="mapclose" id="mapclose" type="button">✕ ปิดแผนที่</button>
+</main>
+</div>
+<button class="fab" id="fab" type="button">🗺️ แผนที่</button>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+/* ---------- DATA ---------- */
+const CITY = {
+  bkk:{name:"กรุงเทพฯ",c:"#667085"},
+  par:{name:"ปารีส",c:"#2f6fed"},
+  stg:{name:"สตราสบูร์ก",c:"#d9480f"},
+  col:{name:"โคลมาร์",c:"#c2255c"},
+  int:{name:"อินเทอร์ลาเคน",c:"#0b8a5f"},
+  luz:{name:"ลูเซิร์น",c:"#7048e8"}
+};
+const HOTELS = [
+  {city:"par",ic:"🗼",name:"Hôtel Sophie Germain",addr:"12 rue Sophie Germain, 75014 Paris",ll:[48.8318,2.3296],
+   in:"ศ. 18 ธ.ค. · 15:00",out:"อ. 22 ธ.ค. · 12:00",n:4,price:"€460 ≈ 17,409 บ.",free:"15 ธ.ค.",note:"ใกล้ Denfert-Rochereau (RER B) และ Mouton-Duvernet (สาย 4) · อาหารเช้าไม่รวม"},
+  {city:"stg",ic:"🎄",name:"ibis budget Strasbourg Centre République",addr:"ที่อยู่ตามใบจอง (ย่าน Place de la République)",ll:[48.5878,7.7552],approx:true,
+   in:"อ. 22 ธ.ค. · ต้องเช็ค",out:"ส. 26 ธ.ค. · ต้องเช็ค",n:4,price:"€982 ≈ 37,151 บ.",free:"11 ธ.ค.",note:"หมุดบนแผนที่เป็นตำแหน่งโดยประมาณ · อาหารเช้าน่าจะไม่รวม"},
+  {city:"int",ic:"🏔️",name:"Backpackers Villa Sonnenhof",addr:"Alpenstrasse 16, 3800 Interlaken",ll:[46.6866,7.8622],
+   in:"ส. 26 ธ.ค. · 16:00–22:00",out:"จ. 28 ธ.ค. · 10:00",n:2,price:"CHF 394 ≈ 16,153 บ.",free:"26 ธ.ค. 14:00",note:"ห้อง Comfort มีห้องน้ำในตัว · รวมอาหารเช้า · ได้ Visitor's Card รถเมล์ฟรี"},
+  {city:"luz",ic:"🌉",name:"Hotel Alpina Luzern",addr:"Frankenstrasse 6, 6003 Luzern",ll:[47.0489,8.3083],
+   in:"จ. 28 ธ.ค. · 15:00",out:"พ. 30 ธ.ค. · 11:00",n:2,price:"CHF 333 ≈ 13,649 บ.",free:"20 ธ.ค.",note:"เดิน 2–4 นาทีจากสถานี · เคาน์เตอร์อยู่ที่ Hotel Monopol · อาหารเช้าไม่รวม"}
+];
+/* work: lvl ok|warn|bad|off */
+const WORK = {
+ "17":{lvl:"ok",eu:"—",th:"09:00–18:00",msg:"วันทำงานปกติ ก่อนไปสนามบิน ~21:00"},
+ "18":{lvl:"bad",eu:"12:00–15:00",th:"18:00–21:00",msg:"เพิ่งลงเครื่อง เจ็ตแล็ก · ตอบได้เฉพาะเรื่องด่วนจากคาเฟ่"},
+ "19":{lvl:"off",eu:"—",th:"—",msg:"วันเสาร์"},
+ "20":{lvl:"off",eu:"—",th:"—",msg:"วันอาทิตย์"},
+ "21":{lvl:"warn",eu:"07:00–08:30",th:"13:00–14:30",msg:"ประชุม Security Weekly 08:00 (ไทย 14:00) เข้าจากโรงแรม"},
+ "22":{lvl:"ok",eu:"07:30–08:45 · 14:00–15:50",th:"13:30–14:45 · 20:00–21:50",msg:"เช้าที่โรงแรม + บน TGV ไปสตราสบูร์ก"},
+ "23":{lvl:"ok",eu:"07:30–09:00",th:"13:30–15:00",msg:"เช้าก่อนเข้าเมือง"},
+ "24":{lvl:"warn",eu:"07:30–09:00 · 16:00–17:00",th:"13:30–15:00 · 22:00–23:00",msg:"คริสต์มาสอีฟ · บ่ายพักที่โรงแรม 1 ชม."},
+ "25":{lvl:"bad",eu:"08:00–09:00",th:"14:00–15:00",msg:"วันคริสต์มาส เดย์ทริปโคลมาร์"},
+ "26":{lvl:"off",eu:"—",th:"—",msg:"วันเสาร์ · วันเดินทางเข้าสวิส"},
+ "27":{lvl:"off",eu:"—",th:"—",msg:"วันอาทิตย์ · ขึ้น Jungfraujoch"},
+ "28":{lvl:"ok",eu:"07:30–09:30 · 10:04–11:55",th:"13:30–15:30 · 16:04–17:55",msg:"ประชุม 08:00 (ไทย 14:00) + บนรถไฟไปลูเซิร์น"},
+ "29":{lvl:"warn",eu:"07:00–08:15",th:"13:00–14:15",msg:"เช้าก่อนขึ้น Rigi"},
+ "30":{lvl:"warn",eu:"08:35–09:45 · 10:30–12:30",th:"14:35–15:45 · 16:30–18:30",msg:"บนรถไฟไปสนามบิน + รอขึ้นเครื่อง"},
+ "31":{lvl:"bad",eu:"—",th:"หลัง 06:10",msg:"ถึงกรุงเทพฯ เช้า · พักฟื้น (เช็คว่าต้องลาวันนี้ไหม)"}
+};
+/* place: [time, title, note, lat, lng, flags]  leg: {leg:"..."} */
+const DAYS = [
+ {d:"17",wd:"พฤหัส",city:"bkk",title:"ออกเดินทางจากกรุงเทพฯ",sum:"เช็คอิน TG930 คืนนี้ นอนบนเครื่อง",items:[
+   ["~21:00","สนามบินสุวรรณภูมิ","เช็คอิน TG930 · เคาน์เตอร์เปิด 3 ชม. ก่อนบิน · พกพาสปอร์ต + เอกสารปรินต์"]
+ ]},
+ {d:"18",wd:"ศุกร์",city:"par",title:"ถึงปารีส · วันพักฟื้น",sum:"ลง CDG 06:50 → โรงแรม → เดินเล่นเบา ๆ → ไอเฟลกะพริบ",items:[
+   ["06:50","CDG Terminal 1","ลงเครื่อง ผ่าน EES + รับกระเป๋า 45–180 นาที",49.0097,2.5479],
+   {leg:"🚕 รถรับ G7 Accueil ~35–60 นาที · €72 (สำรอง: แท็กซี่ทางการ €65)"},
+   ["09:30","Hôtel Sophie Germain","ฝากกระเป๋า · เช็คอินจริง 15:00",48.8318,2.3296,"hotel"],
+   ["10:30","rue Daguerre","มื้อแรก ร้านอาหาร/เบเกอรีย่านตลาด",48.8343,2.3291],
+   ["12:00","Cimetière du Montparnasse","เดินเล่น ฟรี · ห้ามงีบในล็อบบี้",48.8381,2.3262],
+   ["15:00","กลับโรงแรม เช็คอิน","งีบไม่เกิน 1–1.5 ชม.",48.8318,2.3296,"hotel"],
+   {leg:"🚇 เมโทรสาย 6 Denfert-Rochereau → Trocadéro ~15 นาที"},
+   ["17:45","Trocadéro","ดูหอไอเฟลกะพริบทุกต้นชั่วโมง",48.8620,2.2877]
+ ]},
+ {d:"19",wd:"เสาร์",city:"par",title:"ลูฟวร์ · Tuileries · Galeries Lafayette",sum:"เริ่ม Museum Pass 09:00 ที่ลูฟวร์",items:[
+   {leg:"🚇 สาย 4 → Châtelet → สาย 1 Palais-Royal"},
+   ["09:00","Musée du Louvre","สแกน Museum Pass ครั้งแรก · 09:00–13:00",48.8606,2.3376,"book"],
+   ["14:00","ตลาดคริสต์มาส Jardin des Tuileries","เข้าฟรี มีตรวจกระเป๋า",48.8635,2.3275],
+   {leg:"🚶 เดินผ่าน Opéra ~20 นาที"},
+   ["16:10","Galeries Lafayette Haussmann","ดาดฟ้าชั้น 8 ฟรี + ต้นคริสต์มาสใต้โดม",48.8738,2.3320],
+   ["18:30","Champs-Élysées","ไฟประดับ (ถ้ายังไหว) · สาย 9 → Franklin D. Roosevelt",48.8698,2.3079]
+ ]},
+ {d:"20",wd:"อาทิตย์",city:"par",title:"แวร์ซายทั้งวัน",sum:"ถึงหน้าวังก่อน 08:50 · กลับ ~17:20",items:[
+   {leg:"🚇 สาย 4 → Saint-Michel–Notre-Dame → RER C → Versailles Château Rive Gauche (~1 ชม.)"},
+   ["09:00","Château de Versailles","จองรอบที่ chateauversailles.fr (ใช้ Museum Pass)",48.8049,2.1204,"book"],
+   ["13:00","Trianon + Hameau de la Reine","ไม่ต้องจอง เดินจากวัง 25–30 นาที",48.8156,2.1097],
+   ["14:30","สวนแวร์ซาย","ฟรีช่วงหน้าหนาว น้ำพุไม่เปิด",48.8077,2.1137],
+   {leg:"🚆 RER C กลับ → สาย 4"},
+   ["19:00","มื้อเย็นแถว rue Daguerre","ซักผ้ารอบแรกที่โรงแรม",48.8343,2.3291]
+ ]},
+ {d:"21",wd:"จันทร์",city:"par",title:"Île de la Cité · ย่านละติน · ล่องเรือแซน",sum:"ประชุม 08:00 แล้วออก · คืนนี้แพ็คกระเป๋า",items:[
+   {leg:"🚇 สาย 4 Mouton-Duvernet → Cité (ตรง)"},
+   ["08:35","Notre-Dame de Paris","ฟรี · จองรอบในแอปทางการ",48.8530,2.3499,"book"],
+   ["09:30","Sainte-Chapelle","ต้องจองรอบ · มีจุดตรวจ 15–20 นาที",48.8554,2.3450,"book"],
+   ["11:00","Conciergerie","ต้องจองรอบ",48.8561,2.3458,"book"],
+   ["13:15","Shakespeare and Company + ย่านละติน","rue Saint-Séverin · Place Saint-Michel",48.8526,2.3471],
+   ["15:00","Panthéon","ไม่ต้องจอง",48.8462,2.3464],
+   ["18:00","ล่องเรือ Vedettes du Pont Neuf","€15 ออนไลน์ · ท่า Square du Vert-Galant",48.8576,2.3401]
+ ]},
+ {d:"22",wd:"อังคาร",city:"stg",title:"Orsay → TGV → สตราสบูร์ก",sum:"ฝากกระเป๋าที่โรงแรม · TGV ~14:00 · เย็นเดินตลาดรอบแรก",items:[
+   ["09:30","Musée d'Orsay","จองรอบฟรี · ผู้ถือพาสเข้าประตู 1",48.8600,2.3266,"book"],
+   ["11:30","รับกระเป๋าที่ Sophie Germain","",48.8318,2.3296,"hotel"],
+   {leg:"🚇 สาย 4 → Gare de l'Est ~30 นาที"},
+   ["~14:00","Paris Gare de l'Est","TGV INOUI → Strasbourg ~1 ชม. 46 นาที (ยังไม่ได้ซื้อตั๋ว)",48.8768,2.3592,"book"],
+   ["~15:50","Gare de Strasbourg","",48.5850,7.7346],
+   {leg:"🚋 ไปโรงแรม (เช็คเส้นทางใน Google Maps)"},
+   ["16:30","ibis budget Strasbourg Centre République","เช็คอิน · ตำแหน่งบนแผนที่โดยประมาณ",48.5878,7.7552,"hotel"],
+   ["17:00","La Petite France","ตลาดรอบแรก",48.5813,7.7400],
+   ["19:00","Place Kléber","ต้นคริสต์มาสยักษ์",48.5833,7.7458]
+ ]},
+ {d:"23",wd:"พุธ",city:"stg",title:"สตราสบูร์กเต็มวัน",sum:"มหาวิหาร · นาฬิกาดาราศาสตร์ 12:30 · เรือ · ซักผ้าใหญ่",items:[
+   ["09:30","Cathédrale Notre-Dame de Strasbourg","เข้าฟรี",48.5819,7.7509],
+   ["12:30","นาฬิกาดาราศาสตร์","เข้าคิวตั้งแต่ ~11:45",48.5817,7.7508],
+   ["14:00","ระเบียงชมวิวมหาวิหาร","~330 ขั้น",48.5819,7.7509],
+   ["15:00","เรือ Batorama","~1 ชม. มีฮีตเตอร์",48.5812,7.7498],
+   ["16:30","ตลาด Place Broglie (Christkindelsmärik)","ตลาดเก่าแก่ที่สุด",48.5848,7.7500],
+   ["17:30","Square Louise Weiss","ของฝากจากผู้ผลิตท้องถิ่น",48.5797,7.7424]
+ ]},
+ {d:"24",wd:"พฤหัส",city:"stg",title:"คริสต์มาสอีฟ · มิสซาเที่ยงคืน",sum:"ซื้อเสบียงให้พอ 25–26 ก่อน 16:00 · แทรมหยุด ~19:00",items:[
+   ["09:30","ย่าน Neustadt","Place de la République · Palais du Rhin (มรดกโลก)",48.5881,7.7566],
+   ["11:30","ตลาดที่ยังไม่ได้ไป + ของฝาก","",48.5833,7.7458],
+   ["14:30","ภารกิจเสบียง","อาหารเช้า 25–26 + ของกินบนรถไฟ 26",48.5840,7.7470,"must"],
+   ["17:00","ตลาดชั่วโมงสุดท้าย","ปิด ~18:00",48.5819,7.7509],
+   ["23:00","มหาวิหาร · มิสซาเที่ยงคืน","ไปถึงก่อน 45–60 นาที · รอบ 17:00 เป็นทางเลือก",48.5819,7.7509]
+ ]},
+ {d:"25",wd:"ศุกร์",city:"col",title:"วันคริสต์มาส · เดย์ทริปโคลมาร์",sum:"TER ไป-กลับ · ร้านค้าส่วนใหญ่ปิด",items:[
+   {leg:"🚆 TER Strasbourg → Colmar 25–35 นาที (~10:00) · ตารางวันหยุด"},
+   ["11:00","Place des Dominicains + Ancienne Douane","ตลาดงานฝีมือและอาหาร · Koïfhus",48.0789,7.3567],
+   ["13:00","Marché Gourmand, Place de la Cathédrale","มื้อเที่ยงในร่ม",48.0773,7.3577],
+   ["14:00","Petite Venise","",48.0735,7.3610],
+   ["16:30","Place Rapp","ไฟติด · ชิงช้าสวรรค์ · ลานสเก็ต",48.0775,7.3540],
+   {leg:"🚆 TER กลับ ~20:00–20:30"}
+ ]},
+ {d:"26",wd:"เสาร์",city:"int",title:"สตราสบูร์ก → บาเซิล → อินเทอร์ลาเคน",sum:"TER 10:51 · ต่อ IC 13:30 · เช็คอิน 16:00",items:[
+   ["10:51","Gare de Strasbourg","TER200 → Basel SBB (ยังไม่ได้ซื้อตั๋ว)",48.5850,7.7346,"book"],
+   ["12:08","Basel SBB","ซื้อเสบียง ถอน CHF · เปลี่ยนโถงฝรั่งเศส→สวิส 25–30 นาที",47.5476,7.5896],
+   {leg:"🚆 IC61 13:30 → Interlaken Ost 15:28 (Half Fare)"},
+   ["15:28","Interlaken Ost","",46.6905,7.8691],
+   ["16:00","Backpackers Villa Sonnenhof","เช็คอิน 16:00–22:00 เท่านั้น",46.6866,7.8622,"hotel"],
+   ["17:00","Top of Europe Magic Park (Kursaal)","ลานน้ำแข็ง ตลาดเล็ก",46.6880,7.8595]
+ ]},
+ {d:"27",wd:"อาทิตย์",city:"int",title:"Jungfraujoch",sum:"ดูเว็บแคม 07:00 ก่อนตัดสินใจ · ขบวน 07:34",items:[
+   {leg:"🚆 07:34 Interlaken Ost → Grindelwald Terminal"},
+   ["08:10","Grindelwald Terminal","ต่อ Eiger Express",46.6245,8.0410],
+   ["08:40","Eigergletscher","ต่อ Jungfraubahn",46.5751,7.9741],
+   ["09:11","Jungfraujoch 3,454 ม.","Sphinx · Ice Palace · อยู่ 2–3 ชม. · Half Fare CHF 112.20",46.5475,7.9853,"book"],
+   {leg:"🚆 ลง 12:15 หรือ 12:45 → Interlaken ~14:22"},
+   ["15:00","Höheweg + Magic Park","พัก · เก็บกระเป๋า",46.6880,7.8595]
+ ]},
+ {d:"28",wd:"จันทร์",city:"luz",title:"อินเทอร์ลาเคน → ลูเซิร์น",sum:"Luzern-Interlaken Express 10:04 · นั่งฝั่งขวา",items:[
+   ["10:04","Interlaken Ost","Luzern-Interlaken Express ~1 ชม. 50 นาที",46.6905,7.8691],
+   ["11:55","Luzern","",47.0502,8.3102],
+   ["12:00","Hotel Alpina Luzern","ฝากกระเป๋า · เช็คอิน 15:00",47.0489,8.3083,"hotel"],
+   ["13:00","Chapel Bridge (Kapellbrücke)","",47.0516,8.3075],
+   ["14:00","Lion Monument","",47.0585,8.3104],
+   ["14:30","Museggmauer","เดินด้านนอกกำแพง",47.0553,8.3060],
+   ["15:30","Ice Magic, Europaplatz","ลานสเก็ต เข้าฟรี",47.0507,8.3118]
+ ]},
+ {d:"29",wd:"อังคาร",city:"luz",title:"Rigi",sum:"ตัดสินใจ Rigi / Pilatus / Verkehrshaus จากพยากรณ์ · เช็คอินออนไลน์ TG971",items:[
+   {leg:"🚆 ~08:45 IR → Arth-Goldau 26–32 นาที"},
+   ["09:20","Arth-Goldau","ต่อรถไฟฟันเฟือง · Rigi Day Pass CHF 42",47.0490,8.5480],
+   ["10:15","Rigi Kulm 1,798 ม.","อยู่บนยอด ~4 ชม. · ลง 14:48",47.0565,8.4851],
+   {leg:"🚆 IR 32 Arth-Goldau → Luzern ~16:20"},
+   ["17:00","Luzern","ซื้อของฝาก · แพ็คกระเป๋า · ชั่งไม่เกิน 23 กก.",47.0502,8.3102]
+ ]},
+ {d:"30",wd:"พุธ",city:"luz",title:"ลูเซิร์น → ซูริก → กรุงเทพฯ",sum:"รถไฟ ~08:35 → สนามบิน · TG971 13:15",items:[
+   ["08:00","เช็คเอาต์ Hotel Alpina","",47.0489,8.3083,"hotel"],
+   ["08:35","Luzern","IR → Zürich Flughafen ~1 ชม. (อาจต้องเปลี่ยนที่ Zürich HB)",47.0502,8.3102],
+   ["09:45","Zürich Airport","โหลดกระเป๋า · EES ขาออก",47.4504,8.5623],
+   ["13:15","TG971 ออก","",47.4504,8.5623]
+ ]},
+ {d:"31",wd:"พฤหัส",city:"bkk",title:"ถึงกรุงเทพฯ",sum:"~06:10 สุวรรณภูมิ (ต้องเช็ค)",items:[
+   ["~06:10","สนามบินสุวรรณภูมิ","เก็บใบเสร็จ/เอกสารเผื่อเคลมประกัน"]
+ ]}
+];
+
+/* ---------- RENDER ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+// route
+$("#route").innerHTML=[
+ ["bkk","กรุงเทพฯ","17 ธ.ค."],["par","ปารีส","4 คืน"],["stg","สตราสบูร์ก","4 คืน"],["int","อินเทอร์ลาเคน","2 คืน"],["luz","ลูเซิร์น","2 คืน"],["bkk","ซูริก → BKK","30 ธ.ค."]
+].map(([c,n,s])=>`<div class="stop" style="--c:${CITY[c].c}"><i></i><b>${n}</b><span>${s}</span></div>`).join("");
+
+// hotels
+$("#hotelList").innerHTML=HOTELS.map((h,i)=>`
+ <div class="card hotel" style="--c-soft:${CITY[h.city].c}22">
+  <div class="ic">${h.ic}</div>
+  <div>
+   <h3>${esc(h.name)}</h3>
+   <div class="row"><span>📍 ${esc(h.addr)}</span></div>
+   <div class="dates"><div>เช็คอิน<b>${h.in}</b></div><div>เช็คเอาต์<b>${h.out}</b></div></div>
+   <div class="row" style="margin-top:8px"><span><b>${h.n} คืน</b> · ${CITY[h.city].name}</span><span>💳 ${h.price}</span><span class="pill ok">ยกเลิกฟรีถึง ${h.free}</span></div>
+   <div class="row" style="margin-top:4px"><span>${esc(h.note)}</span></div>
+   <div class="row" style="margin-top:6px"><a href="#" data-hotel="${i}">ดูบนแผนที่</a> · <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(h.name+' '+(h.approx?'Strasbourg':h.addr))}">เปิด Google Maps ↗</a></div>
+  </div>
+ </div>`).join("");
+
+// work table
+const lvlName={ok:"สะดวก",warn:"ได้บ้าง",bad:"ไม่สะดวก",off:"วันหยุด"};
+$("#workTable tbody").innerHTML=DAYS.map(D=>{const w=WORK[D.d];
+ return `<tr><td>${D.wd.slice(0,2)}. ${D.d} ธ.ค.</td><td>${CITY[D.city].name}</td><td class="tz">${w.eu}</td><td class="tz">${w.th}</td><td><span class="pill ${w.lvl==='off'?'':w.lvl}">${lvlName[w.lvl]}</span> ${esc(w.msg)}</td></tr>`}).join("");
+
+// days
+let gid=0; const PL=[]; // all places with coords
+$("#chips").innerHTML=`<button class="on" data-day="all"><i style="--c:var(--ink)"></i>ทั้งหมด</button>`+DAYS.map(D=>`<button data-day="${D.d}" style="--c:${CITY[D.city].c}"><i></i>${D.d} ธ.ค.</button>`).join("");
+$("#days").innerHTML=DAYS.map(D=>{
+ const c=CITY[D.city].c; let n=0; const w=WORK[D.d];
+ const body=D.items.map(it=>{
+  if(it.leg) return `<div class="leg">${esc(it.leg)}</div>`;
+  const [t,title,note,lat,lng,flag]=it; const has=lat!=null;
+  let numHtml;
+  if(has){n++; const id=gid++; PL.push({id,day:D.d,n,title,note,t,ll:[lat,lng],c,flag}); numHtml=`<div class="num" data-pid="${id}">${n}</div>`;}
+  else numHtml=`<div class="num text">•</div>`;
+  const tag=flag==="book"?'<span class="tag book">ต้องจอง/ซื้อ</span>':flag==="must"?'<span class="tag must">ห้ามพลาด</span>':flag==="hotel"?'<span class="tag">ที่พัก</span>':"";
+  return `<div class="place">${numHtml}<div class="pc" ${has?`data-pid="${gid-1}"`:""}><div class="tm">${esc(t)}</div><h4>${esc(title)}${tag}</h4>${note?`<p>${esc(note)}</p>`:""}</div></div>`;
+ }).join("");
+ const wb = w.lvl==="off" ? `<div class="workbar none">💼 วันหยุด · ${esc(w.msg)}</div>`
+   : `<div class="workbar">💼 <span><b>${lvlName[w.lvl]}</b> · ยุโรป ${w.eu} = ไทย ${w.th}<br><span class="sub">${esc(w.msg)}</span></span></div>`;
+ return `<div class="day" id="day-${D.d}" data-day="${D.d}" style="--c:${c}">
+   <div class="dayhead"><span class="dot"></span><div class="t"><h3>${D.wd} ${D.d} ธ.ค. · ${esc(D.title)}</h3><p class="daysum">${CITY[D.city].name} · ${esc(D.sum)}</p></div><span class="chev">▾</span></div>
+   <div class="body">${wb}${body}</div></div>`;
+}).join("");
+
+/* ---------- MAP ---------- */
+let map, markers={}, lines={}, hotelMk=[];
+function mkIcon(n,c,hl){return L.divIcon({className:"",html:`<div class="mk${hl?' hl':''}" style="--c:${c}"><span>${n}</span></div>`,iconSize:hl?[36,36]:[28,28],iconAnchor:hl?[18,36]:[14,28],popupAnchor:[0,-28]});}
+function initMap(){
+ if(!window.L){$("#map").innerHTML='<p style="padding:20px">โหลดแผนที่ไม่สำเร็จ</p>';return;}
+ map=L.map("map",{zoomControl:true,scrollWheelZoom:true});
+ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+ const byDay={};
+ PL.forEach(p=>{
+  const m=L.marker(p.ll,{icon:mkIcon(p.n,p.c)}).addTo(map).bindPopup(`<b>${esc(p.title)}</b><br><span style="color:#667085">${esc(p.t)} · ${p.day} ธ.ค.</span>${p.note?'<br>'+esc(p.note):''}`);
+  m.on("click",()=>activate(p.id,false));
+  markers[p.id]={m,p}; (byDay[p.day]=byDay[p.day]||[]).push(p.ll);
+ });
+ Object.entries(byDay).forEach(([d,pts])=>{const c=DAYS.find(x=>x.d===d); lines[d]=L.polyline(pts,{color:CITY[c.city].c,weight:3,opacity:.6,dashArray:"6 6"}).addTo(map);});
+ showDay("all",false);
+ // map control: city quick zoom
+ const ctl=$("#mapctl");
+ [["all","ทั้งทริป"],["par","ปารีส"],["stg","อัลซาส"],["int","สวิส"]].forEach(([k,l])=>{const b=document.createElement("button");b.type="button";b.textContent=l;b.dataset.zone=k;b.onclick=()=>zone(k);ctl.appendChild(b);});
+}
+function boundsFor(ids){return L.latLngBounds(ids.map(i=>markers[i].p.ll));}
+function zone(k){
+ const sets={all:PL,par:PL.filter(p=>+p.day<=22&&p.ll[1]<3),stg:PL.filter(p=>p.ll[1]>7&&p.ll[1]<7.8&&p.ll[0]>48),int:PL.filter(p=>p.ll[0]<47.6&&p.ll[1]>7.5)};
+ document.querySelectorAll("#mapctl button").forEach(b=>b.classList.toggle("on",b.dataset.zone===k));
+ const s=sets[k]; if(s.length) map.fitBounds(L.latLngBounds(s.map(p=>p.ll)),{padding:[40,40],maxZoom:14});
+}
+let curDay="all";
+function showDay(d,scroll){
+ curDay=d;
+ document.querySelectorAll("#chips button").forEach(b=>b.classList.toggle("on",b.dataset.day===d));
+ if(!map) return;
+ PL.forEach(p=>{const el=markers[p.id].m.getElement(); if(el) el.classList.toggle("dim",d!=="all"&&p.day!==d);});
+ Object.entries(lines).forEach(([k,l])=>l.setStyle({opacity:d==="all"||k===d?.6:.08}));
+ const ids=PL.filter(p=>d==="all"||p.day===d).map(p=>p.id);
+ if(ids.length) map.fitBounds(boundsFor(ids),{padding:[50,50],maxZoom:15});
+ if(scroll&&d!=="all"){const el=document.getElementById("day-"+d); el.classList.remove("closed"); el.scrollIntoView({behavior:"smooth",block:"start"});}
+}
+let lastHl=null;
+function activate(id,pan=true){
+ const {m,p}=markers[id]||{}; if(!m) return;
+ if(lastHl!=null&&markers[lastHl]) markers[lastHl].m.setIcon(mkIcon(markers[lastHl].p.n,markers[lastHl].p.c));
+ m.setIcon(mkIcon(p.n,p.c,true)); m.setZIndexOffset(1000); lastHl=id;
+ document.querySelectorAll(".pc.active").forEach(e=>e.classList.remove("active"));
+ const pc=document.querySelector(`.pc[data-pid="${id}"]`); if(pc){pc.classList.add("active"); if(!pan) pc.scrollIntoView({behavior:"smooth",block:"center"});}
+ if(pan){ if(isMobile()) openMap(); map.setView(p.ll,Math.max(map.getZoom(),15),{animate:true}); m.openPopup(); }
+}
+const isMobile=()=>matchMedia("(max-width:860px)").matches;
+function openMap(){document.body.classList.add("showmap"); setTimeout(()=>map&&map.invalidateSize(),60);}
+function closeMap(){document.body.classList.remove("showmap");}
+
+/* ---------- EVENTS ---------- */
+document.addEventListener("click",e=>{
+ const pid=e.target.closest("[data-pid]"); if(pid){activate(+pid.dataset.pid,true);return;}
+ const chip=e.target.closest("#chips button"); if(chip){showDay(chip.dataset.day,true); if(isMobile()&&chip.dataset.day!=="all"){} return;}
+ const head=e.target.closest(".dayhead"); if(head){const day=head.parentElement; day.classList.toggle("closed"); if(!day.classList.contains("closed")) showDay(day.dataset.day,false); return;}
+ const h=e.target.closest("[data-hotel]"); if(h){e.preventDefault(); const H=HOTELS[+h.dataset.hotel]; if(isMobile()) openMap(); map.setView(H.ll,15); const p=PL.find(p=>p.title===H.name); if(p) activate(p.id,true); return;}
+});
+$("#fab").onclick=()=>{openMap(); setTimeout(()=>showDay(curDay,false),120);};
+window.addEventListener("resize",()=>{ if(map){ map.invalidateSize(); } });
+$("#mapclose").onclick=closeMap;
+
+// tabs active state on scroll (desktop scrolls .side, mobile scrolls window)
+const secs=["overview","flights","hotels","work","itinerary"].map(id=>document.getElementById(id));
+const scroller=()=>isMobile()?window:$("#side");
+function onScroll(){
+ const top=isMobile()?window.scrollY:$("#side").scrollTop; let cur="overview";
+ secs.forEach(s=>{ if(s.offsetTop-80<=top) cur=s.id; });
+ document.querySelectorAll("#tabs a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur));
+ // desktop: follow day in view on the map
+ if(!isMobile()&&map){
+  const days=[...document.querySelectorAll(".day")]; const sideTop=$("#side").getBoundingClientRect().top;
+  let inView=null; days.forEach(d=>{const r=d.getBoundingClientRect(); if(r.top-sideTop<220 && r.bottom-sideTop>120) inView=d.dataset.day;});
+  if(inView&&inView!==curDay&&$("#itinerary").getBoundingClientRect().top<200) showDay(inView,false);
+ }
+}
+let raf; const sched=()=>{cancelAnimationFrame(raf); raf=requestAnimationFrame(onScroll);};
+$("#side").addEventListener("scroll",sched,{passive:true}); window.addEventListener("scroll",sched,{passive:true});
+
+/* ---------- CLOCKS & COUNTDOWN ---------- */
+function fmt(tz,opt){return new Intl.DateTimeFormat("th-TH",Object.assign({timeZone:tz},opt)).format(new Date());}
+function tick(){
+ $("#tBkk").textContent=fmt("Asia/Bangkok",{hour:"2-digit",minute:"2-digit",hour12:false});
+ $("#dBkk").textContent=fmt("Asia/Bangkok",{weekday:"short",day:"numeric",month:"short"});
+ $("#tEu").textContent=fmt("Europe/Paris",{hour:"2-digit",minute:"2-digit",hour12:false});
+ $("#dEu").textContent=fmt("Europe/Paris",{weekday:"short",day:"numeric",month:"short"});
+ const dep=Date.parse("2026-12-18T00:05:00+07:00"), now=Date.now(), dd=Math.ceil((dep-now)/864e5);
+ $("#cd").textContent = dep>now ? `⏳ อีก ${dd} วัน` : (now<Date.parse("2026-12-31T12:00:00+07:00")?"🟢 กำลังเดินทาง":"✅ จบทริปแล้ว");
+}
+tick(); setInterval(tick,20000);
+
+/* ---------- INIT ---------- */
+initMap();
+// during the trip: open today's day
+(function(){
+ const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Paris"}).format(new Date()); // YYYY-MM-DD
+ const m=today.match(/^2026-12-(\d\d)$/);
+ DAYS.forEach(D=>{ if(m && D.d!==m[1]) document.getElementById("day-"+D.d).classList.add("closed"); });
+ if(m && document.getElementById("day-"+m[1])) setTimeout(()=>showDay(m[1],true),300);
+})();
+</script>
+</body>
+</html>
