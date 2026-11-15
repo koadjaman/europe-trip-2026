@@ -99,6 +99,13 @@ tr.total td{font-weight:700;background:var(--gold-soft)}
 .now h2{margin-bottom:.3em}
 .now ol{padding-left:1.3em}
 .now li{margin:.45em 0}
+.todaybox h3{font-size:1.02rem;margin:.9em 0 .2em;color:var(--ink)}
+.todaybox .ck{padding:7px 0}
+.todaybox .due{display:inline-block;font-size:.76rem;font-weight:700;padding:1px 8px;border-radius:999px;margin-left:6px;background:var(--chip);color:var(--muted);white-space:nowrap}
+.todaybox .due.late{background:var(--accent);color:#fff}
+.todaybox .due.soon{background:var(--gold-soft);color:var(--ink)}
+.todaybox .go{font-size:.84rem;margin-left:6px;white-space:nowrap}
+.todaybox .more{font-size:.9rem;margin-top:8px}
 /* days */
 .city{border-radius:16px;padding:18px 16px;margin:24px 0 8px;color:#fff;background:linear-gradient(135deg,var(--pine),#1e3a2e)}
 .city.paris{background:linear-gradient(135deg,rgba(46,84,67,.92),rgba(30,58,46,.88)),url("https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg?width=1200") center 40%/cover,linear-gradient(135deg,#2e5443,#1e3a2e)}
@@ -169,7 +176,7 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
       <div><b id="cd-m">–</b><span>นาที</span></div>
       <div><b id="cd-s">–</b><span>วินาที</span></div>
     </div>
-    <div style="font-size:.85rem;opacity:.9" id="cd-label">นับถอยหลังถึง TG930 ออก 18 ธ.ค. 00:05 เวลากรุงเทพฯ</div>
+    <div style="font-size:.85rem;opacity:.9" id="cd-label">นับถอยหลังถึง TG930 ออก 00:05 คืนวันพฤหัสที่ 17 ธ.ค. (เวลาบนตั๋ว 18 ธ.ค.)</div>
     <div class="route" aria-label="เส้นทาง">
       <span class="stop">🇹🇭 กรุงเทพฯ</span><span class="arr">→</span>
       <span class="stop">🗼 ปารีส <b>4 คืน</b></span><span class="arr">→</span>
@@ -185,7 +192,7 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
 
 <nav class="top" aria-label="สารบัญ">
   <div class="wrap">
-    <a href="https://koadjaman.github.io/SofteverAroundTheWorld/">👥 หน้าทีม</a><a href="#now">ตอนนี้</a><a href="#news">ข่าวด่วน</a><a href="#todo">ต้องทำต่อ</a><a href="#shop">ต้องซื้อ</a>
+    <a href="https://koadjaman.github.io/SofteverAroundTheWorld/">👥 หน้าทีม</a><a href="#now">ตอนนี้</a><a href="#news">ข่าวด่วน</a><a href="#todo">ต้องทำต่อ</a><a href="#work">งานก่อนลา</a><a href="#shop">ต้องซื้อ</a>
     <a href="#overview">ภาพรวม</a><a href="#days">รายวัน</a><a href="#tickets">บัตร/ตั๋ว</a><a href="#budget">งบ</a>
     <a href="#holiday">24–26 ธ.ค.</a><a href="#jungfrau">Jungfrau</a><a href="#packing">แพ็คของ</a>
     <a href="#safety">ปลอดภัย</a><a href="#apps">แอป</a><a href="#links">ลิงก์</a><a href="#clips">คลิป</a>
@@ -197,16 +204,20 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
 <!-- ================= NOW ================= -->
 <section id="now" style="padding-top:0">
   <div class="now">
-    <h2>🔥 ตอนนี้ต้องทำอะไร</h2>
-    <p class="muted" style="margin-top:0">สถานะ ณ 14 พ.ย. 2026 · เหลือ 34 วันก่อนบิน · ซื้อแล้วแค่ <b>ตั๋วบิน + ที่พัก 12 คืน + ประกัน</b> นอกนั้นยังไม่ได้ซื้อเลย</p>
+    <h2>🔥 วันนี้ต้องทำอะไร</h2>
+    <p class="muted" style="margin-top:0">อัปเดต อา. 15 พ.ย. 2026 · บินคืนวันพฤหัสที่ 17 ธ.ค. (TG930 ออก 00:05) · ซื้อแล้ว: <b>ตั๋วบิน + ที่พัก 12 คืน + ประกัน + วีซ่าผ่านแล้ว</b> · งานก่อนลายังไม่ได้เริ่ม</p>
+    <div id="todayList" class="todaybox" aria-live="polite"></div>
+    <noscript>
     <ol>
       <li><b>ซื้อ TGV 22 ธ.ค. Paris Est → Strasbourg วันนี้</b> · ขบวน INOUI ราว 14:00 (~1 ชม. 46 นาที ถึงไม่เกิน 17:00) · <a href="https://www.sncf-connect.com" target="_blank" rel="noopener">sncf-connect.com</a> · ราคาตอนนี้ €70–120 (ประมาณ) · <b>ห้ามเลือก OUIGO</b></li>
       <li><b>สมัคร SwissPass แล้วซื้อ Half Fare (เริ่ม 26 ธ.ค.) + ตั๋วสวิส 3 ใบ</b> (Basel→Interlaken 26 · Interlaken→Luzern 28 · Luzern→Zürich Flughafen 30) + <b>TER Strasbourg→Basel 26 ธ.ค.</b> · <a href="https://www.sbb.ch" target="_blank" rel="noopener">sbb.ch</a> / SNCF Connect · CHF 150 + 64.50 + €17–25</li>
       <li><b>จองรถรับ G7 Accueil ที่ CDG</b> · <a href="https://www.g7.fr" target="_blank" rel="noopener">g7.fr</a> · ใส่เลขไฟลท์ TG930 · ซื้อเวลารอเพิ่มให้ครบ 90–120 นาทีหลังเครื่องลง · €72 (ประมาณ)</li>
       <li><b>ซื้อ Paris Museum Pass 96 ชม. แล้วจองรอบฟรี 5 แห่ง</b> · <a href="https://www.parismuseumpass.fr" target="_blank" rel="noopener">parismuseumpass.fr</a> €105 · Louvre 19 · Versailles 20 · Sainte-Chapelle + Conciergerie 21 · Orsay 22</li>
       <li><b>ส่งอีเมลโรงแรม 4 แห่ง + ตัดสินใจเรื่องโรงแรมสตราสบูร์ก</b> · ibis budget แพง €245/คืน (เพดานแผน €135) → หาที่ถูกกว่าที่มีห้องน้ำในตัว + ยกเลิกฟรีได้ ถ้าเจอก่อน <b>11 ธ.ค. 23:59</b> ให้จองใหม่ก่อนแล้วค่อยยกเลิกของเดิม ถ้าไม่เจอ <b>เก็บไว้</b></li>
+      <li><b>เปลี่ยนรหัสผ่านเซิร์ฟเวอร์ที่เคยโพสต์ในแชททีม</b> · ดู <a href="#work">งานก่อนลา</a></li>
     </ol>
-    <p class="muted" style="margin-bottom:0">รายการเต็มพร้อมเช็คบ็อกซ์อยู่ใน <a href="#todo">ต้องทำต่อ</a> · ของที่ต้องจ่ายเพิ่มอยู่ใน <a href="#shop">ต้องซื้ออะไรเพิ่ม</a></p>
+    </noscript>
+    <p class="muted" style="margin-bottom:0">รายการนี้เลือกให้อัตโนมัติตามวันที่ในเครื่อง ติ๊กแล้วหายไป · รายการเต็มอยู่ใน <a href="#todo">ต้องทำต่อ</a> และ <a href="#work">งานก่อนลา</a> · ของที่ต้องจ่ายเพิ่มอยู่ใน <a href="#shop">ต้องซื้ออะไรเพิ่ม</a></p>
   </div>
 </section>
 
@@ -251,8 +262,6 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
     <label class="ck"><input type="checkbox" data-k="t-mail-villa"><div><b>อีเมล Backpackers Villa Sonnenhof</b>: ยืนยันห้องมีห้องน้ำในตัว · ฝากกระเป๋าก่อน 16:00 วันที่ 26 · ฝากกระเป๋าหลังเช็คเอาต์ 10:00 วันที่ 28 (กรณีเลื่อน Jungfraujoch) · ห้องซักผ้า · ห่ออาหารเช้าวันที่ 27 ได้ไหม · ไดร์เป่าผม · ตู้เซฟ<span class="meta">villa.ch · +41 33 826 71 71</span></div></label>
     <label class="ck"><input type="checkbox" data-k="t-mail-alpina"><div><b>อีเมล Hotel Alpina Luzern</b>: ฝากกระเป๋าเที่ยงวันที่ 28 ที่ไหน (ช่วง ธ.ค. ทีม Hotel Monopol ดูแลแทน 24 ชม.) · รับกุญแจที่ไหน · ขอ Visitor Card Lucerne ตั้งแต่เที่ยง · จองอาหารเช้าล่วงหน้า CHF 20 (หน้างาน CHF 30) หรือไม่<span class="meta">info@alpina-luzern.ch · +41 41 210 00 77</span></div></label>
     <label class="ck"><input type="checkbox" data-k="t-sbg-rebook"><div><b>ทบทวนโรงแรมสตราสบูร์ก</b> · ตอนนี้ €981.90 / 4 คืน = <b>€245/คืน</b> เกินเพดานแผน €135/คืน ราว €440 (~17,000 บาท)<span class="meta">Booking.com · ตัดสินใจ: หาห้องที่ ≤€135/คืน + ห้องน้ำในตัว + ยกเลิกฟรี + อยู่ในเมือง · เจอเมื่อไร<b>จองใหม่ก่อน แล้วค่อยยกเลิกของเดิม</b> (ยกเลิกฟรีถึง 11 ธ.ค. 23:59) · ไม่เจอ = เก็บของเดิมไว้ ไม่ต้องเสียเวลาต่อ</span></div></label>
-    <label class="ck"><input type="checkbox" data-k="t-teams"><div><b>ปฏิเสธประชุม Teams ที่ยังค้างในวันลา</b>: 18 ธ.ค. 10:00 · 21 ธ.ค. 14:00 · 28 ธ.ค. 14:00 + ตั้ง out-of-office auto-reply 18–30 ธ.ค.<span class="meta">Outlook/Teams · ฟรี · ทำไม: กันโดนเรียกระหว่างเที่ยว</span></div></label>
-    <label class="ck"><input type="checkbox" data-k="t-leave31"><div><b>เช็คว่าวันที่ 31 ธ.ค. ต้องลาเพิ่มไหม</b> วันลาจบ 30 ธ.ค. แต่เครื่องลง 05:50 วันที่ 31 ธ.ค. (วันหยุด)<span class="meta">ระบบลาของบริษัท · ทำไม: วันลาไม่ครอบคลุมวันกลับ</span></div></label>
     <label class="ck"><input type="checkbox" data-k="t-bag"><div><b>เช็คสิทธิกระเป๋าในใบจองตั๋ว</b> (23 หรือ 30 กก. · ระบบชิ้นหรือชั่งน้ำหนัก) (เวลาถึง TG971 คือ 05:50 วันที่ 31 ธ.ค. ตามใบตั๋วแล้ว)<span class="meta">thaiairways.com Manage Booking · ทำไม: ซื้อน้ำหนักเพิ่มออนไลน์ถูกกว่าที่เคาน์เตอร์</span></div></label>
   </div>
 
@@ -308,6 +317,68 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
     <label class="ck"><input type="checkbox" data-k="t-ap3"><div><b>ลงที่ CDG: เปิดดาต้าของ eSIM ตอนถึงประตูเครื่อง</b> ก่อนเข้าแถว EES · ส่งข้อความหาคนขับ G7</div></label>
     <label class="ck"><input type="checkbox" data-k="t-ap4"><div><b>ไปจุดนัด G7: ชั้น Departures ประตู 2 ด้านนอก</b> (ขึ้นลิฟต์ เผื่อ 10 นาที) · ปฏิเสธทุกคนที่เข้ามาชวนในโถงขาเข้า</div></label>
   </div>
+</section>
+
+<!-- ================= WORK HANDOVER ================= -->
+<section id="work">
+  <h2>💼 งานก่อนลา (ส่งต่องาน)</h2>
+  <p class="muted">ลา 18–30 ธ.ค. (9 วันทำงาน) · กลับมาทำงาน จ. 4 ม.ค. 2027 · <b>ลูกค้า TOP freeze 21 ธ.ค. – 11 ม.ค.</b> CAB ครั้งสุดท้าย อ. 15 ธ.ค. · ต้อง deploy ก่อน 20 ธ.ค. · ข้อมูลจากการอ่านเมล ปฏิทิน Slack และ Softever Benefits เมื่อ 14 พ.ย.</p>
+  <div class="warnbox"><b>ยังไม่ได้ยื่นลาและยังไม่ได้ตั้งคนอนุมัติแทน</b> ในระบบ Softever Benefits · โควตา: พักร้อน 16 วัน · ท่องเที่ยวต่างประเทศ 3 วัน · แผน: ท่องเที่ยวต่างประเทศ 3 วัน (18, 21, 22 ธ.ค.) + พักร้อน 6 วัน (23–30 ธ.ค.) · ตั้งคนอนุมัติทีม QA แทนเป็นกุ๊ก 18 ธ.ค. – 3 ม.ค.</div>
+
+  <div class="card week">
+    <h3>🔴 สัปดาห์นี้ (16–22 พ.ย.) <span class="prog"></span></h3>
+    <label class="ck"><input type="checkbox" data-k="h-pw"><div><b>เปลี่ยนรหัสผ่านเซิร์ฟเวอร์ (RDP/SSH) ที่เคยโพสต์เป็นข้อความธรรมดาในแชททีม</b> ลบข้อความเดิม ย้ายไปเก็บใน password manager/vault<span class="meta">รายละเอียดอยู่ในไฟล์ handover-plan.md ในเครื่อง · ทำไม: หลุดมาตั้งแต่ 29 ส.ค.</span></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-chev"><div><b>ตาม Chevalier เรื่องใบ SSL ที่สัญญาว่าจะส่งภายใน 18 พ.ย.</b><span class="meta">ทำไม: ต้องต่ออายุ SSL ช่วง 12–18 ธ.ค. ก่อน freeze</span></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-leave"><div><b>ยื่นลาใน Softever Benefits</b> 18–22 ธ.ค. ท่องเที่ยวต่างประเทศ 3 วัน + 23–30 ธ.ค. พักร้อน 6 วัน<span class="meta">วันที่ 31 ธ.ค. เป็นวันหยุด ไม่ต้องลาเพิ่ม · 1 ม.ค. ยังไม่มีในปฏิทินวันหยุด 2027 ของระบบ</span></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-deleg"><div><b>ตั้งคนอนุมัติแทน (ลา OT wallet) ของทีม QA → กุ๊ก</b> 18 ธ.ค. – 3 ม.ค.<span class="meta">ทีมไม่ใช่หัวหน้าทีม ระบบไม่ยอมให้เป็นผู้อนุมัติ</span></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-standby"><div><b>ขอให้จัดตาราง standby ปลาย ธ.ค.</b> โดยเฉพาะ 28–30 ธ.ค.<span class="meta">ตอนนี้ยังไม่ประกาศตาราง</span></div></label>
+  </div>
+
+  <div class="card week">
+    <h3>🟠 ภายใน 1 ธ.ค. <span class="prog"></span></h3>
+    <label class="ck"><input type="checkbox" data-k="h-eshift"><div><b>ขอใบ SSL ใหม่ของ E-Shift PRD</b> (หมดอายุ 1–2 ม.ค. · เราดูแลเองต่อจาก Taii)</div></label>
+    <label class="ck"><input type="checkbox" data-k="h-owners"><div><b>หาเจ้าของงาน LDAP (CMS / PIS Sync / CG Reporting) และ TOPLABCS Email Sender</b><span class="meta">ยังไม่รู้ว่าใครดูแล</span></div></label>
+  </div>
+
+  <div class="card week">
+    <h3>🟡 ภายใน 10 ธ.ค. <span class="prog"></span></h3>
+    <label class="ck"><input type="checkbox" data-k="h-patch"><div><b>สอนทีมเทส Windows patch รอบ ธ.ค. ของระบบ TOP ~20 ระบบ</b> ให้ checklist ต่อระบบ · ส่งบัญชีทดสอบผ่านช่องทางที่ปลอดภัย ไม่ส่งในแชท<span class="meta">ทำไม: ตอนนี้เราเป็นคนเทสคนเดียว</span></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-toptell"><div><b>แจ้งผู้ประสานงาน TOP ว่ารอบนี้ทีมเป็นคนเทส</b></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-cover"><div><b>ยืนยันว่าทีมและกุ๊กอยู่ครบช่วง 28–30 ธ.ค.</b><span class="meta">ช่วงนี้นุ๊ก (28–30) และมายด์ (30) ลาด้วย</span></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-meet"><div><b>หาคนเข้าประชุมแทน</b>: TOP operations 10:00 ศ. 18 ธ.ค. และ ศ. 1 ม.ค. → ทีม · TOP security 14:00 จ. 21 และ จ. 28 ธ.ค. → ทีมหรือกุ๊ก (ไม่งั้นแจ้งผู้จัดล่วงหน้า)</div></label>
+  </div>
+
+  <div class="card week">
+    <h3>🟢 CAB 15 ธ.ค. และสัปดาห์สุดท้าย <span class="prog"></span></h3>
+    <label class="ck"><input type="checkbox" data-k="h-cab"><div><b>อ. 15 ธ.ค. เข้า CAB ให้ครบทุกใบ</b>: E-Shift PRD SSL · LDAP CMS/PIS Sync/CG Reporting (หมด 25 ธ.ค.) · TOPLABCS Email Sender (หมด 30 ธ.ค.)<span class="meta">หลัง CAB นี้เปลี่ยนอะไรไม่ได้ถึง 11 ม.ค.</span></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-net10"><div><b>QA sign-off .NET10 go-live ให้เสร็จภายใน 15 ธ.ค.</b></div></label>
+    <label class="ck"><input type="checkbox" data-k="h-handmeet"><div><b>พ. 16 ธ.ค. ประชุมส่งงาน 30 นาทีกับทีม + กุ๊ก</b> ไล่ตามหน้านี้</div></label>
+    <label class="ck"><input type="checkbox" data-k="h-online"><div><b>ยืนยันว่า Online Driver SSL ติดตั้งแล้ว</b> (หมด 19–20 ธ.ค. · ปลาดูแล) ขอให้ยืนยันเป็นลายลักษณ์อักษร</div></label>
+    <label class="ck"><input type="checkbox" data-k="h-installed"><div><b>เช็คว่าใบ SSL/LDAP ทุกใบติดตั้งและทดสอบแล้ว</b> ก่อนออกจากออฟฟิศวันที่ 17</div></label>
+    <label class="ck"><input type="checkbox" data-k="h-ooo"><div><b>ขยาย out-of-office ใน Google Calendar ถึง 3 ม.ค.</b> (ตอนนี้จบ 30 ธ.ค.) + เปิดปฏิเสธนัดใหม่อัตโนมัติ</div></label>
+    <label class="ck"><input type="checkbox" data-k="h-autoreply"><div><b>ตั้ง auto-reply Gmail 17 ธ.ค. – 3 ม.ค.</b> เรื่อง TOP ติดต่อทีม เรื่องอนุมัติติดต่อกุ๊ก</div></label>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>ใบรับรอง / ระบบ</th><th>หมดอายุ</th><th>คนดูแล</th><th>ต้องทำ</th></tr></thead>
+    <tbody>
+      <tr><td>Online Driver (SSL)</td><td>19–20 ธ.ค.</td><td>ปลา</td><td>ติดตั้งก่อน 19 ธ.ค.</td></tr>
+      <tr><td>LDAP CMS / PIS Sync / CG Reporting</td><td>25 ธ.ค.</td><td><span class="chk">ต้องเช็ค</span></td><td>เข้า CAB 15 ธ.ค. ต่ออายุ ทดสอบ sync</td></tr>
+      <tr><td>TOPLABCS Email Sender</td><td>30 ธ.ค.</td><td><span class="chk">ต้องเช็ค</span></td><td>เข้า CAB 15 ธ.ค.</td></tr>
+      <tr><td>E-Shift PRD (SSL)</td><td>1–2 ม.ค.</td><td>ต้าร์</td><td>ขอใบต้น ธ.ค. · เข้า CAB · ติดตั้งภายใน 18 ธ.ค.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>วันที่</th><th>คนลา</th><th>คนดูแลแทน</th></tr></thead>
+    <tbody>
+      <tr><td>14 ธ.ค.</td><td>โอม</td><td>ก่อนเราลา ไม่กระทบ</td></tr>
+      <tr><td>16–18 ธ.ค.</td><td>เนย</td><td>ทีม</td></tr>
+      <tr><td>18–30 ธ.ค.</td><td>ต้าร์</td><td>ทีม (งาน TOP) · กุ๊ก (อนุมัติ)</td></tr>
+      <tr><td>28–30 ธ.ค.</td><td>นุ๊ก · มายด์ (30)</td><td>ทีม / กุ๊ก · <b>ช่วงคนน้อยที่สุด</b></td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">ติดต่อระหว่างลา: เรื่องด่วนเท่านั้น (ระบบล่ม ความปลอดภัย) ทาง Telegram/LINE · กลางวันที่ยุโรป = 15:00–03:00 เวลาไทย · วันเดินทาง 18, 22, 26, 28, 30 ธ.ค. ตอบช้า</p>
 </section>
 
 <!-- ================= SHOP ================= -->
@@ -775,7 +846,7 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="dhead"><div class="dnum"><b>31</b><span>พฤหัส</span></div><div><h4>ถึงกรุงเทพฯ</h4><div class="sun">🌅 ~06:40 (ประมาณ)</div></div></div>
     <div class="dbody">
       <ol class="tl">
-        <li class="key"><time>~06:10</time><span class="w">ถึงสุวรรณภูมิ</span><span class="m">เวลาตามแผน · เวลาจริง<span class="chk">ต้องเช็ค</span>ในใบจอง</span></li>
+        <li class="key"><time>05:50</time><span class="w">TG971 ถึงสุวรรณภูมิ</span><span class="m">ตามใบตั๋ว · วันหยุดสิ้นปี ไม่ต้องลาเพิ่ม</span></li>
         <li><time>เช้า</time><span class="w">กลับบ้าน</span><span class="m">💶 400–1,000 บาท · เก็บใบเสร็จและเอกสารดีเลย์ทุกใบไว้เคลมประกัน</span></li>
       </ol>
       <div class="warnbox">วันลาจบ 30 ธ.ค. → <b>เช็คว่าวันนี้ต้องลาเพิ่มไหม</b></div>
@@ -1255,11 +1326,68 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
     });
   });
   updateProgress();
+
+  /* today's to-do: picks unticked items whose start date has come, soonest deadline first */
+  var TASKS = [
+    ["h-pw","11-15","11-18"],["t-tgv","11-14","11-22"],["t-swisspass","11-14","11-22"],["t-swissA","11-14","11-22"],
+    ["t-ter-basel","11-14","11-22"],["t-mpass","11-14","11-22"],["t-slots","11-14","11-22"],["t-g7","11-14","11-22"],
+    ["t-esim","11-14","11-22"],["t-mail-sbg","11-14","11-22"],["t-mail-sg","11-14","11-22"],["t-mail-villa","11-14","11-22"],
+    ["t-mail-alpina","11-14","11-22"],["t-bag","11-14","11-22"],["h-chev","11-16","11-18"],["h-leave","11-16","11-25"],
+    ["h-deleg","11-16","11-25"],["h-standby","11-16","11-25"],["t-clothes","11-16","11-30"],["t-resto","11-16","11-30"],
+    ["t-colmar","11-23","11-30"],["t-antitheft","11-23","11-30"],["t-adapter","11-23","11-30"],["t-cards","11-23","11-30"],
+    ["t-embassy","11-23","11-30"],["t-doctor","11-23","11-30"],["t-checkinfo","11-25","11-30"],["h-eshift","11-23","12-01"],
+    ["h-owners","11-16","12-01"],["t-print","12-01","12-10"],["t-apps","12-01","12-10"],["t-pb","12-01","12-10"],
+    ["t-swisscheck","12-01","12-10"],["t-paristravaux","12-01","12-10"],["t-laverie","12-01","12-10"],["h-patch","12-01","12-10"],
+    ["h-toptell","12-07","12-10"],["h-cover","12-07","12-10"],["h-meet","12-01","12-10"],["t-sbg-rebook","11-14","12-11"],
+    ["t-sbgfinal","12-08","12-11"],["t-1312","12-13","12-14"],["t-jtariff","12-13","12-15"],["t-1512","12-14","12-15"],
+    ["h-cab","12-08","12-15"],["h-net10","12-01","12-15"],["t-confirm","12-15","12-16"],["t-phone","12-11","12-16"],
+    ["t-consular","12-11","12-16"],["h-handmeet","12-16","12-16"],["t-strike","12-10","12-17"],["t-offline","12-16","12-17"],
+    ["t-pack","12-16","12-17"],["t-charge","12-17","12-17"],["t-olci","12-17","12-17"],["h-online","12-14","12-18"],
+    ["h-installed","12-16","12-17"],["h-ooo","12-16","12-17"],["h-autoreply","12-16","12-17"],["t-go","12-17","12-17"],
+    ["t-luzern20","12-18","12-20"]
+  ];
+  var TH_M = ["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
+  var TH_D = ["อา.","จ.","อ.","พ.","พฤ.","ศ.","ส."];
+  function ymd(d){ return d.getFullYear() + "-" + (d.getMonth() < 9 ? "0" : "") + (d.getMonth() + 1) + "-" + (d.getDate() < 10 ? "0" : "") + d.getDate(); }
+  function renderToday(){
+    var box = document.getElementById('todayList'); if (!box) return;
+    var now = new Date(), today = ymd(now);
+    if (today > "2026-12-17") { box.innerHTML = '<p>ช่วงเดินทาง · ดู <a href="#days">แผนรายวัน</a></p>'; return; }
+    var list = [];
+    TASKS.forEach(function(t){
+      var from = "2026-" + t[1], due = "2026-" + t[2];
+      var src = document.querySelector('input[data-k="' + t[0] + '"]');
+      if (!src || src.checked || from > today) return;
+      var b = src.parentNode.querySelector('b');
+      list.push({ k:t[0], due:due, text:b ? b.textContent : src.parentNode.textContent, src:src, work:t[0].charAt(0) === "h" });
+    });
+    list.sort(function(a, b){ return a.due < b.due ? -1 : a.due > b.due ? 1 : 0; });
+    var html = '<h3>' + TH_D[now.getDay()] + ' ' + now.getDate() + ' ' + TH_M[now.getMonth()] + ' · ' + (list.length ? 'ทำ ' + Math.min(list.length, 8) + ' อย่างนี้ก่อน' : 'ไม่มีงานค้าง 🎉') + '</h3>';
+    list.slice(0, 8).forEach(function(it){
+      var dd = new Date(it.due + "T00:00:00"), days = Math.round((dd - new Date(today + "T00:00:00")) / 86400000);
+      var cls = days < 0 ? "late" : days <= 3 ? "soon" : "";
+      var lab = days < 0 ? "เลยกำหนด" : days === 0 ? "วันนี้" : "ภายใน " + dd.getDate() + " " + TH_M[dd.getMonth()];
+      var anchor = it.work ? "#work" : "#todo";
+      html += '<label class="ck"><input type="checkbox" data-mirror="' + it.k + '"><div>' + (it.work ? '💼 ' : '') + it.text.replace(/</g, "&lt;") +
+        '<span class="due ' + cls + '">' + lab + '</span><a class="go" href="' + anchor + '">รายละเอียด</a></div></label>';
+    });
+    if (list.length > 8) html += '<p class="more muted">ยังมีอีก ' + (list.length - 8) + ' อย่างที่เริ่มได้แล้ว · ดู <a href="#todo">ต้องทำต่อ</a> และ <a href="#work">งานก่อนลา</a></p>';
+    box.innerHTML = html;
+    box.querySelectorAll('input[data-mirror]').forEach(function(m){
+      m.addEventListener('change', function(){
+        var src = document.querySelector('input[data-k="' + m.dataset.mirror + '"]');
+        if (src && m.checked) { src.checked = true; src.dispatchEvent(new Event('change')); setTimeout(renderToday, 350); }
+      });
+    });
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', function(){ setTimeout(renderToday, 0); }); });
+  renderToday();
+
   var reset = document.getElementById('resetBtn');
   if (reset) reset.addEventListener('click', function(){
     if (!confirm('ล้างเช็คบ็อกซ์ทั้งหมดในเครื่องนี้?')) return;
     boxes.forEach(function(b){ b.checked = false; try { if (ls) ls.removeItem(PREFIX + b.dataset.k); } catch(e){} });
-    updateProgress();
+    updateProgress(); renderToday();
   });
 
   /* countdown to TG930: 18 Dec 2026 00:05 Bangkok (UTC+7) */
