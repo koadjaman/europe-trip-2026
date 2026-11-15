@@ -87,7 +87,7 @@ tr:last-child td{border-bottom:0}
 td.num,th.num{text-align:right;white-space:nowrap}
 tr.total td{font-weight:700;background:var(--gold-soft)}
 /* checklist */
-.tt td{vertical-align:top}.tt td small{display:block;color:var(--muted);font-size:.8rem}.ttsum{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.tt td{vertical-align:top}.tt td small{display:block;color:var(--muted);font-size:.8rem}.buylist ul{margin:.2em 0}.buylist>ul>li{margin:.6em 0}.buylist ul ul{padding-left:1.2em}.buylist ul ul li{margin:.25em 0}.ttsum{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
 .ck{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);cursor:pointer}
 .ck:last-child{border-bottom:0}
 .ck input{width:20px;height:20px;margin-top:3px;flex:0 0 auto;accent-color:var(--pine)}
@@ -859,11 +859,33 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
 <section id="tickets">
   <h2>🎟️ บัตรผ่านและตั๋ว</h2>
   <h3 style="margin-top:6px">🗓️ ตารางตั๋วเดินทาง เรียงตามวันเดินทาง</h3>
-  <div class="ttsum">
-    <span class="tag red">ซื้อให้เสร็จภายใน 22 พ.ย. · 8 รายการ</span>
-    <span class="tag red">ภายใน 30 พ.ย. · TER โคลมาร์</span>
-    <span class="tag gold">ซื้อเช้าวันจริง · Navigo Jour, Jungfraujoch, Rigi</span>
-    <span class="tag green">ซื้อแล้ว · ตั๋วบินไป-กลับ</span>
+  <div class="card buylist">
+    <ul>
+      <li><b>✅ ซื้อแล้ว: ตั๋วบินไป-กลับ</b> · ดูการจอง/เช็คอิน <a href="https://www.thaiairways.com" target="_blank" rel="noopener">thaiairways.com</a>
+        <ul>
+          <li>TG930 ออก 00:05 <b>คืนวันพฤหัสที่ 17 ธ.ค.</b> ถึงปารีส 06:50</li>
+          <li>TG971 ออก 13:15 วันพุธที่ 30 ธ.ค. ถึงกรุงเทพฯ 05:50 วันพฤหัสที่ 31 ธ.ค.</li>
+        </ul></li>
+      <li><b>🔴 ซื้อภายใน 22 พ.ย. (8 รายการ):</b>
+        <ul>
+          <li>รถ G7 รับที่ CDG (18 ธ.ค.) → <a href="https://www.g7.fr" target="_blank" rel="noopener">g7.fr</a></li>
+          <li>Museum Pass (ใช้ได้ 19 ธ.ค. 09:00 → 23 ธ.ค. 09:00) → <a href="https://www.parismuseumpass.fr" target="_blank" rel="noopener">parismuseumpass.fr</a></li>
+          <li>TGV ไปสตราสบูร์ก (22 ธ.ค. ~14:00 → ~15:46) → <a href="https://www.sncf-connect.com" target="_blank" rel="noopener">sncf-connect.com</a></li>
+          <li>Half Fare Card (ใช้ได้ 26 ธ.ค. → 25 ม.ค.) → <a href="https://www.klook.com/th/activity/10184-swiss-half-fare-card-switzerland/" target="_blank" rel="noopener">Klook ฿6,060</a> หรือ <a href="https://www.sbb.ch" target="_blank" rel="noopener">sbb.ch</a> CHF 150</li>
+          <li>TER200 ไปบาเซิล (26 ธ.ค. 10:51 → 12:08) → <a href="https://www.sncf-connect.com" target="_blank" rel="noopener">sncf-connect.com</a></li>
+          <li>IC61 ไปอินเทอร์ลาเคน (26 ธ.ค. 13:30 → 15:28) → แอป SBB Mobile / <a href="https://www.sbb.ch" target="_blank" rel="noopener">sbb.ch</a></li>
+          <li>อินเทอร์ลาเคน → ลูเซิร์น (28 ธ.ค. 10:04 → 11:55) → แอป SBB Mobile / <a href="https://www.sbb.ch" target="_blank" rel="noopener">sbb.ch</a></li>
+          <li>ลูเซิร์น → สนามบินซูริก (30 ธ.ค. ~08:35 → ~09:45) → แอป SBB Mobile / <a href="https://www.sbb.ch" target="_blank" rel="noopener">sbb.ch</a></li>
+        </ul></li>
+      <li><b>🟠 ภายใน 30 พ.ย.:</b> TER สตราสบูร์ก ⇄ โคลมาร์ (25 ธ.ค.) → <a href="https://www.sncf-connect.com" target="_blank" rel="noopener">sncf-connect.com</a></li>
+      <li><b>🟡 ซื้อเช้าวันจริง:</b>
+        <ul>
+          <li>Navigo Jour (19–21 ธ.ค.) → แอป <a href="https://www.iledefrance-mobilites.fr" target="_blank" rel="noopener">Île-de-France Mobilités</a></li>
+          <li>Jungfraujoch (27 ธ.ค.) → แอป SBB Mobile · จองที่นั่ง <a href="https://www.jungfrau.ch" target="_blank" rel="noopener">jungfrau.ch</a></li>
+          <li>Rigi กับรถไฟไป Arth-Goldau (29 ธ.ค.) → แอป SBB Mobile / <a href="https://www.rigi.ch" target="_blank" rel="noopener">rigi.ch</a></li>
+        </ul></li>
+    </ul>
+    <p class="muted" style="margin-bottom:0">ตั๋วสวิสทุกใบ: ซื้อหลังได้ Half Fare แล้ว และเลือกส่วนลด Half Fare ตอนซื้อ · ห้าม Supersaver วันที่ 26 และ 30</p>
   </div>
   <div class="tw"><table class="tt">
     <thead><tr><th>วันเดินทาง</th><th>เส้นทาง · ออก → ถึง</th><th>ตั๋ว · ราคา · ซื้อที่</th><th>ซื้อเมื่อไร</th><th>สถานะ</th></tr></thead>
