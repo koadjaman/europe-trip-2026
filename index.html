@@ -87,6 +87,7 @@ tr:last-child td{border-bottom:0}
 td.num,th.num{text-align:right;white-space:nowrap}
 tr.total td{font-weight:700;background:var(--gold-soft)}
 /* checklist */
+.tt td{vertical-align:top}.tt td small{display:block;color:var(--muted);font-size:.8rem}.ttsum{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
 .ck{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);cursor:pointer}
 .ck:last-child{border-bottom:0}
 .ck input{width:20px;height:20px;margin-top:3px;flex:0 0 auto;accent-color:var(--pine)}
@@ -388,15 +389,15 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
   <div class="tw"><table>
     <thead><tr><th>✓</th><th>รายการ</th><th class="num">ราคา</th><th class="num">บาท</th><th>ซื้อที่</th><th>เมื่อไร</th></tr></thead>
     <tbody>
-      <tr><td><input type="checkbox" data-k="s-tgv"></td><td>TGV INOUI Paris Est → Strasbourg 22 ธ.ค.</td><td class="num">€70–120</td><td class="num">2,800–4,800</td><td>sncf-connect.com</td><td><b>สัปดาห์นี้</b></td></tr>
-      <tr><td><input type="checkbox" data-k="s-hfc"></td><td>Swiss Half Fare Card (เริ่ม 26 ธ.ค.)</td><td class="num">CHF 150</td><td class="num">6,375</td><td>sbb.ch (login SwissPass)</td><td><b>สัปดาห์นี้</b></td></tr>
-      <tr><td><input type="checkbox" data-k="s-ter200"></td><td>TER200 Strasbourg → Basel SBB 26 ธ.ค. 10:51</td><td class="num">€17–25</td><td class="num">680–1,000</td><td>SNCF Connect</td><td><b>สัปดาห์นี้</b></td></tr>
-      <tr><td><input type="checkbox" data-k="s-bi"></td><td>Basel SBB → Interlaken Ost 26 ธ.ค. IC61 13:30</td><td class="num">CHF 32</td><td class="num">1,360</td><td>แอป SBB</td><td><b>สัปดาห์นี้</b></td></tr>
-      <tr><td><input type="checkbox" data-k="s-il"></td><td>Interlaken Ost → Luzern 28 ธ.ค. (+ที่นั่ง CHF 12 ไม่บังคับ)</td><td class="num">CHF 17 (+12)</td><td class="num">723 (+510)</td><td>แอป SBB</td><td><b>สัปดาห์นี้</b></td></tr>
-      <tr><td><input type="checkbox" data-k="s-lz"></td><td>Luzern → Zürich Flughafen 30 ธ.ค.</td><td class="num">CHF 15.50</td><td class="num">659</td><td>แอป SBB (ห้าม Supersaver)</td><td><b>สัปดาห์นี้</b></td></tr>
-      <tr><td><input type="checkbox" data-k="s-g7"></td><td>G7 Accueil CDG → โรงแรม + เวลารอ 90–120 นาที</td><td class="num">€72</td><td class="num">2,880</td><td>g7.fr</td><td><b>สัปดาห์นี้</b></td></tr>
-      <tr><td><input type="checkbox" data-k="s-mp"></td><td>Paris Museum Pass 96 ชม.</td><td class="num">€105</td><td class="num">4,200</td><td>parismuseumpass.fr</td><td><b>สัปดาห์นี้</b></td></tr>
-      <tr><td><input type="checkbox" data-k="s-esim"></td><td>eSIM ยุโรป + สวิส ≥10 GB</td><td class="num">–</td><td class="num">500–700</td><td>Airalo/Ubigi/AIS ฯลฯ</td><td><b>สัปดาห์นี้</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-tgv"></td><td>TGV INOUI Paris Est → Strasbourg 22 ธ.ค.</td><td class="num">€70–120</td><td class="num">2,800–4,800</td><td>sncf-connect.com</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-hfc"></td><td>Swiss Half Fare Card (เริ่ม 26 ธ.ค.)</td><td class="num">CHF 150</td><td class="num">6,375</td><td>sbb.ch (login SwissPass)</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-ter200"></td><td>TER200 Strasbourg → Basel SBB 26 ธ.ค. 10:51</td><td class="num">€17–25</td><td class="num">680–1,000</td><td>SNCF Connect</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-bi"></td><td>Basel SBB → Interlaken Ost 26 ธ.ค. IC61 13:30</td><td class="num">CHF 32</td><td class="num">1,360</td><td>แอป SBB</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-il"></td><td>Interlaken Ost → Luzern 28 ธ.ค. (+ที่นั่ง CHF 12 ไม่บังคับ)</td><td class="num">CHF 17 (+12)</td><td class="num">723 (+510)</td><td>แอป SBB</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-lz"></td><td>Luzern → Zürich Flughafen 30 ธ.ค.</td><td class="num">CHF 15.50</td><td class="num">659</td><td>แอป SBB (ห้าม Supersaver)</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-g7"></td><td>G7 Accueil CDG → โรงแรม + เวลารอ 90–120 นาที</td><td class="num">€72</td><td class="num">2,880</td><td>g7.fr</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-mp"></td><td>Paris Museum Pass 96 ชม.</td><td class="num">€105</td><td class="num">4,200</td><td>parismuseumpass.fr</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
+      <tr><td><input type="checkbox" data-k="s-esim"></td><td>eSIM ยุโรป + สวิส ≥10 GB</td><td class="num">–</td><td class="num">500–700</td><td>Airalo/Ubigi/AIS ฯลฯ</td><td><b>ภายใน 22 พ.ย.</b></td></tr>
       <tr><td><input type="checkbox" data-k="s-colmar"></td><td>TER Strasbourg ⇄ Colmar 25 ธ.ค. ไป-กลับ</td><td class="num">~€24</td><td class="num">960</td><td>SNCF Connect / ตู้สถานี</td><td>ภายใน 30 พ.ย.</td></tr>
       <tr><td><input type="checkbox" data-k="s-boat"></td><td>เรือแซน Vedettes du Pont Neuf 21 ธ.ค.</td><td class="num">€15</td><td class="num">600</td><td>เว็บผู้ให้บริการ</td><td>ก่อนไป (หน้าท่า €17)</td></tr>
       <tr><td><input type="checkbox" data-k="s-winter"></td><td>เสื้อผ้ากันหนาว + รองเท้า</td><td class="num">–</td><td class="num">3,000–6,000</td><td>ไทย</td><td>ภายใน 30 พ.ย.</td></tr>
@@ -857,29 +858,76 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:.85rem;text-align:center
 <!-- ================= TICKETS ================= -->
 <section id="tickets">
   <h2>🎟️ บัตรผ่านและตั๋ว</h2>
+  <h3 style="margin-top:6px">🗓️ ตารางตั๋วเดินทาง เรียงตามวันเดินทาง</h3>
+  <div class="ttsum">
+    <span class="tag red">ซื้อให้เสร็จภายใน 22 พ.ย. · 8 รายการ</span>
+    <span class="tag red">ภายใน 30 พ.ย. · TER โคลมาร์</span>
+    <span class="tag gold">ซื้อเช้าวันจริง · Navigo Jour, Jungfraujoch, Rigi</span>
+    <span class="tag green">ซื้อแล้ว · ตั๋วบินไป-กลับ</span>
+  </div>
+  <div class="tw"><table class="tt">
+    <thead><tr><th>วันเดินทาง</th><th>เส้นทาง · ออก → ถึง</th><th>ตั๋ว · ราคา · ซื้อที่</th><th>ซื้อเมื่อไร</th><th>สถานะ</th></tr></thead>
+    <tbody>
+      <tr><td><b>คืน พฤ. 17 ธ.ค.</b><small>ตั๋วเขียน ศ. 18</small></td><td>✈️ BKK → CDG T1<br><b>00:05 → 06:50</b> (ศ. 18 เวลาปารีส)</td><td>TG930 · ซื้อแล้ว</td><td>ซื้อแล้ว 19 ต.ค.</td><td><span class="tag green">ซื้อแล้ว</span></td></tr>
+      <tr><td><b>ศ. 18 ธ.ค.</b></td><td>🚕 CDG → Hôtel Sophie Germain<br>รับหลังเครื่องลง (รอได้ 90–120 นาที) → ถึง ~09:30</td><td>G7 Accueil · €72 · g7.fr</td><td><b>ภายใน 22 พ.ย.</b><small>ยืนยันอีกครั้ง 15–16 ธ.ค.</small></td><td><span class="tag red">ยังไม่จอง</span></td></tr>
+      <tr><td><b>ส. 19 – อ. 22 ธ.ค.</b></td><td>🏛️ ใช้เข้าพิพิธภัณฑ์<br><b>เปิด 19 ธ.ค. 09:00 → หมด 23 ธ.ค. 09:00</b></td><td>Paris Museum Pass 96 ชม. · €105 · parismuseumpass.fr</td><td><b>ภายใน 22 พ.ย.</b><small>แล้วจองรอบ 5 แห่งทันที</small></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>ส. 19, อา. 20, จ. 21 ธ.ค.</b></td><td>🚇 เมโทร/RER/บัส ทั้งวัน รวมแวร์ซาย</td><td>Navigo Jour · €12.30/วัน · แอป IDFM</td><td>เช้าแต่ละวัน</td><td><span class="tag gold">ซื้อวันจริง</span></td></tr>
+      <tr><td><b>อ. 22 ธ.ค.</b></td><td>🚄 Paris Gare de l'Est → Strasbourg<br><b>~14:00 → ~15:46</b> (ถึงไม่เกิน 17:00)</td><td>TGV INOUI · €70–120 · sncf-connect.com</td><td><b>ภายใน 22 พ.ย.</b><small>เปลี่ยน/คืนฟรีถึง 15 ธ.ค.</small></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>ศ. 25 ธ.ค.</b></td><td>🚆 Strasbourg ⇄ Colmar ไป-กลับ<br>ไป <b>~10:00–10:30</b> (25–35 นาที) · กลับ <b>~20:00–20:30</b> → ถึง ~21:00</td><td>TER · ~€24 ไป-กลับ · SNCF Connect</td><td><b>ภายใน 30 พ.ย.</b></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>ส. 26 ธ.ค.</b></td><td>🎫 บัตรลดครึ่งราคาสวิส<br><b>ใช้ได้ 26 ธ.ค. → 25 ม.ค.</b></td><td>Swiss Half Fare Card · CHF 150 ที่ sbb.ch หรือ Klook ฿6,060 (ถูกกว่า ~฿300)</td><td><b>ภายใน 22 พ.ย.</b><small>ต้องมีก่อนซื้อตั๋วสวิส</small></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>ส. 26 ธ.ค.</b></td><td>🚆 Strasbourg → Basel SBB<br><b>10:51 → 12:08</b></td><td>TER200 · €17–25 · SNCF Connect</td><td><b>ภายใน 22 พ.ย.</b></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>ส. 26 ธ.ค.</b></td><td>🚆 Basel SBB → Interlaken Ost<br><b>13:30 → 15:28</b> (IC61)</td><td>CHF 32 (Half Fare) · แอป SBB · ห้าม Supersaver</td><td><b>ภายใน 22 พ.ย.</b></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>อา. 27 ธ.ค.</b></td><td>🏔️ Interlaken Ost → Jungfraujoch<br>ไป <b>07:34 → 09:11</b> · กลับ 12:15 / 12:45 → Interlaken ~14:22 / ~14:52</td><td>CHF 112.20 (Half Fare) + ที่นั่ง CHF 10 · แอป SBB</td><td><b>เช้า 27 ธ.ค.</b><small>หลังดูเว็บแคม ห้ามซื้อล่วงหน้า</small></td><td><span class="tag gold">ซื้อวันจริง</span></td></tr>
+      <tr><td><b>จ. 28 ธ.ค.</b></td><td>🚆 Interlaken Ost → Luzern<br><b>10:04 → 11:55</b> (Luzern-Interlaken Express)</td><td>CHF 17 (+ที่นั่ง CHF 12 ไม่บังคับ) · แอป SBB</td><td><b>ภายใน 22 พ.ย.</b></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>อ. 29 ธ.ค.</b></td><td>🚆 Luzern ⇄ Arth-Goldau ไป-กลับ<br>ไป <b>~08:45 → ~09:15</b> · กลับ <b>~15:49 → ~16:20</b></td><td>~CHF 13.60 · แอป SBB</td><td><b>เช้า 29 ธ.ค.</b></td><td><span class="tag gold">ซื้อวันจริง</span></td></tr>
+      <tr><td><b>อ. 29 ธ.ค.</b></td><td>🚞 ขึ้นเขา Rigi (สำรอง Pilatus)<br>ลงจากยอด 14:48 → Arth-Goldau ~15:40</td><td>Rigi Day Pass CHF 42 (Half Fare) · แอป SBB</td><td><b>เช้า 29 ธ.ค.</b><small>ดูพยากรณ์คืนก่อน</small></td><td><span class="tag gold">ซื้อวันจริง</span></td></tr>
+      <tr><td><b>พ. 30 ธ.ค.</b></td><td>🚆 Luzern → Zürich Flughafen<br><b>~08:35 → ~09:45</b></td><td>CHF 15.50 · แอป SBB · ห้าม Supersaver</td><td><b>ภายใน 22 พ.ย.</b></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>พ. 30 ธ.ค.</b></td><td>✈️ ZRH → BKK<br><b>13:15 → 05:50</b> (พฤ. 31 เวลาไทย)</td><td>TG971 · ซื้อแล้ว</td><td>ซื้อแล้ว 19 ต.ค.</td><td><span class="tag green">ซื้อแล้ว</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">เวลาเป็นเวลาท้องถิ่น · ตั๋วรถไฟสวิสแบบธรรมดาผูกแค่วัน ไม่ผูกขบวน · ตารางรายละเอียดราคาและเงื่อนไขอยู่ด้านล่าง</p>
+  <h3>รายละเอียดบัตรและตั๋วทั้งหมด</h3>
   <div class="okbox">ตัดสินใจแล้ว: ซื้อแค่ <b>Half Fare + Museum Pass + Navigo Easy</b> · ไม่ซื้อ Swiss Travel Pass (CHF 309) · ไม่ซื้อ Navigo Semaine</div>
+  <details class="card" id="why-not-stp"><summary><b>ทำไมไม่ใช้ Swiss Travel Pass</b> · Half Fare ถูกกว่า CHF 108.90 (≈4,628 บาท) และเลื่อนวันได้</summary>
+  <div class="tw"><table>
+    <thead><tr><th>รวมทุกเที่ยวในสวิส 26–30 ธ.ค.</th><th>✅ Half Fare Card</th><th>Swiss Travel Pass 4 วัน</th></tr></thead>
+    <tbody>
+      <tr><td>ค่าบัตร</td><td>CHF 150</td><td>CHF 309</td></tr>
+      <tr><td>26 Basel → Interlaken · 28 Interlaken → Luzern · 29 Luzern ⇄ Arth-Goldau + Rigi</td><td>CHF 104.60 (ลดครึ่ง)</td><td>รวมในพาส</td></tr>
+      <tr><td>27 Jungfraujoch ไป-กลับ</td><td>CHF 112.20 (ลดครึ่งทั้งเส้น)</td><td>~CHF 151.20 ต้องซื้อแยก (พาสฟรีถึง Grindelwald แล้วลดแค่ 25%)</td></tr>
+      <tr><td>30 Luzern → Zürich Flughafen</td><td>CHF 15.50</td><td>CHF 31 ต้องซื้อแยก (พาส 4 วันหมด 29 ธ.ค.)</td></tr>
+      <tr class="total"><td>รวม</td><td><b>CHF 382.30 ≈ 16,248</b></td><td>CHF 491.20 ≈ 20,876</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><b>ต้องซื้อตั๋วแยกอยู่ดี 2 ใบ</b> (Jungfraujoch และวันที่ 30) ถ้าใช้พาส จึงไม่ได้ "ใบเดียวจบ"</li>
+    <li>อยู่สวิส 5 วันเดินทาง (26–30) พาส 4 วันไม่พอ ส่วนพาสที่ยาวกว่านั้นราคายิ่งสูงขึ้น</li>
+    <li>พาสผูกวันตายตัว ถ้าต้องเลื่อน Jungfraujoch เพราะฟ้าปิด จะเสียวันไปเปล่า ๆ · Half Fare ใช้ได้ทั้งเดือน</li>
+    <li>Klook ขาย Swiss Travel Pass 3 วันเริ่ม ฿10,108 ซึ่งสั้นกว่าที่ต้องใช้ · Half Fare บน Klook ฿6,060</li>
+  </ul>
+  </details>
   <div class="tw"><table>
     <thead><tr><th>รายการ</th><th>ราคา</th><th>ซื้อที่</th><th>เมื่อไร</th><th>หมายเหตุ</th><th>สถานะ</th></tr></thead>
     <tbody>
-      <tr><td><b>Swiss Half Fare Card</b> 1 เดือน</td><td>CHF 150 = 6,375</td><td>sbb.ch (login SwissPass)</td><td>สัปดาห์นี้ · เริ่ม 26 ธ.ค.</td><td>แสดงพาสปอร์ตเล่มจริงตอนตรวจ · เปิด 3D Secure · คุ้มเมื่อค่าเดินทางเต็ม ≥ CHF 300</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
-      <tr><td><b>Paris Museum Pass 96 ชม.</b></td><td>€105 = 4,200</td><td>parismuseumpass.fr</td><td>สัปดาห์นี้</td><td>เปิด 19 ธ.ค. 09:00 → หมด 23 ธ.ค. 09:00 · ครอบคลุม Louvre, Versailles, Sainte-Chapelle, Conciergerie, Panthéon, Orsay (ซื้อแยก ~€116–121 ต้องเช็ค) · 48 ชม. €85 / 144 ชม. €125</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>Swiss Half Fare Card</b> 1 เดือน</td><td>CHF 150 = 6,375</td><td>sbb.ch (login SwissPass)</td><td>ภายใน 22 พ.ย. · เริ่ม 26 ธ.ค.</td><td>แสดงพาสปอร์ตเล่มจริงตอนตรวจ · เปิด 3D Secure · คุ้มเมื่อค่าเดินทางเต็ม ≥ CHF 300</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>Paris Museum Pass 96 ชม.</b></td><td>€105 = 4,200</td><td>parismuseumpass.fr</td><td>ภายใน 22 พ.ย.</td><td>เปิด 19 ธ.ค. 09:00 → หมด 23 ธ.ค. 09:00 · ครอบคลุม Louvre, Versailles, Sainte-Chapelle, Conciergerie, Panthéon, Orsay (ซื้อแยก ~€116–121 ต้องเช็ค) · 48 ชม. €85 / 144 ชม. €125</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
       <tr><td>รอบฟรี 5 แห่ง</td><td>ฟรีเมื่อมีพาส</td><td>ticket.louvre.fr · chateauversailles.fr · sainte-chapelle.fr · paris-conciergerie.fr · musee-orsay.fr</td><td>ทันทีหลังได้พาส</td><td>Panthéon และ Arc de Triomphe ไม่ต้องจอง · Notre-Dame ฟรี จองได้ไม่กี่ชั่วโมงล่วงหน้า</td><td><span class="tag red">ยังไม่จอง</span></td></tr>
       <tr><td>Navigo Easy (บัตรเปล่า)</td><td>€2</td><td>ตู้ CDG / Denfert-Rochereau</td><td>18 ธ.ค.</td><td>ไม่ต้องใช้รูป · เก็บตั๋วเดี่ยว ≤20 ใบ · เก็บตั๋วสนามบินกับตั๋วเดี่ยวในใบเดียวไม่ได้ · ตั๋วกระดาษเลิก 15 ธ.ค. 2026 · ไม่มีคาร์เนต์แล้ว</td><td><span class="tag">ซื้อหน้างาน</span></td></tr>
       <tr><td>ตั๋ว Paris Région ↔ Aéroports</td><td>€14</td><td>ตู้ CDG</td><td>18 ธ.ค.</td><td>สำรองถ้าต้องนั่ง RER B · ต่อเมโทรได้เที่ยวเดียวใน 120 นาที · Navigo Jour ไม่ครอบคลุมสนามบิน</td><td><span class="tag">ซื้อหน้างาน</span></td></tr>
       <tr><td>ตั๋วเดี่ยว Métro-Train-RER</td><td>€2.55</td><td>แอป IDFM / ตู้</td><td>18 ธ.ค. ×2 · 22 ธ.ค. ×3</td><td>ราคาเดียวทั่วอิล-เดอ-ฟรองซ์ รวมแวร์ซาย · ต่อบัส/แทรมไม่ได้ (Ticket Bus-Tram €2.05)</td><td><span class="tag">ซื้อหน้างาน</span></td></tr>
       <tr><td>Navigo Jour</td><td>€12.30</td><td>แอป Île-de-France Mobilités</td><td>เช้า 19, 20, 21 ธ.ค.</td><td>โซน 1–5 รวมแวร์ซาย บัส แทรม · คุ้มเมื่อ ≥5 เที่ยว/วัน</td><td><span class="tag">ซื้อหน้างาน</span></td></tr>
       <tr class="total"><td>รวมขนส่งปารีส</td><td>€65.65 = 2,626</td><td colspan="4">ตั๋วเดี่ยวล้วน €56.80 · แบบสบาย €70.30</td></tr>
-      <tr><td><b>TGV INOUI Paris Est → Strasbourg 22 ธ.ค.</b></td><td>€70–120 ตอนนี้ (ประมาณ)</td><td>sncf-connect.com</td><td><b>สัปดาห์นี้</b></td><td>ขบวน ~14:00 ~1 ชม. 46 นาที · เปลี่ยน/คืนฟรีถึง 15 ธ.ค. · ไม่เอา OUIGO · ใส่เบอร์โทรและอีเมลตอนจอง</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>TGV INOUI Paris Est → Strasbourg 22 ธ.ค.</b></td><td>€70–120 ตอนนี้ (ประมาณ)</td><td>sncf-connect.com</td><td><b>ภายใน 22 พ.ย.</b></td><td>ขบวน ~14:00 ~1 ชม. 46 นาที · เปลี่ยน/คืนฟรีถึง 15 ธ.ค. · ไม่เอา OUIGO · ใส่เบอร์โทรและอีเมลตอนจอง</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
       <tr><td><b>TER Strasbourg ⇄ Colmar 25 ธ.ค.</b></td><td>€6–16/เที่ยว · ไป-กลับ ~€24</td><td>SNCF Connect / ตู้</td><td>ภายใน 30 พ.ย.</td><td>ไม่ระบุที่นั่ง · ตารางวันหยุด ~1 ขบวน/ชม.</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
-      <tr><td><b>TER200 Strasbourg → Basel SBB 26 ธ.ค.</b></td><td>€17–25</td><td>SNCF Connect</td><td>สัปดาห์นี้</td><td>10:51 → 12:08 · Half Fare ไม่ครอบคลุม</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
-      <tr><td>Basel SBB → Interlaken Ost 26 ธ.ค. (A)</td><td>CHF 32 (เต็ม 64)</td><td>แอป SBB</td><td>สัปดาห์นี้</td><td>IC61 13:30 → 15:28 · ห้าม Supersaver · ตารางวันอาทิตย์</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td><b>TER200 Strasbourg → Basel SBB 26 ธ.ค.</b></td><td>€17–25</td><td>SNCF Connect</td><td>ภายใน 22 พ.ย.</td><td>10:51 → 12:08 · Half Fare ไม่ครอบคลุม</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td>Basel SBB → Interlaken Ost 26 ธ.ค. (A)</td><td>CHF 32 (เต็ม 64)</td><td>แอป SBB</td><td>ภายใน 22 พ.ย.</td><td>IC61 13:30 → 15:28 · ห้าม Supersaver · ตารางวันอาทิตย์</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
       <tr><td>Jungfraujoch ไป-กลับ 27 ธ.ค. (B)</td><td>CHF 112.20 (เต็ม 224.40) + ที่นั่ง CHF 10</td><td>แอป SBB (บางแหล่งบอกเคาน์เตอร์ Interlaken Ost) · jungfrau.ch/seatreservation</td><td><b>เช้าวันจริงหลังดูเว็บแคม</b></td><td>ฟ้าปิดคืนเงินไม่ได้ · ราคาไม่ขึ้นลงตามวันซื้อ · ทาริฟหนาว 2026/27 ยังไม่ประกาศ (เผื่อ ±3–4%) · ไม่มี Good Morning Ticket · ขึ้นจาก Grindelwald Terminal ~CHF 100.60 (ต้องเช็ค)</td><td><span class="tag gold">ซื้อวันจริง</span></td></tr>
-      <tr><td>Interlaken Ost → Luzern 28 ธ.ค. (A)</td><td>CHF 17 (เต็ม 34) + ที่นั่ง CHF 12</td><td>แอป SBB</td><td>สัปดาห์นี้</td><td>ทุกชั่วโมงนาที :04 · ตั๋วธรรมดาผูกแค่วัน (ดีถ้าต้องเลื่อน Jungfraujoch)</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td>Interlaken Ost → Luzern 28 ธ.ค. (A)</td><td>CHF 17 (เต็ม 34) + ที่นั่ง CHF 12</td><td>แอป SBB</td><td>ภายใน 22 พ.ย.</td><td>ทุกชั่วโมงนาที :04 · ตั๋วธรรมดาผูกแค่วัน (ดีถ้าต้องเลื่อน Jungfraujoch)</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
       <tr><td>Luzern ⇄ Arth-Goldau 29 ธ.ค. (B)</td><td>~CHF 13.60 (ต้องเช็ค)</td><td>แอป SBB</td><td>เช้าวันจริง</td><td>Rigi Day Pass ไม่ครอบคลุมช่วงนี้</td><td><span class="tag gold">ซื้อวันจริง</span></td></tr>
       <tr><td>Rigi Day Pass 29 ธ.ค. (B)</td><td>CHF 42 (เต็ม 84)</td><td>แอป SBB / shop.rigi.ch / สถานี Arth-Goldau</td><td>เช้าวันจริง</td><td>Pilatus สำรอง CHF 42 หน้างาน · Visitor Card ไม่ลดค่ากระเช้า</td><td><span class="tag gold">ซื้อวันจริง</span></td></tr>
-      <tr><td>Luzern → Zürich Flughafen 30 ธ.ค. (A)</td><td>CHF 15.50 (เต็ม 31)</td><td>แอป SBB</td><td>สัปดาห์นี้</td><td><b>ห้าม Supersaver</b> (ใช้ Supersaver Flex ได้ คืน 75%)</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
+      <tr><td>Luzern → Zürich Flughafen 30 ธ.ค. (A)</td><td>CHF 15.50 (เต็ม 31)</td><td>แอป SBB</td><td>ภายใน 22 พ.ย.</td><td><b>ห้าม Supersaver</b> (ใช้ Supersaver Flex ได้ คืน 75%)</td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
       <tr class="total"><td>รวมฝั่งสวิส</td><td>CHF 382.30 ≈ 16,248</td><td colspan="4">ตั๋ว 6 ใบ CHF 232.30 + บัตร 150 · ถ้าไม่ซื้อบัตร CHF 464.60 · STP 4 วัน CHF 491.20 · ค่าโดยสารขึ้น 3.6% ตั้งแต่ 13 ธ.ค. (บัตรไม่ขึ้น)</td></tr>
-      <tr><td><b>G7 Accueil CDG</b></td><td>€72 = 2,880</td><td>g7.fr</td><td>สัปดาห์นี้ · ยืนยัน 15–16 ธ.ค.</td><td>ใส่ TG930 · เวลารอ 90–120 นาที · จุดนัด Departures ประตู 2 · สำรองแท็กซี่ทางการ €65 (T1 ประตู 24)</td><td><span class="tag red">ยังไม่จอง</span></td></tr>
+      <tr><td><b>G7 Accueil CDG</b></td><td>€72 = 2,880</td><td>g7.fr</td><td>ภายใน 22 พ.ย. · ยืนยัน 15–16 ธ.ค.</td><td>ใส่ TG930 · เวลารอ 90–120 นาที · จุดนัด Departures ประตู 2 · สำรองแท็กซี่ทางการ €65 (T1 ประตู 24)</td><td><span class="tag red">ยังไม่จอง</span></td></tr>
       <tr><td>เรือแซน Vedettes du Pont Neuf</td><td>€15 ออนไลน์</td><td>เว็บผู้ให้บริการ</td><td>ก่อนไป</td><td></td><td><span class="tag red">ยังไม่ซื้อ</span></td></tr>
       <tr><td>Batorama</td><td>~€13.50–17</td><td>shop.batorama.com</td><td>ก่อน 23 ธ.ค.</td><td>ตาราง 23–26 ธ.ค. ต้องเช็ค</td><td><span class="tag">ซื้อเมื่อแน่ใจ</span></td></tr>
       <tr><td>CITY-LOCKER สตราสบูร์ก</td><td>เริ่ม €2</td><td>จองออนไลน์เท่านั้น · 22a bd du Président-Wilson · 08:00–22:00</td><td>ถ้าต้องใช้</td><td>ใช้เฉพาะวันย้ายโรงแรม</td><td><span class="tag">ถ้าจำเป็น</span></td></tr>
